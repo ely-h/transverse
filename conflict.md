@@ -4,9 +4,9 @@ Let's explore how to resolve conflicts in Git.
 
 ## Merging Without Conflicts
 
-Another member should add some content here:
+Another member should add some content here: Wyvern
 
-Now, add some content locally without pulling the latest changes from GitLab: Waka waka e eeh eh
+Now, add some content locally without pulling the latest changes from GitLab: Dragon
 
 ## Merging With Conflicts
 
