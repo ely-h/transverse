@@ -1,7 +1,13 @@
 
 Let's explore how to resolve conflicts in Git.
 
-Another member should add some content here: Wyvern 
+
+## Merging Without Conflicts
+
+
+Another member should add some content here: la rockstar c pas bon
+
+Now, add some content locally without pulling the latest changes from GitLab:
 
 Now, add some content locally without pulling the latest changes from GitLab: Dragon
 
