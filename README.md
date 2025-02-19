@@ -1,1 +1,2 @@
 Membres : Rania Hassine, Elyssa Hallou, Ryowen Bernard, Cathya Agoubi
+! Sur la section "Constitution des groupes de travail" il y a écrit que Zahra Manawi est dans notre groupe mais ce n'est pas le cas, elle est actuellement en DUCES !
