@@ -17,5 +17,6 @@ public class Etudiant {
 		// TODO - implement Etudiant.AddMaison
 		throw new UnsupportedOperationException();
 	}
+	
 
 }
