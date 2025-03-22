@@ -7,19 +7,21 @@ public class Nationnalite {
 	ArrayList<Etudiant> sesEtudiants;
 	private String nom;
 
-	public Nationnalite() {
-		// TODO - implement Nationnalite.Nationnalite
-		throw new UnsupportedOperationException();
+	public Nationnalite(String nom) {
+		this.nom=nom;
+		sesEtudiants=new ArrayList<Etudiant>();
 	}
 
-	public void AddEtudiant() {
-		// TODO - implement Nationnalite.AddEtudiant
-		throw new UnsupportedOperationException();
+	public void AddEtudiant(Etudiant etudiant) {
+		sesEtudiants.add(etudiant);
 	}
 
-	public void AddMaison() {
-		// TODO - implement Nationnalite.AddMaison
-		throw new UnsupportedOperationException();
+	public void AddMaison(Maison maison) {
+		saMaison=maison;
+	}
+	
+	public String getNom() {
+		return nom;
 	}
 
 }
