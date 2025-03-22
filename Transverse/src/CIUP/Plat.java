@@ -56,6 +56,13 @@ public class Plat {
 	 public void addEtiquette(Etiquette etiquette) {
 		 this.sesEtiquettes.add(etiquette);
 	 }
+/*---------------------------------------
+ * Getter pour appeler la classe Etiquette
+ * --------------------------------------
+ */
 	 
+	 public String getEtiquettes() {
+			return Etiquettes;
+		}
 
 }
