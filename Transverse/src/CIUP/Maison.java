@@ -75,4 +75,13 @@ public class Maison {
 	public int getNombreEtudiants() {
 		return sesEtudiants.size();
 	}
+
+	public void afficherEtudiants(){
+		for(Etudiant etudiant : sesEtudiants){
+			System.out.println(etudiant);
+		}
+	}
+	public String toString(){
+		return nom+
+	}
 }

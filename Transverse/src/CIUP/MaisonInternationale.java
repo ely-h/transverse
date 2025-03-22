@@ -40,6 +40,17 @@ public class MaisonInternationale extends Maison {
 	public ArrayList<String> getServices(){
 		return servicesProposes;
 	}
+	
+	public String returnServices() {
+		String s="";
+		for(String service : this.servicesProposes) {
+			s+=service+" ";
+		}
+		return s;
+	}
+	public String toString() {
+		return super.toString()+"\n Voici les services proposes : "+returnServices();
+	}
 
 	
 
