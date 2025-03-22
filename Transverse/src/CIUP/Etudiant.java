@@ -32,6 +32,7 @@ public class Etudiant {
 		return ("Étudians numéro : " + _num + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite + "\n" + "Résidence : " + _saMaison + "\n");
 	}
 	
+<<<<<<< HEAD
 	/*------------------------------------------------/ 
 	/GETTERS
 	/------------------------------------------------*/
@@ -74,4 +75,7 @@ public class Etudiant {
 		testToString();
 	}
 	
+=======
+
+>>>>>>> b36d01a65009622d374281059bb9efe26e86005a
 }

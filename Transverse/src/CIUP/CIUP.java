@@ -1,3 +1,5 @@
 package CIUP;
-public class CIUP {
+public abstract class CIUP {
+	public abstract void main (String args[]);
 }
+
