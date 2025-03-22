@@ -1,5 +1,6 @@
 package CIUP;
 
+
 public class Etiquette {
 	private String nom;
 	

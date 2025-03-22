@@ -42,17 +42,26 @@ public class MenuRestoUParCategorie {
 		System.out.print(plat.getNomDuPlat());
 		System.out.print(plat.getIngredientsDuPlat());
 		System.out.print(plat.getValeursNutritionnelles());
-		for(String allergene : getAllergenes())
+		for(Allergene allergene : plat.getAllergenes())
 			System.out.print(allergene);
-		for(String etiquette : getEtiquettes())
-			System.out.print(etiquette);
+		for(Etiquette etiquette : plat.getEtiquettes())
+			System.out.print(etiquette.getNom());
 	}
 
-	public void filtrerUnPlat(String filtre) {
+	@Override
+	public String toString() {
+		return "MenuRestoUParCategorie [saMaison=" + saMaison + ", sesPlats=" + sesPlats + ", categorie=" + categorie
+				+ "]";
+	}
+
+	public void filtrerUnPlat(Etiquette filtre) {
 		ArrayList<Plat> platFiltreParEtiquette = new ArrayList<Plat>();
-		for(Plat plat: sesPlats) {
-			if(filtre == plat.getEtiquette()) {
-				platFiltreParEtiquette.add(plat)
+		for(Plat plat: sesPlats) 
+		{
+			for(Etiquette etiquette: plat.getEtiquettes()) 
+			{
+				if(filtre == etiquette)
+					platFiltreParEtiquette.add(plat);
 			}
 		}
 		for(Plat plat: platFiltreParEtiquette)

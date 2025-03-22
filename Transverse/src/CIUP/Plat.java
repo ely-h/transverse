@@ -11,7 +11,7 @@ public class Plat {
 	private String nomDuPlat;
 	private ArrayList<String> ingredientsDuPlat;
 	private String valeursNutritionnelles; 
-	private ArrayList<Allergene> allergenes;
+	private ArrayList<Allergene> sesAllergenes;
 	private ArrayList<Etiquette> sesEtiquettes;
 
 	/*-------------------------
@@ -23,18 +23,18 @@ public class Plat {
 		 this.nomDuPlat = "Plat inconnu";
 		 this.ingredientsDuPlat = new ArrayList<>();
 		 this.valeursNutritionnelles = ""; 
-		 this.allergenes = new ArrayList<Allergene>();
+		 this.sesAllergenes = new ArrayList<Allergene>();
 	}
 	 
 	 /*-------------------------
 	  * Constructeur avec paramètres
 	  *------------------------
 	  */
-	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, ArrayList<Allergene> allergenes, String valeursNutritionnelles) {
+	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, String valeursNutritionnelles) {
 		 this.nomDuPlat = nomDuPlat;
-		 this.ingredientsDuPlat =ingredientsDuPlat;
+		 this.ingredientsDuPlat = ingredientsDuPlat;
 		 this.valeursNutritionnelles = valeursNutritionnelles; 
-		 this.allergenes = allergenes; 
+		 
 	 }
 	 
 	 public String getNomDuPlat() {
@@ -49,13 +49,20 @@ public class Plat {
 		 return valeursNutritionnelles; 
 	 }
 	 
-	 public List<Allergene> getAllergenes (){
-		 return allergenes;
+	 public List<Allergenes> getAllergenes (){
+		 return sesAllergenes;
 	 }
 	 
 	 public void addEtiquette(Etiquette etiquette) {
 		 this.sesEtiquettes.add(etiquette);
 	 }
-	 
+/*---------------------------------------
+ * Getter pour appeler la classe Etiquette
+ * --------------------------------------
+ */
+	 public ArrayList<Etiquette> getEtiquettes() {
+			return this.sesEtiquettes;
+
+		}
 
 }
