@@ -61,8 +61,13 @@ public class Plat {
  * --------------------------------------
  */
 	 
+<<<<<<< HEAD
 	 public ArrayList<Etiquette> getEtiquettes() {
 			return this.sesEtiquettes;
+=======
+	 public String getEtiquette() {
+			return Etiquette;
+>>>>>>> fe965ef38fa87b8943b424d3233a3ebea33756d4
 		}
 
 }
