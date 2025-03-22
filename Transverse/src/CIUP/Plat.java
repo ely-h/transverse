@@ -27,7 +27,7 @@ public class Plat {
 	}
 	 
 	 /*-------------------------
-	  * Constructeur avec paramètres
+	  * Constructeur avec paramètres.
 	  *------------------------
 	  */
 	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, String valeursNutritionnelles) {
