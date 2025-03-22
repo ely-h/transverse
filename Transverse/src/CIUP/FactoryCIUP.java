@@ -24,11 +24,25 @@ public class FactoryCIUP {
  *  -----------------------------
  */
 	
- public static void creerMaisons(String nom, String nationalite, int longitude, int lattitude, int nombreChambres) {
+ public static void creerMaisons();{
+	 	Maison maisonFrance = new Maison("Maison France", "Française", 48, 2, 50);
+		Maison maisonEspagne = new Maison("Maison Espagnole", "Espagne", 40, -3, 30);
 		
-		 Maison maison = new Maison (nom, nationalite, longitude, lattitude, nombreChambres);
-				 listeMaisons.add(maison);
-		 System.out.println(maison);
+
+		/*------------------------------------
+		 * Permet d'ajouter les maisons dans la liste
+		 * -----------------------------------
+		 */
+		listeMaisons.add(maisonFrance);
+		listeMaisons.add(maisonEspagne);
+		
+		/*----------------------------------
+		 * Afficher les maisons 
+		 * ---------------------------------
+		 */
+		System.out.println(maison);
+		System.out.println(MaisonFrance); 
+		System.out.println(MaisonEspagne);
 		 
 		}
 	 
@@ -73,15 +87,7 @@ public class FactoryCIUP {
  */
 
 	public static void creerListeMaisons() {
-		Maison maisonFrance = new Maison("Maison France", "Française", 48, 2, 50);
-		Maison maisonEspagne = new Maison("Maison Espagnole", "Espagne", 40, -3, 30);
 		
-		/*------------------------------------
-		 * Permet d'ajouter les maisons dans la liste
-		 * -----------------------------------
-		 */
-		listeMaisons.add(maisonFrance);
-		listeMaisons.add(maisonEspagne);
 		
 		/*---------------------------------------
 		 * Permet d'afficher les maisons créees
