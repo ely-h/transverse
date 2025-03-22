@@ -4,32 +4,35 @@ import java.util.*;
 
 /*-----------------------------
  * Classe des Plats ayant comme informations le nom, les ingredients, les valeurs nutritionnelle et les allergenes du plats
- */---------------------------
+ *---------------------------
+ */
 public class Plat {
 
 	private String nomDuPlat;
 	private ArrayList<String> ingredientsDuPlat;
-	private int valeursNutritionnelle; // a modifier dans l'uml et le mettre en int il s'agit d'un nombre 
+	private String valeursNutritionnelles; 
 	private ArrayList<String> allergenes;
 
 	/*-------------------------
 	 * Constructeur vide de plat pour initialiser
-	 */------------------------
-	public Plat() {
+	 *------------------------
+	 */
+	 Plat() {
 		 
 		 this.nomDuPlat = "Plat inconnu";
 		 this.ingredientsDuPlat = new ArrayList<>();
-		 this.valeursNutritionnelle = 0; 
-		 this.allergenes = new Arraylist<>();
+		 this.valeursNutritionnelles = ""; 
+		 this.allergenes = new ArrayList<String>();
 	}
 	 
 	 /*-------------------------
 	  * Constructeur avec paramètres
-	  */------------------------
-	 public Plat (String nomDuPlat, List<String> ingredientsDuPlat, int valeursNutritionelle, List<String> allergenes) {
+	  *------------------------
+	  */
+	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, ArrayList<String> allergenes, String valeursNutritionnelles) {
 		 this.nomDuPlat = nomDuPlat;
 		 this.ingredientsDuPlat =ingredientsDuPlat;
-		 this.valeursNutritionnelle = valeursNutritionnelle; 
+		 this.valeursNutritionnelles = valeursNutritionnelles; 
 		 this.allergenes = allergenes; 
 	 }
 	 
@@ -41,8 +44,8 @@ public class Plat {
 		 return ingredientsDuPlat;
 	 }
 	 
-	 public int getValeursNutritionnelle () {
-		 return valeursNutritionnelle; 
+	 public String getValeursNutritionnelles () {
+		 return valeursNutritionnelles; 
 	 }
 	 
 	 public List<String> getAllergenes (){
@@ -51,7 +54,8 @@ public class Plat {
 	
 /*------------------------------
  * Cette classe permet de renvoyer le nom et le logo des allergènes en utilisant le chemin vers le logo des allergènes
- */-----------------------------
+ *-----------------------------
+ */
  	class Etiquette() {
 		private String nomDeEtiquette;
 		private String logoPath; 
@@ -59,14 +63,16 @@ public class Plat {
  
  /*---------------------------
   * Constructeur Etiquette 
-  */---------------------------
+  *---------------------------
+  */
  public Etiquette ( String nomDeEtiquette, String logoPath) {
 	 this.nomDeEtiquette = nomDeEtiquette;
 	 this.logoPath = logoPath; 
  }
  /*----------------------------
   * La méthode Getter permet ici d'accéder aux valeurs de nom de l'etiquette et de son logo
-  */----------------------------
+  *----------------------------
+  */
   
  public String getNomDeEtiquette() {
 	 return nomDeEtiquette; 
@@ -78,7 +84,8 @@ public class Plat {
  
  /*-----------------------------
   * cette classe permet d'afficher le logo des etiquettes 
-  */----------------------------
+  *----------------------------
+  */
  
 public class AfficherLogo{
 	public static void main (String[] args) {
