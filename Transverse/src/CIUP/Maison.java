@@ -26,6 +26,7 @@ public class Maison {
 		sonMenuRestoUParCategorie=new ArrayList<MenuRestoUParCategorie>(4);
 		this.nom=nom;
 		saNationnalite=nationnalite;
+		saNationnalite.AddMaison(this);
 		this.longitude=longitude;
 		this.lattitude=lattitude;
 		nombreChambres=nombreTotalChambres;
@@ -82,6 +83,6 @@ public class Maison {
 		}
 	}
 	public String toString(){
-		return nom+
+		return nom+" de "+saNationnalite.getNom()+"\nSes coordonnes gps sont longitude="+longitude+" lattitude="+lattitude;
 	}
 }

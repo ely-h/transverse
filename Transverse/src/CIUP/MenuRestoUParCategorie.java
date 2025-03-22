@@ -4,7 +4,7 @@ import java.util.*;
 public class MenuRestoUParCategorie {
 
 	Maison saMaison;
-	ArrayList<Plat> sesPlats = new ArrayList();
+	ArrayList<Plat> sesPlats = new ArrayList<Plat>();
 	private String categorie;
 
 

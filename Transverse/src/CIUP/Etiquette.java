@@ -9,7 +9,7 @@ public class Etiquette {
 	}
 	
 	public String getNom() {
-		return nom; 
+		return nom;
 	}
 
 }
