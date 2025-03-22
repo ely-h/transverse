@@ -6,5 +6,9 @@ public class Etiquette {
 	Etiquette(String nom){
 		this.nom=nom;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
 
 }

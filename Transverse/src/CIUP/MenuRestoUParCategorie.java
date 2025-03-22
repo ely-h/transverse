@@ -4,7 +4,7 @@ import java.util.*;
 public class MenuRestoUParCategorie {
 
 	Maison saMaison;
-	ArrayList<Plat> sesPlats = new ArrayList();
+	ArrayList<Plat> sesPlats = new ArrayList<Plat>();
 	private String categorie;
 
 
@@ -41,7 +41,7 @@ public class MenuRestoUParCategorie {
 	public void consultationPlat(Plat plat) {
 		System.out.print(plat.getNomDuPlat());
 		System.out.print(plat.getIngredientsDuPlat());
-		System.out.print(plat.getValeursNutritionnelle());
+		System.out.print(plat.getValeursNutritionnelles());
 		for(String allergene : getAllergenes())
 			System.out.print(allergene);
 		for(String etiquette : getEtiquettes())
