@@ -74,35 +74,5 @@ public class Plat {
   *----------------------------
   */
   
- public String getNomDeEtiquette() {
-	 return nomDeEtiquette; 
- }
- 
- public String getLogoPath() {
-	 return logoPath;
- }
- 
- /*-----------------------------
-  * cette classe permet d'afficher le logo des etiquettes 
-  *----------------------------
-  */
- 
-public class AfficherLogo{
-	public static void main (String[] args) {
-	
-		Etiquette Gluten = new Etiquette ("Gluten", "images/Gluten.png");
-		Etiquette Arachide = new Etiquette ("Arachide", "images/Arachide.png");
-		Etiquette MollusquesCrustacés = new Etiquette ("MollusquesCrustacés", "images/MollusquesCrustacés.png");
-		Etiquette Noix = new Etiquette ("Noix", "images/Noix.png");
-		Etiquette Vegan = new Etiquette ("images/Vegan.png"); 
-	
-		System.out.println(Gluten);
-		System.out.println(Arachide);
-		System.out.println(MollusquesCrustacés);
-		System.out.println(Noix);
-		System.out.println(Vegan);
-	
-	}	
-}
 
 }

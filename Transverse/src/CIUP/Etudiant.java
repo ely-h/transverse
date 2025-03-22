@@ -1,22 +1,81 @@
 package CIUP;
 public class Etudiant {
 
-	Nationnalite saNationnalite;
-	Maison saMaison;
-	private String nom;
-	private String prenom;
-	private String mail;
-	private int anneeEtude;
+	Nationnalite _saNationnalite;
+	Maison _saMaison;
+	private String _nom;
+	private String _prenom;
+	private String _mail;
+	private int _anneeEtude;
+	private static int _num = 0;
+	private String _statuLogement;
 
-	public Etudiant() {
-		// TODO - implement Etudiant.Etudiant
-		throw new UnsupportedOperationException();
-	}
-
-	public void AddMaison() {
-		// TODO - implement Etudiant.AddMaison
-		throw new UnsupportedOperationException();
+	/*------------------------------------------------/ 
+	/EL CONSTRUCTOR
+	/-----------------------------------------------♠*/
+	
+	Etudiant(String nom, String prenom, String mail, int anneeEtude /*, Nationnalite Nation*/) {
+		_nom = nom;
+		_mail = mail;
+		_prenom = prenom;
+		_anneeEtude = anneeEtude;
+		_statuLogement = "Attente";
+		//_saNationnalite = Nation;
+		_num = _num++;
 	}
 	
+	/*------------------------------------------------/ 
+	/METHODES
+	/------------------------------------------------*/
+	
+	public String toString() {
+		return ("Étudians numéro : " + _num + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite + "\n" + "Résidence : " + _saMaison + "\n");
+	}
+	
+<<<<<<< HEAD
+	/*------------------------------------------------/ 
+	/GETTERS
+	/------------------------------------------------*/
+	
+	public String get_nom() {return _nom;}
+	public String get_mail() {return _mail;}
+	public String get_prenom() {return _prenom;}
+	public Maison get_saMaison() {return _saMaison;}
+	public int get_anneeEtude() {return _anneeEtude;}
+	public String get_statuLogement() {return _statuLogement;}
+	public Nationnalite get_saNationnalite() {return _saNationnalite;}
+	
+	/*------------------------------------------------/ 
+	/SETTERS
+	/------------------------------------------------*/
+	
+	public void set_nom(String nom) {_nom = nom;}
+	public void set_mail(String mail) {_mail = mail;}
+	public void set_prenom(String prenom) {_prenom = prenom;}
+	public void set_saMaison(Maison saMaison) {_saMaison = saMaison;}
+	public void set_anneeEtude(int anneeEtude) {_anneeEtude = anneeEtude;}
+	public void get_statuLogment(String newStatu) {_statuLogement = newStatu;}
+	public void set_saNationnalite(Nationnalite saNationnalite) {_saNationnalite = saNationnalite;}
+	
+	/*------------------------------------------------/ 
+	/TEST
+	/------------------------------------------------*/
+	
+	Etudiant ETest = new Etudiant("Joneuh", "Smisseuh","XxJonesDeLaMuertexX@hotmail.fr", 2  );
+	
+	private void testToString() {
+		System.out.println(ETest);
+	}
+	
+	/*------------------------------------------------/ 
+	/MAIN
+	/------------------------------------------------*/
+	
+	public void main(String arg[]) {
+		testToString();
+	}
+	
+=======
 
+>>>>>>> b36d01a65009622d374281059bb9efe26e86005a
 }
