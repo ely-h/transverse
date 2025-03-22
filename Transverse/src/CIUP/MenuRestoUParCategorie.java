@@ -3,29 +3,15 @@ import java.util.*;
 
 public class MenuRestoUParCategorie {
 
-	Maison saMaison;
-	ArrayList<Plat> sesPlats = new ArrayList<Plat>();
+	private ArrayList<Plat> sesPlats = new ArrayList();
 	private String categorie;
 
-
-	public Maison getSaMaison() {
-		return saMaison;
-	}
-
-	public void setSaMaison(Maison saMaison) {
-		this.saMaison = saMaison;
-	}
 
 	public String getCategorie() {
 		return categorie;
 	}
 
 	public void setCategorie(String categorie) {
-		this.categorie = categorie;
-	}
-
-	public MenuRestoUParCategorie(Maison maison, String categorie) {
-		this.saMaison = maison;
 		this.categorie = categorie;
 	}
 	
@@ -50,7 +36,7 @@ public class MenuRestoUParCategorie {
 
 	@Override
 	public String toString() {
-		return "MenuRestoUParCategorie [saMaison=" + saMaison + ", sesPlats=" + sesPlats + ", categorie=" + categorie
+		return "MenuRestoUParCategorie [saMaison=" + ", sesPlats=" + sesPlats + ", categorie=" + categorie
 				+ "]";
 	}
 

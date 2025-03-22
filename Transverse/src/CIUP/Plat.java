@@ -49,7 +49,7 @@ public class Plat {
 		 return valeursNutritionnelles; 
 	 }
 	 
-	 public List<Allergenes> getAllergenes (){
+	 public List<Allergene> getAllergenes (){
 		 return sesAllergenes;
 	 }
 	 
