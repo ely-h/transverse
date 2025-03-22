@@ -11,7 +11,8 @@ public class Plat {
 	private String nomDuPlat;
 	private ArrayList<String> ingredientsDuPlat;
 	private String valeursNutritionnelles; 
-	private ArrayList<String> allergenes;
+	private ArrayList<Allergene> allergenes;
+	private ArrayList<Etiquette> sesEtiquettes;
 
 	/*-------------------------
 	 * Constructeur vide de plat pour initialiser
@@ -22,14 +23,14 @@ public class Plat {
 		 this.nomDuPlat = "Plat inconnu";
 		 this.ingredientsDuPlat = new ArrayList<>();
 		 this.valeursNutritionnelles = ""; 
-		 this.allergenes = new ArrayList<String>();
+		 this.allergenes = new ArrayList<Allergene>();
 	}
 	 
 	 /*-------------------------
 	  * Constructeur avec paramètres
 	  *------------------------
 	  */
-	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, ArrayList<String> allergenes, String valeursNutritionnelles) {
+	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, ArrayList<Allergene> allergenes, String valeursNutritionnelles) {
 		 this.nomDuPlat = nomDuPlat;
 		 this.ingredientsDuPlat =ingredientsDuPlat;
 		 this.valeursNutritionnelles = valeursNutritionnelles; 
@@ -48,31 +49,13 @@ public class Plat {
 		 return valeursNutritionnelles; 
 	 }
 	 
-	 public List<String> getAllergenes (){
+	 public List<Allergene> getAllergenes (){
 		 return allergenes;
 	 }
-	
-/*------------------------------
- * Cette classe permet de renvoyer le nom et le logo des allergènes en utilisant le chemin vers le logo des allergènes
- *-----------------------------
- */
- 	class Etiquette() {
-		private String nomDeEtiquette;
-		private String logoPath; 
-	}
- 
- /*---------------------------
-  * Constructeur Etiquette 
-  *---------------------------
-  */
- public Etiquette ( String nomDeEtiquette, String logoPath) {
-	 this.nomDeEtiquette = nomDeEtiquette;
-	 this.logoPath = logoPath; 
- }
- /*----------------------------
-  * La méthode Getter permet ici d'accéder aux valeurs de nom de l'etiquette et de son logo
-  *----------------------------
-  */
-  
+	 
+	 public void addEtiquette(Etiquette etiquette) {
+		 this.sesEtiquettes.add(etiquette);
+	 }
+	 
 
 }
