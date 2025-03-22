@@ -10,29 +10,33 @@ public class FactoryCIUP {
 	
 	/*---------------------------
 	 * Initialise les listes
-	 */--------------------------
+	 * --------------------------
+	 */
 	 
 	 public static void initialiserListes() {
-		 lesMaisons = new ArrayList<>();
-		 listeMaison = new ArrayList<>();
-		 lesEtudiants = new ArrayList<>();
-		 listeAttente = new ArrayList<>():
+		 lesMaisons = new ArrayList<Maison>();
+		 listeMaison = new ArrayList<Maison>();
+		 lesEtudiants = new ArrayList<Etudiants>();
+		 listeAttente = new ArrayList<Etudiant>():
 	 }
 /*-------------------------------
  *  Cette méthode permet de creer une maison et de la rajouter dans la liste de maison
- */-------------------------------
+ *  -----------------------------
+ */
 	
- public static void creerMaisons(STring nom, String nationalite, int longitude, int lattitude, int nombreChambres) {
+ public static void creerMaisons(String nom, String nationalite, int longitude, int lattitude, int nombreChambres) {
 		
-		 Maison maison = new Maison (nom, nationalite, longitude, lattitude, nombreChambres)
+		 Maison maison = new Maison (nom, nationalite, longitude, lattitude, nombreChambres);
 				 listeMaisons.add(maison);
-		 System.out.println("Maison créee :" + maison.getNom() + "Nationalité :" + maison.getNationalite());
+		 System.out.println(maison);
+		 
 		}
 	 
 	 
  /*-------------------------------
-  * Cette méthode permet de creer un etudiant avec une maison 
-  */-------------------------------
+  * Cette méthode permet de creer un etudiant avec une maison
+  * ------------------------------ 
+  */
 	
   public static void creerEtudiantsAvecMaison(String nom, String nationalite) {
 	  Etudiant etudiant = new Etudiant(nom, nationalite);
@@ -54,7 +58,8 @@ public class FactoryCIUP {
 
   /*---------------------------------
    * Permet de mettre un etudiant creer dans la liste d'attente
-   */--------------------------------
+   * --------------------------------
+   */
    
 	public static void creerEtudiantsListeAttente() {
 		Etudiant etudiant = new Etudiant(nom, nationalite);
@@ -64,7 +69,8 @@ public class FactoryCIUP {
 
 /*-------------------------------------
  * Permet de creer une liste de maison 
- */-------------------------------------
+ * ------------------------------------
+ */
 
 	public static void creerListeMaisons() {
 		Maison maisonFrance = new Maison("Maison France", "Française", 48, 2, 50);
@@ -72,13 +78,15 @@ public class FactoryCIUP {
 		
 		/*------------------------------------
 		 * Permet d'ajouter les maisons dans la liste
-		 */-----------------------------------
+		 * -----------------------------------
+		 */
 		listeMaisons.add(maisonFrance);
 		listeMaisons.add(maisonEspagne);
 		
 		/*---------------------------------------
 		 * Permet d'afficher les maisons créees
-		 */--------------------------------------
+		 * --------------------------------------
+		 */
 		
 		 System.out.println("Maisons créées : ");
 	    for (Maison maison : listeMaisons) {
@@ -88,7 +96,8 @@ public class FactoryCIUP {
  
  /*------------------------------------------------
   * Permet d'appeler les méthodes
-  */------------------------------------------------
+  * -----------------------------------------------
+  */
  public static void main(String[] args) {
 	    creerListeMaisons(); 
 	    creerEtudiantsListeAttente();
