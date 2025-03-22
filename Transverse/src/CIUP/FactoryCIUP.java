@@ -3,28 +3,96 @@ import java.util.*;
 
 public class FactoryCIUP {
 
-	ArrayList<Maison> lesMaisons;
-	ArrayList<Etudiant> lesEtudiants;
+	private static ArrayList<Maison> lesMaisons;
 	private static ArrayList<Maison> listeMaison;
-
-	public static void creerEtudiantsAvecMaison() {
-		// TODO - implement FactoryCIUP.creerEtudiantsAvecMaison
-		throw new UnsupportedOperationException();
+	private static ArrayList<Etudiant> lesEtudiants;
+	private static ArrayList<Etudiant> listeAttente;
+	
+	/*---------------------------
+	 * Initialise les listes
+	 */--------------------------
+	 
+	 public static void initialiserListes() {
+		 lesMaisons = new ArrayList<>();
+		 listeMaison = new ArrayList<>();
+		 lesEtudiants = new ArrayList<>();
+		 listeAttente = new ArrayList<>():
+	 }
+/*-------------------------------
+ *  Cette méthode permet de creer une maison et de la rajouter dans la liste de maison
+ */-------------------------------
+	
+ public static void creerMaisons(STring nom, String nationalite, int longitude, int lattitude, int nombreChambres) {
+		
+		 Maison maison = new Maison (nom, nationalite, longitude, lattitude, nombreChambres)
+				 listeMaisons.add(maison);
+		 System.out.println("Maison créee :" + maison.getNom() + "Nationalité :" + maison.getNationalite());
+		}
+	 
+	 
+ /*-------------------------------
+  * Cette méthode permet de creer un etudiant avec une maison 
+  */-------------------------------
+	
+  public static void creerEtudiantsAvecMaison(String nom, String nationalite) {
+	  Etudiant etudiant = new Etudiant(nom, nationalite);
+	  
+	  // Nous cherchos si les maisons sont compatible avec l'étudiant 
+	  for (Maison maison ; listeMaisons) {
+		  //on compare ici les nationalites
+		  if (maison.getNationalite().compareTo(nationalite) == 0 && maison.getNombreEtudiant() < maison.getNombreChambres()) {
+			  maison.addEtudiant(etudiant);
+			  listeEtudiats.add(etudiant);
+			  System.out.println("l'étudiant"+nom + "est placé dans la maison" + maison.getNom());
+			  return; 
+		  }
+	  }
+		listeAttente.add(etudiant);
+		System.out.println("l'étudiant"+ nom +"est placé dans la liste attente");
+		
 	}
 
+  /*---------------------------------
+   * Permet de mettre un etudiant creer dans la liste d'attente
+   */--------------------------------
+   
 	public static void creerEtudiantsListeAttente() {
-		// TODO - implement FactoryCIUP.creerEtudiantsListeAttente
-		throw new UnsupportedOperationException();
+		Etudiant etudiant = new Etudiant(nom, nationalite);
+		listeAttente.add(etudiant);
+		System.out.println("l'étudiant"+ nom +"est placé dans la liste attente");
 	}
 
-	public static void creerMaisons() {
-		// TODO - implement FactoryCIUP.creerMaisons
-		throw new UnsupportedOperationException();
-	}
+/*-------------------------------------
+ * Permet de creer une liste de maison 
+ */-------------------------------------
 
 	public static void creerListeMaisons() {
-		// TODO - implement FactoryCIUP.creerListeMaisons
-		throw new UnsupportedOperationException();
+		Maison maisonFrance = new Maison("Maison France", "Française", 48, 2, 50);
+		Maison maisonEspagne = new Maison("Maison Espagnole", "Espagne", 40, -3, 30);
+		
+		/*------------------------------------
+		 * Permet d'ajouter les maisons dans la liste
+		 */-----------------------------------
+		listeMaisons.add(maisonFrance);
+		listeMaisons.add(maisonEspagne);
+		
+		/*---------------------------------------
+		 * Permet d'afficher les maisons créees
+		 */--------------------------------------
+		
+		 System.out.println("Maisons créées : ");
+	    for (Maison maison : listeMaisons) {
+	        System.out.println("  " + maison.getNom() + "Nationalité : " + maison.getNationalite());
+	    }
 	}
-
+ 
+ /*------------------------------------------------
+  * Permet d'appeler les méthodes
+  */------------------------------------------------
+ public static void main(String[] args) {
+	    creerListeMaisons(); 
+	    creerEtudiantsListeAttente();
+	    creerEtudiantsAvecMaison();
+	    creerMaisons();
+	}
 }
