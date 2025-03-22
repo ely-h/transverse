@@ -27,6 +27,8 @@ public class FactoryCIUP {
  public static void creerMaisons();{
 	 	Maison maisonFrance = new Maison("Maison France", "Française", 48, 2, 50);
 		Maison maisonEspagne = new Maison("Maison Espagnole", "Espagne", 40, -3, 30);
+		Maison maisonJapon = new Maison("Maison Japon", "Japonaise", 35, 139, 40);
+		Maison maisonInternationale = new Maison ("Maison Internationale", " Toutes les Nationalité", 0, 0, 100 );
 		
 
 		/*------------------------------------
@@ -35,14 +37,18 @@ public class FactoryCIUP {
 		 */
 		listeMaisons.add(maisonFrance);
 		listeMaisons.add(maisonEspagne);
+		listeMaisons.add(maisonJapon);
+		listeMaisons.add(maisonInternationale);
 		
 		/*----------------------------------
-		 * Afficher les maisons 
+		 * Afficher les maisons et la maison internationale 
 		 * ---------------------------------
 		 */
-		System.out.println(maison);
-		System.out.println(MaisonFrance); 
-		System.out.println(MaisonEspagne);
+
+		System.out.println(maisonFrance); 
+		System.out.println(maisonEspagne);
+		System.out.println(maisonJapon);
+		System.out.println(maisonInternationale);
 		 
 		}
 	 
