@@ -61,8 +61,8 @@ public class Plat {
  * --------------------------------------
  */
 	 
-	 public String getEtiquettes() {
-			return Etiquettes;
+	 public String getEtiquette() {
+			return Etiquette;
 		}
 
 }
