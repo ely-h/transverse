@@ -30,7 +30,7 @@ public class Etudiant {
 	/------------------------------------------------*/
 	
 	public String toString() {
-		return ("Étudians numéro : " + _num + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite + "\n" + "Résidence : " + _saMaison + "\n");
+		return ("Étudians numéro : " + _num + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite.getNom() + "\n" + "Résidence : " + _saMaison + "\n");
 	}
 	
 
