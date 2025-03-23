@@ -65,6 +65,10 @@ public class Maison {
 	public String getNationalite() {
 		return nationalite;
 	}
+	
+	public RestoU getSonRestoU(){
+		return sonRestoU;
+	}
 
 	public int getLongitude() {
 		return longitude;

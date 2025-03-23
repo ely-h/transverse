@@ -10,6 +10,10 @@ public class RestoU {
 		return saMaison;
 	}
 
+	public ArrayList<MenuRestoUParCategorie> getSesCategories() {
+		return sesCategories;
+	}
+
 	public void setSaMaison(Maison saMaison) {
 		this.saMaison = saMaison;
 	}

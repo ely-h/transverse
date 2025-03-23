@@ -15,6 +15,10 @@ public class MenuRestoUParCategorie {
 		this.categorie = categorie;
 	}
 	
+	public ArrayList<Plat> getSesPlats() {
+		return sesPlats;
+	}
+
 	public MenuRestoUParCategorie(Plat plat) {
 		this.sesPlats.add(plat); 
 	}
@@ -53,6 +57,10 @@ public class MenuRestoUParCategorie {
 		for(Plat plat: platFiltreParEtiquette)
 			System.out.print(plat);
 	}
+	
+	 public void addplat(Plat plat) {
+		 this.sesPlats.add(plat);
+	 }
 	
 
 

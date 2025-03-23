@@ -95,20 +95,146 @@ public class FactoryCIUP {
         lesEtudiants.add(etudiant8);
         lesEtudiants.add(etudiant9);
         lesEtudiants.add(etudiant10);
+        
 		
-		
-		for(Etudiant etudiant : lesEtudiants)
-			System.out.println(etudiant);
-		
-		
-			 
-	}
+     // Création des listes d'ingrédients
+        ArrayList<String> ingredientsSaladeCesar = new ArrayList<>();
+        ingredientsSaladeCesar.add("salade");
+        ingredientsSaladeCesar.add("poulet grillé");
+        ingredientsSaladeCesar.add("parmesan");
+
+        ArrayList<String> ingredientsCarbonara = new ArrayList<>();
+        ingredientsCarbonara.add("pâtes");
+        ingredientsCarbonara.add("lardons");
+        ingredientsCarbonara.add("crème fraîche");
+
+        ArrayList<String> ingredientsSushi = new ArrayList<>();
+        ingredientsSushi.add("riz");
+        ingredientsSushi.add("saumon");
+        ingredientsSushi.add("algues");
+
+        ArrayList<String> ingredientsCouscous = new ArrayList<>();
+        ingredientsCouscous.add("semoule");
+        ingredientsCouscous.add("viande");
+        ingredientsCouscous.add("légumes");
+
+        ArrayList<String> ingredientsTiramisu = new ArrayList<>();
+        ingredientsTiramisu.add("biscuits");
+        ingredientsTiramisu.add("café");
+        ingredientsTiramisu.add("mascarpone");
+
+        ArrayList<String> ingredientsFondantChocolat = new ArrayList<>();
+        ingredientsFondantChocolat.add("chocolat");
+        ingredientsFondantChocolat.add("beurre");
+        ingredientsFondantChocolat.add("sucre");
+
+        ArrayList<String> ingredientsBurger = new ArrayList<>();
+        ingredientsBurger.add("pain");
+        ingredientsBurger.add("steak");
+        ingredientsBurger.add("fromage");
+
+        ArrayList<String> ingredientsPizza = new ArrayList<>();
+        ingredientsPizza.add("pâte");
+        ingredientsPizza.add("tomates");
+        ingredientsPizza.add("mozzarella");
+
+        // Création des plats avec les listes d'ingrédients
+        Plat entree1 = new Plat("Salade César", ingredientsSaladeCesar, "Calories: 400 kcal");
+        Plat entree2 = new Plat("Soupe de légumes", ingredientsCouscous, "Calories: 300 kcal");
+
+        Plat platPrincipal1 = new Plat("Pâtes Carbonara", ingredientsCarbonara, "Calories: 500 kcal");
+        Plat platPrincipal2 = new Plat("Couscous", ingredientsCouscous, "Calories: 600 kcal");
+
+        Plat dessert1 = new Plat("Tiramisu", ingredientsTiramisu, "Calories: 450 kcal");
+        Plat dessert2 = new Plat("Fondant au chocolat", ingredientsFondantChocolat, "Calories: 500 kcal");
+
+        Plat extra1 = new Plat("Burger", ingredientsBurger, "Calories: 700 kcal");
+        Plat extra2 = new Plat("Pizza Margherita", ingredientsPizza, "Calories: 650 kcal");
+
+        // Ajout d'allergènes et d'étiquettes aux plats
+        Allergene allergeneLactose = new Allergene("Lactose");
+        Allergene allergeneGluten = new Allergene("Gluten");
+        Etiquette etiquetteVegetarien = new Etiquette("Végétarien");
+        Etiquette etiquetteSansGluten = new Etiquette("Sans gluten");
+
+        entree1.addEtiquette(etiquetteSansGluten);
+        entree1.addAllergene(allergeneLactose);
+
+        platPrincipal1.addAllergene(allergeneGluten);
+
+        dessert1.addEtiquette(etiquetteVegetarien);
+
+        extra1.addAllergene(allergeneLactose);
+
+     // Création des catégories de menus
+        MenuRestoUParCategorie menuEntrees = new MenuRestoUParCategorie(entree1);
+        menuEntrees.setCategorie("Entrées");
+        menuEntrees.addplat(entree2);
+
+        MenuRestoUParCategorie menuPlatsPrincipaux = new MenuRestoUParCategorie(platPrincipal1);
+        menuPlatsPrincipaux.setCategorie("Plats principaux");
+        menuPlatsPrincipaux.addplat(platPrincipal2);
+
+        MenuRestoUParCategorie menuDesserts = new MenuRestoUParCategorie(dessert1);
+        menuDesserts.setCategorie("Desserts");
+        menuDesserts.addplat(dessert2);
+
+        MenuRestoUParCategorie menuExtras = new MenuRestoUParCategorie(extra1);
+        menuExtras.setCategorie("Extras");
+        menuExtras.addplat(extra2);
+
+        // Création des RestoU
+        RestoU restoFrance = new RestoU(maisonFrance);
+        RestoU restoEspagne = new RestoU(maisonEspagne);
+        RestoU restoJapon = new RestoU(maisonJapon);
+        RestoU restoTunisie = new RestoU(maisonTunisie);
+        RestoU restoCoree = new RestoU(maisonCoree);
+        RestoU restoInternational = new RestoU(maisonInternationale);
+
+        // Ajout des catégories au RestoU
+     // Ajout des catégories aux RestoU
+        restoFrance.addCategorieRestoU(menuEntrees);
+        restoFrance.addCategorieRestoU(menuPlatsPrincipaux);
+        restoFrance.addCategorieRestoU(menuDesserts);
+        restoFrance.addCategorieRestoU(menuExtras);
+
+        restoEspagne.addCategorieRestoU(menuEntrees);
+        restoEspagne.addCategorieRestoU(menuPlatsPrincipaux);
+        restoEspagne.addCategorieRestoU(menuDesserts);
+        restoEspagne.addCategorieRestoU(menuExtras);
+
+        restoJapon.addCategorieRestoU(menuEntrees);
+        restoJapon.addCategorieRestoU(menuPlatsPrincipaux);
+        restoJapon.addCategorieRestoU(menuDesserts);
+        restoJapon.addCategorieRestoU(menuExtras);
+
+        restoTunisie.addCategorieRestoU(menuEntrees);
+        restoTunisie.addCategorieRestoU(menuPlatsPrincipaux);
+        restoTunisie.addCategorieRestoU(menuDesserts);
+        restoTunisie.addCategorieRestoU(menuExtras);
+
+        restoCoree.addCategorieRestoU(menuEntrees);
+        restoCoree.addCategorieRestoU(menuPlatsPrincipaux);
+        restoCoree.addCategorieRestoU(menuDesserts);
+        restoCoree.addCategorieRestoU(menuExtras);
+
+        restoInternational.addCategorieRestoU(menuEntrees);
+        restoInternational.addCategorieRestoU(menuPlatsPrincipaux);
+        restoInternational.addCategorieRestoU(menuDesserts);
+        restoInternational.addCategorieRestoU(menuExtras);
+    
+
+        // Affichage des informations
+        System.out.println("Informations sur les RestoU :");
+        System.out.println(restoFrance);
+        restoFrance.consulterCategoriesDuResto();
+    }
 	
 	public static ArrayList<Maison> getLesMaisons(){
 		return lesMaisons;
 	}
 	
-	public ArrayList<Etudiant> getLesEtudiants(){
+	public static ArrayList<Etudiant> getLesEtudiants(){
 		return lesEtudiants;
 	}
 	

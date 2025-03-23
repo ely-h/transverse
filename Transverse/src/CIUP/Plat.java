@@ -23,6 +23,7 @@ public class Plat {
 		 this.nomDuPlat = "Plat inconnu";
 		 this.ingredientsDuPlat = new ArrayList<>();
 		 this.valeursNutritionnelles = ""; 
+		 this.sesEtiquettes = new ArrayList<Etiquette>();
 		 this.sesAllergenes = new ArrayList<Allergene>();
 	}
 	 
@@ -34,7 +35,8 @@ public class Plat {
 		 this.nomDuPlat = nomDuPlat;
 		 this.ingredientsDuPlat = ingredientsDuPlat;
 		 this.valeursNutritionnelles = valeursNutritionnelles; 
-		 
+	     this.sesAllergenes = new ArrayList<>();
+	     this.sesEtiquettes = new ArrayList<>(); 
 	 }
 	  
 /*------------------------
@@ -61,6 +63,10 @@ public class Plat {
 	 public void addEtiquette(Etiquette etiquette) {
 		 this.sesEtiquettes.add(etiquette);
 	 }
+	 
+	 public void addAllergene (Allergene allergene) {
+		 this.sesAllergenes.add(allergene);
+	 }
 /*---------------------------------------
  * Getter pour appeler la classe Etiquette
  * --------------------------------------
@@ -69,5 +75,10 @@ public class Plat {
 			return this.sesEtiquettes;
 
 		}
+
+	public void setSesAllergenes(ArrayList<Allergene> sesAllergenes) {
+		this.sesAllergenes = sesAllergenes;
+	}
+
 
 }
