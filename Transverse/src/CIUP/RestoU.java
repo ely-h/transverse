@@ -3,7 +3,7 @@ package CIUP;
 import java.util.ArrayList;
 
 //C'est la classe mère du menu restoU
-public abstract class RestoU {
+public class RestoU {
 	Maison saMaison;
 	private ArrayList<MenuRestoUParCategorie> sesCategories = new ArrayList();
 

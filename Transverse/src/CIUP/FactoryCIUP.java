@@ -83,7 +83,7 @@ public class FactoryCIUP {
 			 
 	}
 	
-	public ArrayList<Maison> getLesMaisons(){
+	public static ArrayList<Maison> getLesMaisons(){
 		return lesMaisons;
 	}
 	
