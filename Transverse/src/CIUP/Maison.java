@@ -9,7 +9,7 @@ public class Maison {
 	 */
 
 	ArrayList<MenuRestoUParCategorie> sonMenuRestoUParCategorie;
-	ArrayList<Etudiant> sesEtudiants;
+	ArrayList<Etudiant> sesEtudiants=new ArrayList<Etudiant>();
 	Nationnalite saNationnalite;
 	private String nom;
 	private String nationalite;
@@ -42,6 +42,7 @@ public class Maison {
 		if(nombreChambres-sesEtudiants.size()>=0)
 		{
 			sesEtudiants.add(etudiantAAjouter);
+			etudiantAAjouter.set_saMaison(this);
 			return true;
 		}
 		else
