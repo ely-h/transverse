@@ -66,14 +66,35 @@ public class FactoryCIUP {
 		Etudiant etudiant1=new Etudiant("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES);
 		Etudiant etudiant2=new Etudiant("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR);
 		Etudiant etudiant3=new Etudiant("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN);
-		
+        Etudiant etudiant4 = new Etudiant("Akira", "Tanaka", "akira.tanaka@gmail.com", 4, JP);
+        Etudiant etudiant5 = new Etudiant("Minji", "Kim", "minji.kim@naver.com", 2, KR);
+        Etudiant etudiant6 = new Etudiant("Sophie", "Dupont", "sophie.dupont@gmail.com", 3, FR);
+        Etudiant etudiant7 = new Etudiant("Carlos", "Gomez", "carlos.gomez@yahoo.es", 1, ES);
+        Etudiant etudiant8 = new Etudiant("Aya", "Nakamura", "aya.nakamura@gmail.com", 5, JP);
+        Etudiant etudiant9 = new Etudiant("Amir", "Ben Ali", "amir.benali@yahoo.fr", 2, TN);
+        Etudiant etudiant10 = new Etudiant("Junho", "Lee", "junho.lee@naver.com", 4, KR);
+        
 		maisonEspagne.addEtudiant(etudiant1);
 		maisonFrance.addEtudiant(etudiant2);
 		maisonTunisie.addEtudiant(etudiant3);
+        maisonJapon.addEtudiant(etudiant4);
+        maisonCoree.addEtudiant(etudiant5);
+        maisonFrance.addEtudiant(etudiant6);
+        maisonEspagne.addEtudiant(etudiant7);
+        maisonJapon.addEtudiant(etudiant8);
+        maisonTunisie.addEtudiant(etudiant9);
+        maisonCoree.addEtudiant(etudiant10);
 		
 		lesEtudiants.add(etudiant1);
 		lesEtudiants.add(etudiant2);
 		lesEtudiants.add(etudiant3);
+        lesEtudiants.add(etudiant4);
+        lesEtudiants.add(etudiant5);
+        lesEtudiants.add(etudiant6);
+        lesEtudiants.add(etudiant7);
+        lesEtudiants.add(etudiant8);
+        lesEtudiants.add(etudiant9);
+        lesEtudiants.add(etudiant10);
 		
 		
 		for(Etudiant etudiant : lesEtudiants)
