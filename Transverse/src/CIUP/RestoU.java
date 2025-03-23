@@ -2,6 +2,10 @@ package CIUP;
 
 import java.util.ArrayList;
 
+/*-----------------------------
+ * Classe représentant un restaurant universitaire (RestoU) associé à une maison.
+ * Contient des informations sur la maison à laquelle il appartient et les catégories de menus qu'il propose.
+ *---------------------------*/
 public class RestoU {
 	Maison saMaison;
 	private ArrayList<MenuRestoUParCategorie> sesCategories = new ArrayList<MenuRestoUParCategorie>(4);

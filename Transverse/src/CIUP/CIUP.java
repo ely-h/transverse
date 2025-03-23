@@ -1,5 +1,10 @@
 package CIUP;
 
+/*-----------------------------
+ * Classe principale représentant la Cité Internationale Universitaire de Paris (CIUP).
+ * Gère la création et l'affichage des objets liés à la CIUP, notamment les maisons, les étudiants, les restaurants universitaires et leurs menus.
+ *---------------------------*/
+
 public class CIUP {
     public static void main(String[] args) {
         // Étape 1 : Création des objets via FactoryCIUP

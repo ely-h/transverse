@@ -1,6 +1,7 @@
 package CIUP;
 import java.util.*;
 
+// Classe FactoryCIUP permettant de créer et initialiser tous les objets nécessaires pour représenter la Cité Internationale Universitaire de Paris (CIUP).
 public class FactoryCIUP {
 
 	private static ArrayList<Maison> lesMaisons;
@@ -166,22 +167,22 @@ public class FactoryCIUP {
 
         extra1.addAllergene(allergeneLactose);
 
-     // Création des catégories de menus
+        // Création des catégories de menus
         MenuRestoUParCategorie menuEntrees = new MenuRestoUParCategorie(entree1);
         menuEntrees.setCategorie("Entrées");
-        menuEntrees.addplat(entree2);
+        menuEntrees.addPlat(entree2);
 
         MenuRestoUParCategorie menuPlatsPrincipaux = new MenuRestoUParCategorie(platPrincipal1);
         menuPlatsPrincipaux.setCategorie("Plats principaux");
-        menuPlatsPrincipaux.addplat(platPrincipal2);
+        menuPlatsPrincipaux.addPlat(platPrincipal2);
 
         MenuRestoUParCategorie menuDesserts = new MenuRestoUParCategorie(dessert1);
         menuDesserts.setCategorie("Desserts");
-        menuDesserts.addplat(dessert2);
+        menuDesserts.addPlat(dessert2);
 
         MenuRestoUParCategorie menuExtras = new MenuRestoUParCategorie(extra1);
         menuExtras.setCategorie("Extras");
-        menuExtras.addplat(extra2);
+        menuExtras.addPlat(extra2);
 
         // Création des RestoU
         RestoU restoFrance = new RestoU(maisonFrance);
@@ -191,8 +192,7 @@ public class FactoryCIUP {
         RestoU restoCoree = new RestoU(maisonCoree);
         RestoU restoInternational = new RestoU(maisonInternationale);
 
-        // Ajout des catégories au RestoU
-     // Ajout des catégories aux RestoU
+        // Ajout des catégories aux RestoU
         restoFrance.addCategorieRestoU(menuEntrees);
         restoFrance.addCategorieRestoU(menuPlatsPrincipaux);
         restoFrance.addCategorieRestoU(menuDesserts);
@@ -223,11 +223,6 @@ public class FactoryCIUP {
         restoInternational.addCategorieRestoU(menuDesserts);
         restoInternational.addCategorieRestoU(menuExtras);
     
-
-        // Affichage des informations
-        System.out.println("Informations sur les RestoU :");
-        System.out.println(restoFrance);
-        restoFrance.consulterCategoriesDuResto();
     }
 	
 	public static ArrayList<Maison> getLesMaisons(){
