@@ -8,7 +8,7 @@ public class MaisonInternationale extends Maison {
 	 * ------------------------------------
 	 */
 
-	private ArrayList<String> servicesProposes;
+	private ArrayList<String> servicesProposes=new ArrayList<String>();
 	
 	/*------------------------------------
 	 * constructeur
