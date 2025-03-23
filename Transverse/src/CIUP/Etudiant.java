@@ -58,22 +58,6 @@ public class Etudiant {
 	public void get_statuLogment(String newStatu) {_statuLogement = newStatu;}
 	public void set_saNationnalite(Nationnalite saNationnalite) {_saNationnalite = saNationnalite;}
 	
-	/*------------------------------------------------/ 
-	/TEST
-	/------------------------------------------------*/
 	
-	Etudiant ETest = new Etudiant("Joneuh", "Smisseuh","XxJonesDeLaMuertexX@hotmail.fr", 2  );
-	
-	private void testToString() {
-		System.out.println(ETest);
-	}
-	
-	/*------------------------------------------------/ 
-	/MAIN
-	/------------------------------------------------*/
-	
-	public void main(String arg[]) {
-		testToString();
-	}
 	
 }
