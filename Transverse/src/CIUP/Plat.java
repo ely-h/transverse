@@ -14,10 +14,10 @@ public class Plat {
 	private ArrayList<Allergene> sesAllergenes;
 	private ArrayList<Etiquette> sesEtiquettes;
 
-	/*-------------------------
-	 * Constructeur vide de plat pour initialiser
-	 *------------------------
-	 */
+/*-------------------------
+* Constructeur vide de plat pour initialiser
+*--------------------------
+*/
 	 Plat() {
 		 
 		 this.nomDuPlat = "Plat inconnu";
@@ -26,16 +26,21 @@ public class Plat {
 		 this.sesAllergenes = new ArrayList<Allergene>();
 	}
 	 
-	 /*-------------------------
-	  * Constructeur avec paramètres.
-	  *------------------------
-	  */
+/*-------------------------
+* Constructeur avec paramètres.
+*--------------------------
+*/
 	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, String valeursNutritionnelles) {
 		 this.nomDuPlat = nomDuPlat;
 		 this.ingredientsDuPlat = ingredientsDuPlat;
 		 this.valeursNutritionnelles = valeursNutritionnelles; 
 		 
 	 }
+	  
+/*------------------------
+ * liste des getter 
+ * -----------------------
+ */
 	 
 	 public String getNomDuPlat() {
 		 return nomDuPlat;
