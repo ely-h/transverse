@@ -80,7 +80,7 @@ public static void creerNationalite() {
  */
 	
   public static void creerEtudiantsAvecMaison() {
-	  Etudiant etudiant = new Etudiant(nom, nationalite);
+	  Etudiant etudiant = new Etudiant("nom", "nationalite", "email", "annee etude", "nationalite");
 	  Etudiant etudiant1("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES);
 	  Etudiant etudiant2("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR);
 	  Etudiant etudiant1("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN);
@@ -92,7 +92,7 @@ public static void creerNationalite() {
 */
    
 	public static void creerEtudiantsListeAttente() {
-		Etudiant etudiant = new Etudiant(nom, nationalite, email, ??, Nationalité);
+		Etudiant etudiant = new Etudiant(nom, nationalite, email, annee etude, Nationalité);
 		listeAttente.add(etudiant);
 		System.out.println("l'étudiant"+ nom +"est placé dans la liste attente");
 	}
