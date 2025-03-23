@@ -2,10 +2,9 @@ package CIUP;
 
 import java.util.ArrayList;
 
-//C'est la classe mère du menu restoU
 public class RestoU {
 	Maison saMaison;
-	private ArrayList<MenuRestoUParCategorie> sesCategories = new ArrayList();
+	private ArrayList<MenuRestoUParCategorie> sesCategories = new ArrayList<MenuRestoUParCategorie>(4);
 
 	public Maison getSaMaison() {
 		return saMaison;
@@ -17,6 +16,7 @@ public class RestoU {
 	
 	public RestoU(Maison maison) {
 		this.saMaison = maison;
+		maison.addRestoU(this);
 	}
 	
 	public void addCategorieRestoU(MenuRestoUParCategorie categorie) {

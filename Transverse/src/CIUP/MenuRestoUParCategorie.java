@@ -3,7 +3,7 @@ import java.util.*;
 
 public class MenuRestoUParCategorie {
 
-	private ArrayList<Plat> sesPlats = new ArrayList();
+	private ArrayList<Plat> sesPlats = new ArrayList<Plat>();
 	private String categorie;
 
 

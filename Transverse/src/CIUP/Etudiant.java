@@ -7,8 +7,8 @@ public class Etudiant {
 	private String _prenom;
 	private String _mail;
 	private int _anneeEtude;
-	private static int _num = 0;
-	private int _numEtudiant;
+	private static int _numTotalEtudiants = 0;
+	private int _num;
 	private String _statuLogement;
 
 	/*------------------------------------------------/ 
@@ -23,8 +23,8 @@ public class Etudiant {
 		_statuLogement = "Attente";
 		_saNationnalite = Nation;
 		_saNationnalite.AddEtudiant(this);
-		_num ++;
-		_numEtudiant=_num;
+		_numTotalEtudiants ++;
+		_num=_numTotalEtudiants;
 	}
 	
 	/*------------------------------------------------/ 
@@ -32,7 +32,7 @@ public class Etudiant {
 	/------------------------------------------------*/
 	
 	public String toString() {
-		return ("Étudians numéro : " + _numEtudiant + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite.getNom() + "\n" + "Résidence : " + _saMaison + "\n");
+		return ("Étudians numéro : " + _num + "\n" + "Nom : " + _nom + "\n" + "Prénom : " + _prenom + "\n" + "Année d'étude : " + _anneeEtude + "\n" + "Nationnalité : " + _saNationnalite.getNom() + "\n" + "Résidence : " + _saMaison + "\n");
 	}
 	
 
@@ -47,8 +47,8 @@ public class Etudiant {
 	public int get_anneeEtude() {return _anneeEtude;}
 	public String get_statuLogement() {return _statuLogement;}
 	public Nationnalite get_saNationnalite() {return _saNationnalite;}
-	public int getNumEtudiant() {return _numEtudiant;}
-	public static int getNum() {return _num;}
+	public int getNum() {return _num;}
+	public static int getNumTotalEtudiants() {return _numTotalEtudiants;}
 	
 	/*------------------------------------------------/ 
 	/SETTERS

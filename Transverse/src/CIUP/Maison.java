@@ -8,7 +8,7 @@ public class Maison {
 	 * ------------------------------------
 	 */
 
-	ArrayList<MenuRestoUParCategorie> sonMenuRestoUParCategorie;
+	RestoU sonRestoU;
 	ArrayList<Etudiant> sesEtudiants=new ArrayList<Etudiant>();
 	Nationnalite saNationnalite;
 	private String nom;
@@ -23,7 +23,7 @@ public class Maison {
 	 */
 
 	public Maison(String nom,Nationnalite nationnalite,int longitude, int lattitude, int nombreTotalChambres) {
-		sonMenuRestoUParCategorie=new ArrayList<MenuRestoUParCategorie>(4);
+		
 		this.nom=nom;
 		saNationnalite=nationnalite;
 		saNationnalite.AddMaison(this);
@@ -36,6 +36,10 @@ public class Maison {
 	 * methodes
 	 * ------------------------------------
 	 */
+	
+	public void addRestoU(RestoU resto) {
+		sonRestoU=resto;
+	}
 	
 	public boolean addEtudiant(Etudiant etudiantAAjouter)
 	{
