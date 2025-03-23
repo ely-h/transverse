@@ -83,5 +83,13 @@ public class FactoryCIUP {
 			 
 	}
 	
+	public ArrayList<Maison> getLesMaisons(){
+		return lesMaisons;
+	}
+	
+	public ArrayList<Etudiant> getLesEtudiants(){
+		return lesEtudiants;
+	}
+	
 
 }
