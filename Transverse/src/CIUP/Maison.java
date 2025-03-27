@@ -13,8 +13,8 @@ public class Maison {
 	Nationnalite saNationnalite;
 	private String nom;
 	private String nationalite;
-	private int longitude;
-	private int lattitude;
+	private double longitude;
+	private double lattitude;
 	private int nombreChambres;
 	
 	/*------------------------------------
@@ -22,7 +22,7 @@ public class Maison {
 	 * ------------------------------------
 	 */
 
-	public Maison(String nom,Nationnalite nationnalite,int longitude, int lattitude, int nombreTotalChambres) {
+	public Maison(String nom,Nationnalite nationnalite,double longitude, double lattitude, int nombreTotalChambres) {
 		
 		this.nom=nom;
 		saNationnalite=nationnalite;
@@ -70,11 +70,11 @@ public class Maison {
 		return sonRestoU;
 	}
 
-	public int getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public int getLattitude() {
+	public double getLattitude() {
 		return lattitude;
 	}
 
