@@ -13,7 +13,7 @@ public class Etiquette {
  * -----------------------------
  */
 	
-	Etiquette(String nom){
+	public Etiquette(String nom){
 		this.nom=nom;
 	}
 	
