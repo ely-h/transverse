@@ -15,7 +15,7 @@ public class MaisonInternationale extends Maison {
 	 * ------------------------------------
 	 */
 	
-	MaisonInternationale(String nom,Nationnalite nationnalite,int longitude, int lattitude, int nombreTotalChambres) {
+	MaisonInternationale(String nom,Nationnalite nationnalite,double longitude, double lattitude, int nombreTotalChambres) {
 		super (nom,nationnalite,longitude,lattitude,nombreTotalChambres);
 	}
 	
@@ -51,7 +51,5 @@ public class MaisonInternationale extends Maison {
 	public String toString() {
 		return super.toString()+"\n Voici les services proposes : "+returnServices();
 	}
-
-	
 
 }
