@@ -18,7 +18,7 @@ public class Plat {
 * Constructeur vide de plat pour initialiser
 *--------------------------
 */
-	 Plat() {
+	 public Plat() {
 		 
 		 this.nomDuPlat = "Plat inconnu";
 		 this.ingredientsDuPlat = new ArrayList<>();
