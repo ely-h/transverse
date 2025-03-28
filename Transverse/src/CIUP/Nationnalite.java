@@ -23,5 +23,13 @@ public class Nationnalite {
 	public String getNom() {
 		return nom;
 	}
+	
+	public ArrayList<Etudiant> getSesEtudiants(){
+		return sesEtudiants;
+	}
+	
+	public Maison getSaMaison() {
+		return saMaison;
+	}
 
 }
