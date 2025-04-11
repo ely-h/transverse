@@ -14,7 +14,7 @@ public class Nationnalite {
 
 	public void AddEtudiant(Etudiant etudiant) {
 		if(etudiant==null) {
-			throw 
+			throw new IllegalArgumentException("On ne peux pas ajouter d'étudiant null");
 		}
 		sesEtudiants.add(etudiant);
 	}
