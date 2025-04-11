@@ -13,6 +13,9 @@ public class Nationnalite {
 	}
 
 	public void AddEtudiant(Etudiant etudiant) {
+		if(etudiant==null) {
+			throw 
+		}
 		sesEtudiants.add(etudiant);
 	}
 
