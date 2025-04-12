@@ -62,6 +62,8 @@ public class RestoUTest {
         Plat plat2 = new Plat();
         MenuRestoUParCategorie cat1 = new MenuRestoUParCategorie(plat1);
         MenuRestoUParCategorie cat2 = new MenuRestoUParCategorie(plat2);
+        cat1.setCategorie("Entrées");
+        cat2.setCategorie("Desserts");
 
         resto.addCategorieRestoU(cat1);
         resto.addCategorieRestoU(cat2);
