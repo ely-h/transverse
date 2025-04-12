@@ -79,6 +79,12 @@ public class Plat {
 	public void setSesAllergenes(ArrayList<Allergene> sesAllergenes) {
 		this.sesAllergenes = sesAllergenes;
 	}
+	
+	@Override
+	public String toString() {
+	    return "Plat: " + nomDuPlat;
+	}
+
 
 
 }
