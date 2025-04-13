@@ -2,6 +2,14 @@ package CIUPTest;
 import CIUP.*;
 
 public class MenuRestoUTest {
+    public static void main(String[] args){
+        constructeur_platNonNull_sesPlatsContiensCePlat();
+        constructeur_platNull_sesPlatsResteVide();
+        addPlat_platNonNull_sesPlatsContientCePlat();
+        addPlat_platNull_ThrowIllegalArgumentException();
+        System.out.println("All tests passed");
+    }
+
     private static void constructeur_platNonNull_sesPlatsContiensCePlat()
     {
         Plat platTest=new Plat();
