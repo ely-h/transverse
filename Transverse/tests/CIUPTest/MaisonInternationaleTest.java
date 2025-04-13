@@ -4,7 +4,7 @@ import CIUP.*;
 
 public class MaisonInternationaleTest {
 	
-	public static void main(String arg[]) {
+	public static void AllTest_MaisonInternationale(String arg[]) {
 		testAddService();
 		
 		System.out.println("All tests passed.");
