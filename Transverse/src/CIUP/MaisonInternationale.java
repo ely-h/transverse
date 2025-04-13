@@ -15,7 +15,7 @@ public class MaisonInternationale extends Maison {
 	 * ------------------------------------
 	 */
 	
-	MaisonInternationale(String nom,Nationnalite nationnalite,double longitude, double lattitude, int nombreTotalChambres) {
+	public MaisonInternationale(String nom,Nationnalite nationnalite,double longitude, double lattitude, int nombreTotalChambres) {
 		super (nom,nationnalite,longitude,lattitude,nombreTotalChambres);
 	}
 	

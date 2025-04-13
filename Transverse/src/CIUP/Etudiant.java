@@ -15,7 +15,7 @@ public class Etudiant {
 	/EL CONSTRUCTOR
 	/-----------------------------------------------♠*/
 	
-	Etudiant(String nom, String prenom, String mail, int anneeEtude , Nationnalite Nation) {
+	public Etudiant(String nom, String prenom, String mail, int anneeEtude , Nationnalite Nation) {
 		_nom = nom;
 		_mail = mail;
 		_prenom = prenom;
