@@ -13,6 +13,8 @@ public class RestoUTest {
         testSetSaMaison_ModifieCorrectementLaMaison();
         testAddCategorieRestoU_ListeContientCategorie();
         testConsulterCategoriesDuResto_AfficheToutesLesCategories();
+        testConstructeurAvecMaisonNull_DeclencheException();
+        testSetSaMaisonAvecNull_DeclencheException();
         System.out.println("Tous les tests de RestoU sont passés.");
     }
 
@@ -44,7 +46,7 @@ public class RestoUTest {
         Maison maison = new Maison("Maison Test", nat, 0.0, 0.0, 10);
         RestoU resto = new RestoU(maison);
 
-        Plat plat = new Plat();  // Assure-toi que Plat a un constructeur vide utilisable
+        Plat plat = new Plat();
         MenuRestoUParCategorie cat = new MenuRestoUParCategorie(plat);
 
         resto.addCategorieRestoU(cat);
@@ -68,8 +70,41 @@ public class RestoUTest {
         resto.addCategorieRestoU(cat1);
         resto.addCategorieRestoU(cat2);
         
-        resto.consulterCategoriesDuResto(); // Devrait afficher 2 lignes
+        resto.consulterCategoriesDuResto();
         System.out.println("\ntestConsulterCategoriesDuResto_AfficheToutesLesCategories passed\n");
     }
+    
+    public static void testSetSaMaisonAvecNull_DeclencheException() {
+        System.out.println("Test setSaMaison avec null :");
+        Nationnalite nat = new Nationnalite("Test");
+        Maison maison = new Maison("Maison A", nat, 0.0, 0.0, 10);
+        RestoU resto = new RestoU(maison);
+        
+        try {
+            resto.setSaMaison(null);
+            System.out.println("ÉCHEC : Aucune exception n’a été levée alors qu’elle était attendue.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("testSetSaMaisonAvecNull_DeclencheException passed");
+        } catch (Exception e) {
+            System.out.println("Échec : Mauvais type d’exception : " + e);
+        }
+
+        System.out.println();
+    }
+
+    public static void testConstructeurAvecMaisonNull_DeclencheException() {
+        System.out.println("Test constructeur RestoU avec null :");
+        try {
+            RestoU resto = new RestoU(null);
+            System.out.println("ÉCHEC : Le constructeur n’a pas levé d’exception.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("testConstructeurAvecMaisonNull_DeclencheException passed");
+        } catch (Exception e) {
+            System.out.println("Échec : Exception inattendue : " + e);
+        }
+        System.out.println();
+    }
+
+    
 }
 
