@@ -1,8 +1,9 @@
 package CIUPTest;
+import java.util.ArrayList;
 import CIUP.FactoryCIUP;
-import Maison;
-import MaisonInternationale;
-import Etudiant;
+import CIUP.Maison;
+import CIUP.MaisonInternationale;
+import CIUP.Etudiant;
 
 public class FactoryCIUPTest {
 	 private static final int NOMBRE_MAISONS_ATTENDU = 6;
@@ -10,6 +11,10 @@ public class FactoryCIUPTest {
 	    private static final int NOMBRE_SERVICES_ATTENDUS_MAISON_INTERNATIONALE = 3;
 
 	    public static void main(String[] args) {
+	    	/*------------------------------------
+	    	 * il s'agit de l'exécution des différents test + l'affichage si tous les tests passent 
+	    	 * -----------------------------------
+	    	 */
 	        FactoryCIUPTest test = new FactoryCIUPTest();
 	        test.creationObjets_LanceInitialisation_LesMaisonsEtEtudiantsNeSontPasNull();
 	        test.getLesMaisons_ApresInitialisation_ListeCorrecte();
@@ -18,26 +23,38 @@ public class FactoryCIUPTest {
 	        System.out.println("Tous les tests FactoryCIUP sont passés.");
 	    }
 
+	    	/*------------------------------------
+	    	 * permet de tester les listes de maisons et étudiants après initialisation 
+	    	 * -----------------------------------
+	    	 */
 	    private void creationObjets_LanceInitialisation_LesMaisonsEtEtudiantsNeSontPasNull() {
-	        FactoryCIUP.creationObjets();
+	        FactoryCIUP.CreationObjets();
 	        assert FactoryCIUP.getLesMaisons() != null : "Les maisons ne sont pas initialisées.";
 	        assert FactoryCIUP.getLesEtudiants() != null : "Les étudiants ne sont pas initialisés.";
 	        System.out.println("creationObjets_LanceInitialisation_LesMaisonsEtEtudiantsNeSontPasNull passed.");
 	    }
+	    /*--------------------------------------------
+	     * Verifie le nombre de maisons créeees est correct et que certaines maisons spécifiques existent 
+	     * -------------------------------------------
+	     */
 
 	    private void getLesMaisons_ApresInitialisation_ListeCorrecte() {
-	        FactoryCIUP.creationObjets();
-	        Maison[] maisons = FactoryCIUP.getLesMaisons();
-	        assert maisons.length == NOMBRE_MAISONS_ATTENDU : "Nombre de maisons incorrect.";
+	        FactoryCIUP.CreationObjets();
+	        ArrayList<Maison> maisons = FactoryCIUP.getLesMaisons();
+	        assert maisons.size() == NOMBRE_MAISONS_ATTENDU : "Nombre de maisons incorrect.";
 
 	        boolean maisonFrancePresente = false;
 	        boolean maisonInternationalePresente = false;
 
-	        for (int i = 0; i < maisons.length; i++) {
-	            if (maisons[i].getNom().equals("Maison France")) {
+	        /*----------------------------------------
+	         * Vérifie présence de maison spécifique
+	         * ---------------------------------------
+	         */
+	        for (Maison maison : maisons) {
+	            if (maison.getNom().equals("Maison France")) {
 	                maisonFrancePresente = true;
 	            }
-	            if (maisons[i].getNom().equals("Maison Internationale")) {
+	            if (maison.getNom().equals("Maison Internationale")) {
 	                maisonInternationalePresente = true;
 	            }
 	        }
@@ -47,14 +64,22 @@ public class FactoryCIUPTest {
 	        System.out.println("getLesMaisons_ApresInitialisation_ListeCorrecte passed.");
 	    }
 
+	    /*------------------------------------------------
+	     * Vérifie que le bon nombre d etudiants crée et que l etudiant dicaprio soit bien présent
+	     * -----------------------------------------------
+	     */
 	    private void getLesEtudiants_ApresInitialisation_ListeCorrecte() {
-	        FactoryCIUP.creationObjets();
-	        Etudiant[] etudiants = FactoryCIUP.getLesEtudiants();
-	        assert etudiants.length == NOMBRE_ETUDIANTS_ATTENDU : "Nombre d'étudiants incorrect.";
+	        FactoryCIUP.CreationObjets();
+	        ArrayList<Etudiant> etudiants = FactoryCIUP.getLesEtudiants();
+	        assert etudiants.size() == NOMBRE_ETUDIANTS_ATTENDU : "Nombre d'étudiants incorrect.";
 
 	        boolean etudiantDicaprioPresent = false;
-	        for (int i = 0; i < etudiants.length; i++) {
-	            if (etudiants[i].getNom().equals("Dicaprio")) {
+	        /*-------------------------------------------
+	         * recherche d'un etudiant par son nom
+	         * ------------------------------------------
+	         */
+	        for (Etudiant etudiant : etudiants) {
+	            if (etudiant.get_nom().equals("Dicaprio")) {
 	                etudiantDicaprioPresent = true;
 	            }
 	        }
@@ -62,30 +87,43 @@ public class FactoryCIUPTest {
 	        assert etudiantDicaprioPresent : "Étudiant Dicaprio manquant.";
 	        System.out.println("getLesEtudiants_ApresInitialisation_ListeCorrecte passed.");
 	    }
+	    /*----------------------------------------------
+	     * Verifie que la maison internationale contient les services attendus
+	     * ---------------------------------------------
+	     */
 
 	    private void maisonInternationale_ApresCreation_ContientServicesCorrects() {
-	        FactoryCIUP.creationObjets();
+	        FactoryCIUP.CreationObjets();
 	        Maison maisonInternationale = getMaisonParNom("Maison Internationale");
 
+	        /*-----------------------------------
+	         * Verifie que la maison existe
+	         * ----------------------------------
+	         */
 	        assert maisonInternationale != null : "Maison Internationale non trouvée.";
 
 	        MaisonInternationale maisonCast = (MaisonInternationale) maisonInternationale;
-	        String[] services = maisonCast.getServices();
+	        ArrayList <String> services = maisonCast.getServices();
 
-	        assert services.length == NOMBRE_SERVICES_ATTENDUS_MAISON_INTERNATIONALE : "Nombre de services incorrect.";
+	        assert services.size() == NOMBRE_SERVICES_ATTENDUS_MAISON_INTERNATIONALE : "Nombre de services incorrect.";
 
 	        boolean serviceBibliotheque = false;
 	        boolean serviceRestoU = false;
 	        boolean serviceTheatre = false;
 
-	        for (int i = 0; i < services.length; i++) {
-	            if (services[i].equals("bibliotheque")) {
+	        /*------------------------------------
+	         * Recherche de services spécifiques
+	         * -----------------------------------
+	         */
+	        
+	        for (String service : services) {
+	            if (service.equals("bibliotheque")) {
 	                serviceBibliotheque = true;
 	            }
-	            if (services[i].equals("RestoU")) {
+	            if (service.equals("RestoU")) {
 	                serviceRestoU = true;
 	            }
-	            if (services[i].equals("Theatre")) {
+	            if (service.equals("Theatre")) {
 	                serviceTheatre = true;
 	            }
 	        }
@@ -96,11 +134,15 @@ public class FactoryCIUPTest {
 	        System.out.println("maisonInternationale_ApresCreation_ContientServicesCorrects passed.");
 	    }
 
+	    /*------------------------------------------
+	     * Methode pour trouver une maison à partir de son nom
+	     * -----------------------------------------
+	     */
 	    private Maison getMaisonParNom(String nomMaison) {
-	        Maison[] maisons = FactoryCIUP.getLesMaisons();
-	        for (int i = 0; i < maisons.length; i++) {
-	            if (maisons[i].getNom().equals(nomMaison)) {
-	                return maisons[i];
+	        ArrayList<Maison> maisons = FactoryCIUP.getLesMaisons();
+	        for (Maison maison : maisons) {
+	            if (maison.getNom().equals(nomMaison)) {
+	                return maison;
 	            }
 	        }
 	        return null;
