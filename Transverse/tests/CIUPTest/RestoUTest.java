@@ -1,10 +1,10 @@
 package CIUPTest;
 
-import CIUP.RestoU;
-import CIUP.Maison;
-import CIUP.MenuRestoUParCategorie;
-import CIUP.Nationnalite;
-import CIUP.Plat;
+import modele.Maison;
+import modele.MenuRestoUParCategorie;
+import modele.Nationnalite;
+import modele.Plat;
+import modele.RestoU;
 
 public class RestoUTest {
 

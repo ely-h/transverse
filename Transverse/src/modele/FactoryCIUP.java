@@ -1,4 +1,4 @@
-package CIUP;
+package modele;
 import java.util.*;
 
 // Classe FactoryCIUP permettant de créer et initialiser tous les objets nécessaires pour représenter la Cité Internationale Universitaire de Paris (CIUP).

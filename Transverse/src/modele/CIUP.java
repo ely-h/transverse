@@ -1,4 +1,4 @@
-package CIUP;
+package modele;
 
 /*-----------------------------
  * Classe principale représentant la Cité Internationale Universitaire de Paris (CIUP).

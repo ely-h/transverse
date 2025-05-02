@@ -1,5 +1,5 @@
 package CIUPTest;
-import CIUP.*;
+import modele.*;
 
 public class MenuRestoUTest {
     public static void main(String[] args){

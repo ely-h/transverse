@@ -1,6 +1,7 @@
 package CIUPTest;
-import CIUP.*;
 import java.util.*;
+
+import modele.*;
 
 public class NationnaliteTest {
 	private static void addEtudiant_EtudiantNonNull_AjouteEtudiantAPartirDuConstructeur() {

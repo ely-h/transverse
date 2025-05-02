@@ -1,8 +1,8 @@
 package CIUPTest;
 
-import CIUP.Allergene;
-import CIUP.Etiquette;
-import CIUP.Plat;
+import modele.Allergene;
+import modele.Etiquette;
+import modele.Plat;
 
 public class PlatTest {
     public static void main(String[] args) {

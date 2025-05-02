@@ -1,12 +1,12 @@
 package CIUPTest;
 
-import CIUP.*;
+import modele.*;
 
 public class MaisonTest {
 	
 	final static int NB_CHAMBRE = 5;
 
-	public static void AllTest_Maison(String arg[]) {
+	public static void main(String arg[]) {
 		testAddRestoU();
 		testAddEtudiant_UnSeulEtudiant();
 		testAddEtudiant_NombreMaximum();

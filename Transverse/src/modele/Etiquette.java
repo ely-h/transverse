@@ -1,4 +1,4 @@
-package CIUP;
+package modele;
 
 /*------------------------------
  * Classe Etiquette

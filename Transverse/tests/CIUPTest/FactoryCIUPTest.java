@@ -1,9 +1,10 @@
 package CIUPTest;
 import java.util.ArrayList;
-import CIUP.FactoryCIUP;
-import CIUP.Maison;
-import CIUP.MaisonInternationale;
-import CIUP.Etudiant;
+
+import modele.Etudiant;
+import modele.FactoryCIUP;
+import modele.Maison;
+import modele.MaisonInternationale;
 
 public class FactoryCIUPTest {
 	 private static final int NOMBRE_MAISONS_ATTENDU = 6;

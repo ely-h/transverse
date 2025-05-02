@@ -1,4 +1,4 @@
-package CIUP;
+package modele;
 public class Etudiant {
 
 	Nationnalite _saNationnalite;

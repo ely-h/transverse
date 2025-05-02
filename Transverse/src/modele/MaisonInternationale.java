@@ -1,4 +1,4 @@
-package CIUP;
+package modele;
 import java.util.*;
 
 public class MaisonInternationale extends Maison {

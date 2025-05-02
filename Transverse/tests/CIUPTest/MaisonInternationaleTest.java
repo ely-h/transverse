@@ -1,10 +1,10 @@
 package CIUPTest;
 
-import CIUP.*;
+import modele.*;
 
 public class MaisonInternationaleTest {
 	
-	public static void AllTest_MaisonInternationale(String arg[]) {
+	public static void main(String arg[]) {
 		testAddService();
 		
 		System.out.println("All tests passed.");
