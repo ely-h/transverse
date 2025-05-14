@@ -1,14 +1,19 @@
 package vueMaison;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.GridLayout;
 
-public class PanelSelection extends JFrame {
-	JLabel l;
+public class PanelSelection extends JPanel{
+	JLabel label;
+	JCheckBox checkbox;
 	
-	PanelSelection(String s1, String s2){
-		l = new JLabel(s1);
-		l.setIcon(new ImageIcon(s2));
-		add(l);
+	PanelSelection( String cbxNom, String imgNom)
+	{
+		label = new JLabel();	
+		label.setIcon(new ImageIcon (imgNom +".jpg"));
+		checkbox = new JCheckBox(cbxNom);
+
+		setLayout(new GridLayout(3,1));
+		add(label);
+		add(checkbox);
 	}
 }
