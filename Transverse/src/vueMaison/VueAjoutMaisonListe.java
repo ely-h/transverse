@@ -5,12 +5,6 @@ import java.awt.event.*;
 import java.io.IOException; 
 
 public class VueAjoutMaisonListe extends JPanel{
-
-
-	
-	
-	
-	
 	
 	public static void main(String[] args) {
 		JPanel panelMaisons = new JPanel();
@@ -20,13 +14,11 @@ public class VueAjoutMaisonListe extends JPanel{
 		panelMaisons.setLayout(gridLayout);
 		
 		JPanel panelTitre = new JPanel();
-		panelTitre.add(new JButton("Center"), BorderLayout.NORTH);
 		
 		JPanel panelConfirmation = new JPanel();
-		panelConfirmation.add(new JButton("Center"), BorderLayout.NORTH);
 		
-		//JPanel panelPrincipal = new JPanel();
-		//panelPrincipal.add(new JButton("Center"), BorderLayout.CENTER);
+		JPanel panelPrincipal = new JPanel(new BorderLayout());
+		
 
 		try 
 		{
@@ -38,7 +30,7 @@ public class VueAjoutMaisonListe extends JPanel{
 		
 		JFrame fenetre;
 		fenetre = new JFrame ("Calcul Perimètre");
-		fenetre.setSize(2400,1080);
+		fenetre.setSize(500,200);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenetre.setVisible(true);
 		panelMaisons.add(maisonInternationale);
@@ -46,7 +38,7 @@ public class VueAjoutMaisonListe extends JPanel{
 		panelMaisons.add(maisonES);
 		panelMaisons.add(maisonJP);
 		panelMaisons.add(maisonTU);
-		panelPrincipal.add(panelMaisons);
+		panelPrincipal.add(panelMaisons, BorderLayout.CENTER);
 		fenetre.add(panelPrincipal);
 		} catch (IOException e) {
 			e.printStackTrace();
