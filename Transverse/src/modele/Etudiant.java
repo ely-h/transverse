@@ -1,4 +1,6 @@
 package modele;
+
+
 public class Etudiant {
 
 	Nationnalite _saNationnalite;
@@ -15,7 +17,8 @@ public class Etudiant {
 	/EL CONSTRUCTOR
 	/-----------------------------------------------♠*/
 	
-	public Etudiant(String nom, String prenom, String mail, int anneeEtude , Nationnalite Nation) {
+	public Etudiant(String nom, String prenom, String mail, int anneeEtude , Nationnalite Nation){
+		
 		_nom = nom;
 		_mail = mail;
 		_prenom = prenom;
@@ -25,6 +28,7 @@ public class Etudiant {
 		_saNationnalite.AddEtudiant(this);
 		_numTotalEtudiants ++;
 		_num=_numTotalEtudiants;
+		
 	}
 	
 	/*------------------------------------------------/ 

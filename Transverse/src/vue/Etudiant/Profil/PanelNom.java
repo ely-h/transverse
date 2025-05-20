@@ -9,8 +9,8 @@ public class PanelNom extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	JLabel _type;
-	JLabel _valeur;
+	private JLabel _type;
+	private JLabel _valeur;
 	
 	//---------------
 	//CONSTRUCTEUR

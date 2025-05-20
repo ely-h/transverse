@@ -8,12 +8,12 @@ public class PanelInfo extends JPanel {
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	PanelNom _pNom;
-	PanelPrenom _pPrenom;
-	PanelMail _pMail;
-	PanelAnneeEtude _pAnnee;
-	PanelNationalitee _pNationalitee;
-	PanelLogement _pLogement;
+	private PanelNom _pNom;
+	private PanelPrenom _pPrenom;
+	private PanelMail _pMail;
+	private PanelAnneeEtude _pAnnee;
+	private PanelNationalitee _pNationalitee;
+	private PanelLogement _pLogement;
 	
 	//---------------
 	//ACCESSEUR
@@ -22,13 +22,13 @@ public class PanelInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	PanelInfo(String valPT1, String valPT2, String valPT3, String valPT4, String valPT5, String valPT6){
-		_pNom = new PanelNom(valPT1);
-		_pPrenom = new PanelPrenom(valPT2);
-		_pMail = new PanelMail(valPT3);
-		_pAnnee = new PanelAnneeEtude(valPT4);
-		_pNationalitee = new PanelNationalitee(valPT5);
-		_pLogement = new PanelLogement(valPT6);
+	PanelInfo(String nom, String prenom, String mail, int annee, String nationalitee, String logement){
+		_pNom = new PanelNom(nom);
+		_pPrenom = new PanelPrenom(prenom);
+		_pMail = new PanelMail(mail);
+		_pAnnee = new PanelAnneeEtude(annee);
+		_pNationalitee = new PanelNationalitee(nationalitee);
+		_pLogement = new PanelLogement(logement);
 		
 		add(_pNom);
 		add(_pPrenom);
@@ -47,7 +47,7 @@ public class PanelInfo extends JPanel {
 		frame.setSize(250, 250);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelInfo p = new PanelInfo("Jones", "Felicia", "felicia.jones@gmail.com", "5", "USA House", "Américaine");
+		PanelInfo p = new PanelInfo("Jones", "Felicia", "felicia.jones@gmail.com", 5, "USA House", "Américaine");
 		
 		frame.add(p);
 		

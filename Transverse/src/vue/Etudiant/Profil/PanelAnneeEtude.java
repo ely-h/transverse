@@ -9,16 +9,19 @@ public class PanelAnneeEtude extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	JLabel _type;
-	JLabel _valeur;
+	private JLabel _type;
+	private JLabel _valeur;
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	
-	PanelAnneeEtude(String val){
+	PanelAnneeEtude(int val){
+		
+		String s = Integer.toString(val); 
+		
 		_type = new JLabel("Année Étude : ");
-		_valeur = new JLabel(val);
+		_valeur = new JLabel(s);
 		
 		add(_type);
 		add(_valeur);
@@ -34,7 +37,7 @@ public class PanelAnneeEtude extends JPanel{
 		frame.setSize(50, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelAnneeEtude p = new PanelAnneeEtude("5");
+		PanelAnneeEtude p = new PanelAnneeEtude(5);
 		
 		frame.add(p);
 		

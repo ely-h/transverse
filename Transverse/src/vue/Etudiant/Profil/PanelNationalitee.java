@@ -9,8 +9,8 @@ public class PanelNationalitee extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	JLabel _type;
-	JLabel _valeur;
+	private JLabel _type;
+	private JLabel _valeur;
 	
 	//---------------
 	//CONSTRUCTEUR
@@ -29,7 +29,7 @@ public class PanelNationalitee extends JPanel{
 	//---------------
 	//MAIN
 	//---------------
-	public static void mainPanelNom (String arg[]) {
+	public static void mainPanelNationalitee(String arg[]) {
 		JFrame frame = new JFrame ("Frame");
 		frame.setSize(50, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
