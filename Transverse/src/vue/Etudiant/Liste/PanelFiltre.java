@@ -6,13 +6,12 @@ import java.util.*;
 
 import modele.Maison;
 
-public class Liste extends JPanel{
+public class PanelFiltre extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelFiltre _pFiltre;
-	
+	private PanelFiltreLabel _label;
 	
 	//---------------
 	//ACCESSEUR
@@ -21,14 +20,18 @@ public class Liste extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	Liste(ArrayList<Maison> alMaison){
-		_pFiltre = new PanelFiltre(alMaison);
-	
-		add(_pFiltre);
+	PanelFiltre(ArrayList<Maison> alMaison){
+		_label = new PanelFiltreLabel();
 		
-		setLayout(new GridLayout(1,2));
+		add(_label);
+		
+		for (int i=0; i < alMaison.size(); i++) {
+			PanelFiltreButton _button = new PanelFiltreButton(alMaison.get(i).getNationalite());
+			add(_button);
+		}
+		
+		setLayout(new GridLayout(alMaison.size()+1, 1));
 	}
-	
 	
 	//---------------
 	//MAIN

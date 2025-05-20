@@ -2,17 +2,13 @@ package vue.Etudiant.Liste;
 
 import javax.swing.*;
 import java.awt.GridLayout;
-import java.util.*;
 
-import modele.Maison;
-
-public class Liste extends JPanel{
+public class PanelFiltreLabel extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelFiltre _pFiltre;
-	
+	private JLabel _label;
 	
 	//---------------
 	//ACCESSEUR
@@ -21,20 +17,14 @@ public class Liste extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	Liste(ArrayList<Maison> alMaison){
-		_pFiltre = new PanelFiltre(alMaison);
-	
-		add(_pFiltre);
+	PanelFiltreLabel(){
+		_label = new JLabel("Filtres");
 		
-		setLayout(new GridLayout(1,2));
+		add(_label);
 	}
-	
 	
 	//---------------
 	//MAIN
 	//---------------
-	
-	//---------------
-	//METHODE
-	//---------------
+
 }

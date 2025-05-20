@@ -20,7 +20,7 @@ public class Profil extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public Profil(String nom, String prenom, String mail, int annee, String nationalitee, String logement, String imgPath)
+	Profil(String nom, String prenom, String mail, int annee, String nationalitee, String logement, String imgPath)
 	 throws IOException{
 		_pInfo = new PanelInfo(nom, prenom, mail, annee, nationalitee, logement);
 		_pPhoto = new PanelPhotoButtonModif(imgPath);

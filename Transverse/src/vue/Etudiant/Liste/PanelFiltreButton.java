@@ -2,18 +2,13 @@ package vue.Etudiant.Liste;
 
 import javax.swing.*;
 import java.awt.GridLayout;
-import java.util.*;
 
-import modele.Maison;
-
-public class Liste extends JPanel{
+public class PanelFiltreButton extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelFiltre _pFiltre;
-	
-	
+	private JButton _button;
 	//---------------
 	//ACCESSEUR
 	//---------------
@@ -21,14 +16,11 @@ public class Liste extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	Liste(ArrayList<Maison> alMaison){
-		_pFiltre = new PanelFiltre(alMaison);
-	
-		add(_pFiltre);
+	PanelFiltreButton(String nation){
+		_button = new JButton(nation);
 		
-		setLayout(new GridLayout(1,2));
+		add(_button);
 	}
-	
 	
 	//---------------
 	//MAIN
