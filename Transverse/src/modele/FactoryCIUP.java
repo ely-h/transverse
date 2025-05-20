@@ -9,6 +9,9 @@ public class FactoryCIUP {
 	private static ArrayList<Etudiant> lesEtudiants;
 	private static ArrayList<Etudiant> listeAttente;
 	
+	private static ArrayList<MenuRestoUParCategorie> lesCategories;
+	
+	
 	public static void CreationObjets() {
 		FactoryCIUP a = new FactoryCIUP();
 		
@@ -21,6 +24,7 @@ public class FactoryCIUP {
 		listeMaisons = new ArrayList<Maison>();
 		lesEtudiants = new ArrayList<Etudiant>();
 		listeAttente = new ArrayList<Etudiant>();
+		lesCategories=new ArrayList<MenuRestoUParCategorie>();
 		
 		/*------------------------------
 		* Permet de créer les nationalités des maisons
@@ -183,6 +187,11 @@ public class FactoryCIUP {
         MenuRestoUParCategorie menuExtras = new MenuRestoUParCategorie(extra1);
         menuExtras.setCategorie("Extras");
         menuExtras.addPlat(extra2);
+        
+        lesCategories.add(menuEntrees);
+        lesCategories.add(menuPlatsPrincipaux);
+        lesCategories.add(menuDesserts);
+        lesCategories.add(menuExtras);
 
         // Création des RestoU
         RestoU restoFrance = new RestoU(maisonFrance);
@@ -225,6 +234,12 @@ public class FactoryCIUP {
     
     }
 	
+	public static ArrayList<MenuRestoUParCategorie> getLesCategories() {
+		return lesCategories;
+	}
+
+	
+
 	public static ArrayList<Maison> getLesMaisons(){
 		return lesMaisons;
 	}
