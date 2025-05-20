@@ -10,7 +10,7 @@ public class Profil extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelPhoto _pPhoto;
+	private PanelPhotoButtonModif _pPhoto;
 	private PanelInfo _pInfo;
 	
 	//---------------
@@ -23,7 +23,7 @@ public class Profil extends JPanel{
 	public Profil(String nom, String prenom, String mail, int annee, String nationalitee, String logement, String imgPath)
 	 throws IOException{
 		_pInfo = new PanelInfo(nom, prenom, mail, annee, nationalitee, logement);
-		_pPhoto = new PanelPhoto(imgPath);
+		_pPhoto = new PanelPhotoButtonModif(imgPath);
 		
 		add(_pPhoto);
 		add(_pInfo);
