@@ -2,77 +2,90 @@ package vueMaison;
 import javax.swing.*;
 import java.awt.*; 
 import java.awt.event.*;
-import java.io.IOException; 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VueAjoutMaisonListe extends JPanel{
-	
-	public static void main(String[] args) {
-		JPanel panelMaisons = new JPanel();
-		GridLayout gridLayout  = new GridLayout(2,5);
-		gridLayout.setHgap(15);
-		gridLayout.setVgap(10);
-		panelMaisons.setLayout(gridLayout);
-		
-		JPanel panelTitre = new JPanel();
-		
-		JPanel panelConfirmation = new JPanel();
-		
-		JPanel panelPrincipal = new JPanel(new BorderLayout());
-		
+	private JPanel panelMaisons;
+    private JButton btnSelectAll;
+    private JButton btnConfirm;
+    private JButton btnCancel;
+    private List<PanelSelection> selectionPanels;
+    
+    private PanelSelection maisonInternationale;
+    private PanelSelection maisonFR;
+    private PanelSelection maisonES;
+    private PanelSelection maisonJP;
+    private PanelSelection maisonTU;
+    
+    public VueAjoutMaisonListe() {
+        setLayout(new BorderLayout());
+        selectionPanels = new ArrayList<>();
 
-		try 
+        panelMaisons = new JPanel();
+        panelMaisons.setLayout(new GridLayout(2, 5, 10, 10));
+        
+        try 
 		{
-		PanelSelection maisonInternationale = new PanelSelection( "Maison Internationale", "img/maison-internationale");
-		PanelSelection maisonFR = new PanelSelection( "Maison France", "img/maison-france");
-		PanelSelection maisonES = new PanelSelection( "Maison Espagne", "img/maison-espagne");
-		PanelSelection maisonJP = new PanelSelection( "Maison Japon", "img/maison-japon");
-		PanelSelection maisonTU = new PanelSelection( "Maison Tunisie", "img/maison-tunisie");
-		
-		JFrame fenetre;
-		fenetre = new JFrame ("Calcul Perimètre");
-		fenetre.setSize(500,200);
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.setVisible(true);
-		panelMaisons.add(maisonInternationale);
-		panelMaisons.add(maisonFR);
-		panelMaisons.add(maisonES);
-		panelMaisons.add(maisonJP);
-		panelMaisons.add(maisonTU);
-		panelPrincipal.add(panelMaisons, BorderLayout.CENTER);
-		fenetre.add(panelPrincipal);
+			maisonInternationale = new PanelSelection( "Maison Internationale", "img/maison-internationale");
+			maisonFR = new PanelSelection( "Maison France", "img/maison-france");
+			maisonES = new PanelSelection( "Maison Espagne", "img/maison-espagne");
+			maisonJP = new PanelSelection( "Maison Japon", "img/maison-japon");
+			maisonTU = new PanelSelection( "Maison Tunisie", "img/maison-tunisie");
+			
+            selectionPanels.add(maisonInternationale);
+            selectionPanels.add(maisonFR);
+            selectionPanels.add(maisonES);
+            selectionPanels.add(maisonJP);
+            selectionPanels.add(maisonTU);
+			
+			for (PanelSelection panel : selectionPanels) {
+	            panelMaisons.add(panel);
+	        }
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+        
+        add(panelMaisons, BorderLayout.CENTER);
+        
+        JPanel panelActions = new JPanel(); //new GridLayout(4,1)
+        panelActions.setLayout(new BoxLayout(panelActions, BoxLayout.Y_AXIS));
+        JLabel confirmation = new JLabel("Création de la liste");
+        btnSelectAll = new JButton("Tout sélectionner");
+        
+        btnConfirm = new JButton("Confirmer");
+        btnCancel = new JButton("Annuler");
+        
+        panelActions.add(btnSelectAll);
+        
+        panelActions.add(Box.createVerticalStrut(250));
+        panelActions.add(confirmation);
+        panelActions.add(btnConfirm);
+        panelActions.add(btnCancel);
+ 
+        JPanel espace = new JPanel();
+        espace.setPreferredSize(new Dimension(0, 20));
+        
+        add(espace, BorderLayout.SOUTH);
+        add(panelActions, BorderLayout.EAST);
+        
+        //ECOUTEURS
+        btnSelectAll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (PanelSelection panel : selectionPanels) {
+                    panel.checkbox.setSelected(true);
+                }
+            }
+        });
+    }
 
-		/*JLabel lblInter = new JLabel("");
-		lblInter.setIcon(new ImageIcon ("maison-internationale.jpg"));
-		
-		JLabel lblFR = new JLabel("");
-		lblFR.setIcon(new ImageIcon ("maison-france.jpg"));
-		
-		JLabel lblES = new JLabel("");
-		lblES.setIcon(new ImageIcon ("maison-espagne.jpg"));
-		
-		JLabel lblJP = new JLabel("");
-		lblJP.setIcon(new ImageIcon ("maison-japon.jpg"));
-		
-		JLabel lblTUN = new JLabel("");
-		lblTUN.setIcon(new ImageIcon ("maison-tunisie.jpg"));*/
-
-		
-		/*JCheckBox cbxInter = new JCheckBox("Maison Internationale");
-		JCheckBox cbxFRA = new JCheckBox("Maison France");
-		JCheckBox cbxES = new JCheckBox("Maison Espagne");
-		JCheckBox cbxJP = new JCheckBox("Maison japon");
-		JCheckBox cbxTUN = new JCheckBox("Maison Tunisie");*/
-		
-		
-		///FENETRE
-
-		
-		//fenetre.setResizable(false);
-		
-		//PanelSelection maisonInternationale = new PanelSelection
-		
-	}
+    public static void main(String[] args) {
+        JFrame fenetre = new JFrame("Calcul Perimètre");
+        fenetre.setSize(700, 700);
+        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenetre.add(new VueAjoutMaisonListe());
+        fenetre.setVisible(true);
+    }
 }

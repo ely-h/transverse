@@ -24,6 +24,14 @@ public class PanelSelection extends JPanel{
 		add(checkbox);
 	}
 	
+    public boolean toutSelection() {
+        return checkbox.isSelected();
+    }
+    
+    public void setDeselected(boolean deselected) {
+        checkbox.setSelected(deselected);
+    }
+	
 	public static void main(String[] args) {
 		PanelSelection vueTest;
 		try {
