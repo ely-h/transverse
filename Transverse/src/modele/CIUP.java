@@ -7,12 +7,13 @@ package modele;
 
 public class CIUP {
     public static void main(String[] args) {
-        // Étape 1 : Création des objets via FactoryCIUP
-        FactoryCIUP.CreationObjets();
+    	FactoryCIUP factory=new FactoryCIUP();
+        // Étape 1 : Création des objets via factory
+        factory.CreationObjets();
 
         // Étape 2 : Affichage des informations
         System.out.println("Informations sur la CIUP :");
-        for (Maison maison : FactoryCIUP.getLesMaisons()) {
+        for (Maison maison : factory.getLesMaisons()) {
             System.out.println(maison);
             System.out.println("Étudiants dans cette maison :");
             maison.afficherEtudiants();
@@ -20,7 +21,7 @@ public class CIUP {
         }
         // Étape 3 : Affichage des informations sur les RestoU, leurs catégories et plats
         System.out.println("\nInformations sur les RestoU :");
-        for (Maison maison : FactoryCIUP.getLesMaisons()) {
+        for (Maison maison : factory.getLesMaisons()) {
             if (maison.getSonRestoU() != null) { // Vérifie si la maison a un RestoU
                 RestoU restoU = maison.getSonRestoU();
                 System.out.println("\nRestoU de la maison : " + maison.getNom());
