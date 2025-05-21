@@ -1,8 +1,10 @@
-package vue.Etudiant.Profil.Panels;
+package vue.Etudiant.Liste.EtuDisplayData;
 
 import javax.swing.*;
 
-public class ButtonModification extends JPanel{
+import vue.Etudiant.Profil.Panels.ButtonModification;
+
+public class PanelButton extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
@@ -16,8 +18,8 @@ public class ButtonModification extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	ButtonModification(){
-		_button = new JButton("Modifier");
+	public PanelButton(){
+		_button = new JButton("Profil");
 		
 		add(_button);
 	}
@@ -31,11 +33,12 @@ public class ButtonModification extends JPanel{
 		profil.setSize(200, 300);
 		profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		ButtonModification p = new ButtonModification();
+		PanelButton p = new PanelButton();
 		
 		profil.add(p);
 		profil.setVisible(true);
 	
 	}
+	
 	
 }

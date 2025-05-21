@@ -29,7 +29,7 @@ public class PanelFiltre extends JPanel{
 		add(_label);
 		
 		for (int i=0; i < alMaison.size(); i++) {
-			PanelFiltreButton _button = new PanelFiltreButton(alMaison.get(i).getNationalite());
+			PanelFiltreButton _button = new PanelFiltreButton(alMaison.get(i).getNationalite().getNom());
 			add(_button);
 		}
 		
@@ -76,8 +76,4 @@ public class PanelFiltre extends JPanel{
 		profil.setVisible(true);
 		
 	}
-	
-	//---------------
-	//METHODE
-	//---------------
 }

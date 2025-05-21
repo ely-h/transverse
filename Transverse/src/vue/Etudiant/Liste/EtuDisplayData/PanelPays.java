@@ -16,6 +16,7 @@ public class PanelPays extends JPanel {
 	//---------------
 	public PanelPays(String pays){
 		_pays = new JLabel(pays);
+		add(_pays);
 	}
 	
 	//---------------

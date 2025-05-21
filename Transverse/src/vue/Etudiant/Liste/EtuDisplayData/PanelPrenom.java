@@ -16,6 +16,7 @@ public class PanelPrenom extends JPanel {
 	//---------------
 	public PanelPrenom(String prenom){
 		_prenom = new JLabel(prenom);
+		add(_prenom);
 	}
 	
 	//---------------

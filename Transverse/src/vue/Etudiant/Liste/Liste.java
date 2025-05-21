@@ -33,8 +33,7 @@ public class Liste extends JPanel{
 	//---------------
 	//MAIN
 	//---------------
-	
-	//---------------
-	//METHODE
-	//---------------
+	public static void main(String[] arg) {
+		
+	}
 }

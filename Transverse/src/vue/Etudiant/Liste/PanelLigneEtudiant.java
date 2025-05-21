@@ -13,7 +13,7 @@ public class PanelLigneEtudiant extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private JButton _button;
+	private PanelButton _button;
 	private PanelNom _nom;
 	private PanelPrenom _prenom;
 	private PanelPays _pays;
@@ -28,7 +28,7 @@ public class PanelLigneEtudiant extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	PanelLigneEtudiant(String nom, String prenom, String pays, int annee){
-		_button = new JButton("Profil");
+		_button = new PanelButton();
 		_nom = new PanelNom(nom);
 		_prenom = new PanelPrenom(prenom);
 		_pays = new PanelPays(pays);

@@ -16,6 +16,7 @@ public class PanelNom extends JPanel {
 	//---------------
 	public PanelNom(String nom){
 		_nom = new JLabel(nom);
+		add(_nom);
 	}
 	
 	//---------------
@@ -23,7 +24,7 @@ public class PanelNom extends JPanel {
 	//---------------
 	public static void main(String[] arg) {
 		JFrame liste = new JFrame("liste");
-		liste.setSize(700, 300);
+		liste.setSize(50, 100);
 		liste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		PanelNom pn = new PanelNom("Johns");

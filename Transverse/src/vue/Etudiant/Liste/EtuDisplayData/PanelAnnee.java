@@ -16,6 +16,7 @@ public class PanelAnnee extends JPanel {
 	//---------------
 	public PanelAnnee(int annee){
 		_annee = new JLabel(String.valueOf(annee));
+		add(_annee);
 	}
 	
 	//---------------
