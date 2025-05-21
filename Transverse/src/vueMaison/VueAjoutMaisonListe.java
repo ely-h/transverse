@@ -1,4 +1,5 @@
 package vueMaison;
+import modele.FactoryCIUP;
 import javax.swing.*;
 import java.awt.*; 
 import java.awt.event.*;
@@ -20,11 +21,14 @@ public class VueAjoutMaisonListe extends JPanel{
     private PanelSelection maisonTU;
     
     public VueAjoutMaisonListe() {
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout(20,20));
         selectionPanels = new ArrayList<>();
 
         panelMaisons = new JPanel();
         panelMaisons.setLayout(new GridLayout(2, 5, 10, 10));
+        
+        FactoryCIUP factory = FactoryCIUP.getInstance();
+        factory.CreationObjets();
         
         try 
 		{
@@ -46,7 +50,6 @@ public class VueAjoutMaisonListe extends JPanel{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        
         add(panelMaisons, BorderLayout.CENTER);
         
         JPanel panelActions = new JPanel(); //new GridLayout(4,1)
