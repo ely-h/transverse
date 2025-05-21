@@ -1,4 +1,5 @@
 package vue.RestoU;
+import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -27,6 +28,11 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 			this.lesVuesDeMenu.add(new VueMenuRestoUParCategorie (lesMenus.get(i).getCategorie(),this.lesCheminsDesImages.get(i)));
 			this.add(this.lesVuesDeMenu.get(i));
 		}
+		GridLayout grid=new GridLayout(1,4);
+		this.setLayout(grid);
+		grid.setHgap(20);
+		
+		
 		
 		
 	}
@@ -35,22 +41,25 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 		this.lesCheminsDesImages=new ArrayList<String>(4);
 		this.lesCheminsDesImages.add(ENTREES,"img/tartare-crevette.jpg");
 		this.lesCheminsDesImages.add(PLATS,"img/spaghetti.jpg");
-		this.lesCheminsDesImages.add(DESSERTS,"img/Raspberry-Mouse.jpg");
+		this.lesCheminsDesImages.add(DESSERTS,"img/Raspberry-Mousse.jpg");
 		this.lesCheminsDesImages.add(EXTRAS,"img/pizza.jpg");
 		
 	}
 	
 	public static void main(String[] args) {
 		FactoryCIUP f=new FactoryCIUP();
+		f.CreationObjets();
 		try {
 			PanelCategoriesMenuRestoU vueTest=new PanelCategoriesMenuRestoU(f.getLesCategories());
 			JFrame fenetre=new JFrame("Les Menus");
-			fenetre.setSize(300,500);
+			fenetre.setSize(1000,500);
 			fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			fenetre.add(vueTest);
 			fenetre.setVisible(true);
 		}
-		catch (IOException e)
+		catch (IOException e) {
+			System.out.println("Le fichier n'existe pas");
+		}
 	}
 
 }

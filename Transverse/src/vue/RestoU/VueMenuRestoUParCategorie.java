@@ -1,7 +1,9 @@
 package vue.RestoU;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.image.*;
@@ -27,6 +29,8 @@ public class VueMenuRestoUParCategorie extends JPanel {
 		this.add(imgCategorie);
 		
 		this.add(new PanelLabelBoutton("Choisir",categorie));
+		
+		this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY,3));
 
 	}
 

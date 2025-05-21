@@ -4,16 +4,15 @@ import java.util.*;
 // Classe FactoryCIUP permettant de créer et initialiser tous les objets nécessaires pour représenter la Cité Internationale Universitaire de Paris (CIUP).
 public class FactoryCIUP {
 
-	private static ArrayList<Maison> lesMaisons;
-	private static ArrayList<Maison> listeMaisons;
-	private static ArrayList<Etudiant> lesEtudiants;
-	private static ArrayList<Etudiant> listeAttente;
+	private ArrayList<Maison> lesMaisons;
+	private ArrayList<Maison> listeMaisons;
+	private ArrayList<Etudiant> lesEtudiants;
+	private ArrayList<Etudiant> listeAttente;
 	
-	private static ArrayList<MenuRestoUParCategorie> lesCategories;
+	private ArrayList<MenuRestoUParCategorie> lesCategories;
 	
 	
-	public static void CreationObjets() {
-		FactoryCIUP a = new FactoryCIUP();
+	public void CreationObjets() {
 		
 		/*---------------------------
 		* Initialise les listes
@@ -234,17 +233,16 @@ public class FactoryCIUP {
     
     }
 	
-	public static ArrayList<MenuRestoUParCategorie> getLesCategories() {
+	public ArrayList<MenuRestoUParCategorie> getLesCategories() {
 		return lesCategories;
 	}
 
 	
-
-	public static ArrayList<Maison> getLesMaisons(){
+	public ArrayList<Maison> getLesMaisons(){
 		return lesMaisons;
 	}
 	
-	public static ArrayList<Etudiant> getLesEtudiants(){
+	public ArrayList<Etudiant> getLesEtudiants(){
 		return lesEtudiants;
 	}
 	
