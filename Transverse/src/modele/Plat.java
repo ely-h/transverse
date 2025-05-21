@@ -31,7 +31,7 @@ public class Plat {
 * Constructeur avec paramètres.
 *--------------------------
 */
-	  Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, String valeursNutritionnelles) {
+	  public Plat (String nomDuPlat, ArrayList<String> ingredientsDuPlat, String valeursNutritionnelles) {
 		 this.nomDuPlat = nomDuPlat;
 		 this.ingredientsDuPlat = ingredientsDuPlat;
 		 this.valeursNutritionnelles = valeursNutritionnelles; 

@@ -7,7 +7,7 @@ package modele;
 
 public class CIUP {
     public static void main(String[] args) {
-    	FactoryCIUP factory=new FactoryCIUP();
+    	 FactoryCIUP factory = FactoryCIUP.getInstance();
         // Étape 1 : Création des objets via factory
         factory.CreationObjets();
 

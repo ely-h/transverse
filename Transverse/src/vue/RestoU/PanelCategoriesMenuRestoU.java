@@ -16,8 +16,8 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 //	VueMenuRestoUParCategorie vuePlat;
 //	VueMenuRestoUParCategorie vueDessert;
 //	VueMenuRestoUParCategorie vueExtra;
-	ArrayList<VueMenuRestoUParCategorie> lesVuesDeMenu;
-	ArrayList<String> lesCheminsDesImages;
+	protected ArrayList<VueMenuRestoUParCategorie> lesVuesDeMenu;
+	protected ArrayList<String> lesCheminsDesImages;
 	
 	public PanelCategoriesMenuRestoU(ArrayList<MenuRestoUParCategorie> lesMenus) throws IOException {
 		this.lesVuesDeMenu=new ArrayList<VueMenuRestoUParCategorie>(lesMenus.size());
@@ -47,7 +47,7 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 	}
 	
 	public static void main(String[] args) {
-		FactoryCIUP f=new FactoryCIUP();
+		FactoryCIUP f=FactoryCIUP.getInstance();
 		f.CreationObjets();
 		try {
 			PanelCategoriesMenuRestoU vueTest=new PanelCategoriesMenuRestoU(f.getLesCategories());

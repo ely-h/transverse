@@ -17,12 +17,19 @@ public class VueMenuRestoUParCategorie extends JPanel {
 	protected JLabel categorie;
 	protected JLabel imgCategorie;
 
-	public VueMenuRestoUParCategorie(String categorie,String imageCat) throws IOException{
-		BufferedImage bufferedImg=ImageIO.read(new File(imageCat));
+	public VueMenuRestoUParCategorie(String categorie,String imageCat) {
+		BufferedImage bufferedImg;
+		try {
+			bufferedImg = ImageIO.read(new File(imageCat));
+			Image imgCat=bufferedImg.getScaledInstance(300,250, Image.SCALE_DEFAULT);
 		
-		Image imgCat=bufferedImg.getScaledInstance(300,250, Image.SCALE_DEFAULT);
+			imgCategorie=new JLabel(new ImageIcon(imgCat));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		imgCategorie=new JLabel(new ImageIcon(imgCat));
+		
 		
 		this.setLayout(new GridLayout(2,1) );
 		
@@ -37,17 +44,14 @@ public class VueMenuRestoUParCategorie extends JPanel {
 	public static void main(String[] args) {
 		//BufferedImage monImg=ImageIO.read(new File("tarte_citron_meringuee.webp"));
 		VueMenuRestoUParCategorie vueTest;
-		try {
-			vueTest = new VueMenuRestoUParCategorie("Essai avec test long","img/pizza.jpg");
-			JFrame fenetre=new JFrame();
+		
+		vueTest = new VueMenuRestoUParCategorie("Essai avec test long","img/pizza.jpg");
+		JFrame fenetre=new JFrame();
 		fenetre.setSize(300,500);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenetre.add(vueTest);
 		fenetre.setVisible(true);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 
 	}
