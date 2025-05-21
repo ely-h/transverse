@@ -12,7 +12,6 @@ public class Maison {
 	ArrayList<Etudiant> sesEtudiants=new ArrayList<Etudiant>();
 	Nationnalite saNationnalite;
 	private String nom;
-	private String nationalite;
 	private double longitude;
 	private double lattitude;
 	private int nombreChambres;
@@ -62,8 +61,8 @@ public class Maison {
 		return nom;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+	public Nationnalite getNationalite() {
+		return saNationnalite;
 	}
 	
 	public RestoU getSonRestoU(){
