@@ -1,4 +1,4 @@
-package vue.Etudiant.Profil;
+package vue.Etudiant.Profil.Panels;
 
 import java.awt.GridLayout;
 import javax.swing.*;
@@ -22,7 +22,7 @@ public class PanelInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	PanelInfo(String nom, String prenom, String mail, int annee, String nationalitee, String logement){
+	public PanelInfo(String nom, String prenom, String mail, int annee, String nationalitee, String logement){
 		_pNom = new PanelNom(nom);
 		_pPrenom = new PanelPrenom(prenom);
 		_pMail = new PanelMail(mail);

@@ -1,4 +1,4 @@
-package vue.Etudiant.Profil;
+package vue.Etudiant.Profil.Panels;
 
 import java.awt.GridLayout;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class PanelPhotoButtonModif extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	PanelPhotoButtonModif(String imgPath)throws IOException{
+	public PanelPhotoButtonModif(String imgPath)throws IOException{
 		_pPhoto = new PanelPhoto(imgPath);
 		_pbutton = new ButtonModification();
 		

@@ -1,6 +1,9 @@
 package vue.Etudiant.Profil;
 
 import modele.Etudiant;
+import vue.Etudiant.Profil.Panels.PanelInfo;
+import vue.Etudiant.Profil.Panels.PanelPhotoButtonModif;
+
 import java.awt.GridLayout;
 import javax.swing.*;
 import java.io.IOException;

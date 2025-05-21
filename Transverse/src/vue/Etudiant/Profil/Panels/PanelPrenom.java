@@ -1,4 +1,4 @@
-package vue.Etudiant.Profil;
+package vue.Etudiant.Profil.Panels;
 
 import java.awt.GridLayout;
 import javax.swing.*;
