@@ -14,11 +14,13 @@ public class VueAjoutMaisonListe extends JPanel{
     private JButton btnCancel;
     private List<PanelSelection> selectionPanels;
     
+    private ArrayList<modele.Maison> lesMaisons;
     private PanelSelection maisonInternationale;
     private PanelSelection maisonFR;
     private PanelSelection maisonES;
     private PanelSelection maisonJP;
     private PanelSelection maisonTU;
+    private PanelSelection maisonKR;
     
     public VueAjoutMaisonListe() {
         setLayout(new BorderLayout(20,20));
@@ -30,19 +32,33 @@ public class VueAjoutMaisonListe extends JPanel{
         FactoryCIUP factory = FactoryCIUP.getInstance();
         factory.CreationObjets();
         
+        lesMaisons = factory.getLesMaisons();
+
         try 
 		{
-			maisonInternationale = new PanelSelection( "Maison Internationale", "img/maison-internationale");
-			maisonFR = new PanelSelection( "Maison France", "img/maison-france");
-			maisonES = new PanelSelection( "Maison Espagne", "img/maison-espagne");
-			maisonJP = new PanelSelection( "Maison Japon", "img/maison-japon");
-			maisonTU = new PanelSelection( "Maison Tunisie", "img/maison-tunisie");
+			maisonFR = new PanelSelection(lesMaisons.get(0), lesMaisons.get(0).getNom(), "img/" + lesMaisons.get(0).getNom() );
+			maisonES = new PanelSelection(lesMaisons.get(1), lesMaisons.get(1).getNom(), "img/" + lesMaisons.get(1).getNom() );
+			maisonJP = new PanelSelection(lesMaisons.get(2), lesMaisons.get(2).getNom(), "img/" + lesMaisons.get(2).getNom() );
+			maisonTU = new PanelSelection(lesMaisons.get(3), lesMaisons.get(3).getNom(), "img/" + lesMaisons.get(3).getNom() );
+			maisonKR = new PanelSelection(lesMaisons.get(4), lesMaisons.get(4).getNom(), "img/" + lesMaisons.get(4).getNom() );
+			maisonInternationale = new PanelSelection(lesMaisons.get(5), lesMaisons.get(5).getNom(), "img/" + lesMaisons.get(5).getNom() ); 
+
+			/*maisonFR = new PanelSelection(lesMaisons.get(1), "Maison France", "img/maison-france");
+			maisonES = new PanelSelection(lesMaisons.get(2), "Maison Espagne", "img/maison-espagne");
+			maisonJP = new PanelSelection(lesMaisons.get(3), "Maison Japon", "img/maison-japon");
+			maisonTU = new PanelSelection(lesMaisons.get(4), "Maison Tunisie", "img/maison-tunisie");*/
 			
             selectionPanels.add(maisonInternationale);
             selectionPanels.add(maisonFR);
             selectionPanels.add(maisonES);
             selectionPanels.add(maisonJP);
             selectionPanels.add(maisonTU);
+            selectionPanels.add(maisonKR);
+
+            /*selectionPanels.add(maisonFR);
+            selectionPanels.add(maisonES);
+            selectionPanels.add(maisonJP);
+            selectionPanels.add(maisonTU);*/
 			
 			for (PanelSelection panel : selectionPanels) {
 	            panelMaisons.add(panel);
