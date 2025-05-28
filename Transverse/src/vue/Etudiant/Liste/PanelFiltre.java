@@ -8,6 +8,7 @@ import modele.Maison;
 import modele.MaisonInternationale;
 import modele.Nationnalite;
 import vue.Etudiant.Profil.Profil;
+import modele.FactoryCIUP;
 
 public class PanelFiltre extends JPanel{
 
@@ -40,37 +41,15 @@ public class PanelFiltre extends JPanel{
 	//MAIN
 	//---------------
 	public static void main (String[] arg) {
-		ArrayList<Maison> listeMaison = new ArrayList<Maison>();
 		
-		Nationnalite FR = new Nationnalite ("Française");
-		Nationnalite ES = new Nationnalite ("Espagnole");			
-		Nationnalite JP = new Nationnalite ("Japonaise");
-		Nationnalite TN = new Nationnalite ("Tunisienne");
-		Nationnalite KR = new Nationnalite ("Coréenne"); 
-		Nationnalite INT = new Nationnalite ("Internationale"); 
-	
-		Maison maisonFrance = new Maison("Maison France", FR, 48, 2, 50);
-		Maison maisonEspagne = new Maison("Maison Espagnole", ES, 40, -3, 30);
-		Maison maisonJapon = new Maison("Maison Japon", JP, 35, 139, 40);
-		Maison maisonTunisie = new Maison ("Maison Tunisie", TN, 36, 10, 35);
-		Maison maisonCoree = new Maison ("Maison Coree", KR, 37, 127, 45);
-		MaisonInternationale maisonInternationale = new MaisonInternationale ("Maison Internationale", INT, 0, 0, 100 );
-		maisonInternationale.addService("bibliotheque");
-		maisonInternationale.addService("RestoU");
-		maisonInternationale.addService("Theatre");
-		
-		listeMaison.add(maisonFrance);
-		listeMaison.add(maisonEspagne);
-		listeMaison.add(maisonJapon);
-		listeMaison.add(maisonTunisie);
-		listeMaison.add(maisonCoree);
-		listeMaison.add(maisonInternationale);
+		FactoryCIUP facto = FactoryCIUP.getInstance();
+		facto.CreationObjets();
 		
 		JFrame profil = new JFrame("Profil");
 		profil.setSize(100, 300);
 		profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelFiltre pf = new PanelFiltre(listeMaison);
+		PanelFiltre pf = new PanelFiltre(facto.getLesMaisons());
 		
 		profil.add(pf);
 		profil.setVisible(true);
