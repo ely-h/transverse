@@ -32,7 +32,15 @@ public class PanelSelection extends JPanel{
 		this.maison = maison;
 	}
 	
-    public boolean toutSelection() {
+    public Maison getMaison() {
+		return maison;
+	}
+
+	public void setMaison(Maison maison) {
+		this.maison = maison;
+	}
+
+	public boolean toutSelection() {
         return checkbox.isSelected();
     }
     

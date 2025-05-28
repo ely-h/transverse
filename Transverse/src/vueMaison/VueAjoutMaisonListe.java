@@ -100,7 +100,11 @@ public class VueAjoutMaisonListe extends JPanel{
         });
     }
 
-    public static void main(String[] args) {
+    public List<PanelSelection> getSelectionPanels() {
+		return selectionPanels;
+	}
+
+	public static void main(String[] args) {
         JFrame fenetre = new JFrame("Calcul Perimètre");
         fenetre.setSize(700, 700);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
