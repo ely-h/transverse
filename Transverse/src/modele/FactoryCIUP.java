@@ -165,7 +165,7 @@ public class FactoryCIUP {
         Plat extra2 = new Plat("Pizza Margherita", ingredientsPizza, "Calories: 650 kcal");
 
         // Ajout d'allergènes et d'étiquettes aux plats
-        this.lesFiltres=new ArrayList<Allergene>();
+        this.lesFiltres=new ArrayList<String>();
         Allergene allergeneLactose = new Allergene("Lactose");
         this.lesFiltres.add(allergeneLactose.getNom());
         Allergene allergeneGluten = new Allergene("Gluten");
@@ -255,5 +255,11 @@ public class FactoryCIUP {
 		return lesFiltres;
 	}
 	
-
+	public void addMaisonToListe(Maison maison) {
+	    if (listeMaisons == null) {
+	        listeMaisons = new ArrayList<Maison>();
+	    }
+	    listeMaisons.add(maison);
+	}
+	
 }
