@@ -41,20 +41,7 @@ public class PanelEditInfo extends JPanel {
 		
 		setLayout(new GridLayout(6,1));
 	}
-	//---------------
-	//MAIN
-	//---------------
-	public static void main (String arg[]) {
-		JFrame frame = new JFrame ("Frame");
-		frame.setSize(250, 250);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		PanelEditInfo p = new PanelEditInfo();
-		
-		frame.add(p);
-		
-		frame.setVisible(true);
-	}
+	
 	//---------------
 	//METHODE
 	//---------------

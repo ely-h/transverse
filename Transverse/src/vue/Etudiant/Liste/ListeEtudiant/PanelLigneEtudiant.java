@@ -53,27 +53,6 @@ public class PanelLigneEtudiant extends JPanel{
 		
 		setLayout(new GridLayout(1,6));
 	}
-
-	//---------------
-	//MAIN
-	//---------------
-	public static void main(String[] arg) {
-		try {
-			FactoryCIUP facto = FactoryCIUP.getInstance();
-			facto.CreationObjets();
-		
-			JFrame liste = new JFrame("liste");
-			liste.setSize(500, 100);
-			liste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-			PanelLigneEtudiant ple = new PanelLigneEtudiant(facto.getLesEtudiants().get(1));
-			
-			liste.add(ple);
-			liste.setVisible(true);
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	//---------------
 	//METHODE

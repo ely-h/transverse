@@ -34,23 +34,4 @@ public class PanelFiltre extends JPanel{
 		
 		setLayout(new GridLayout(alMaison.size()+1, 1));
 	}
-	
-	//---------------
-	//MAIN
-	//---------------
-	public static void main (String[] arg) {
-		
-		FactoryCIUP facto = FactoryCIUP.getInstance();
-		facto.CreationObjets();
-		
-		JFrame profil = new JFrame("Profil");
-		profil.setSize(100, 300);
-		profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		PanelFiltre pf = new PanelFiltre(facto.getLesMaisons());
-		
-		profil.add(pf);
-		profil.setVisible(true);
-		
-	}
 }

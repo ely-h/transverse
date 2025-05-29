@@ -30,26 +30,4 @@ public class PanelPhotoButtonModif extends JPanel{
 		
 		setLayout(new GridLayout(2,1));
 	}
-	
-	
-	//---------------
-	//MAIN
-	//---------------
-
-	public static void main(String arg[]) {
-		try {
-			JFrame profil = new JFrame("Profil");
-			profil.setSize(700, 300);
-			profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-			PanelPhotoButtonModif p = new PanelPhotoButtonModif ("img/example.jpg");
-			
-			profil.add(p);
-			profil.setVisible(true);
-			
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
 }

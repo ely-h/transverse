@@ -41,20 +41,7 @@ public class PanelInfo extends JPanel {
 		
 		setLayout(new GridLayout(6,1));
 	}
-	//---------------
-	//MAIN
-	//---------------
-	public static void main (String arg[]) {
-		JFrame frame = new JFrame ("Frame");
-		frame.setSize(250, 250);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		PanelInfo p = new PanelInfo("Jones", "Felicia", "felicia.jones@gmail.com", 5, "USA House", "Américaine");
-		
-		frame.add(p);
-		
-		frame.setVisible(true);
-	}
+	
 	//---------------
 	//METHODE
 	//---------------
