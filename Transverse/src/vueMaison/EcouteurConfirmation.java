@@ -33,6 +33,9 @@ public class EcouteurConfirmation implements ActionListener {
         
         PanelConfirmation panelConfirmation = new PanelConfirmation(maisonsSelectionnees);
         
+        EcouteurRetour ecouteurRetour = new EcouteurRetour(vueAjout, fenetre);
+        panelConfirmation.getBtnRetour().addActionListener(ecouteurRetour);
+        
         // Remplacer contenu de la fenêtre
         fenetre.getContentPane().removeAll();
         fenetre.add(panelConfirmation);
