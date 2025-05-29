@@ -9,8 +9,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelLabelBoutton extends JPanel{
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
+	
 	protected JButton bouttonChoisir;
 	protected JLabel categorie;
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 	
 	public PanelLabelBoutton(String texteBoutton, String texteCategorie) {
 		super();
@@ -27,6 +36,10 @@ public class PanelLabelBoutton extends JPanel{
 		
 		this.setLayout(new GridLayout(2,1));
 	}
+
+	//--------------------------
+	// ACCESSEURS
+	//--------------------------
 	
 	public JButton getBoutton() {
 		return bouttonChoisir;

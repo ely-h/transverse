@@ -12,10 +12,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class VueMenuRestoUParCategorie extends JPanel {
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
 	
 	protected JButton bouttonChoisir;
 	protected JLabel categorie;
 	protected JLabel imgCategorie;
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 
 	public VueMenuRestoUParCategorie(String categorie,String imageCat) {
 		BufferedImage bufferedImg;

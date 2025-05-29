@@ -15,9 +15,18 @@ import javax.swing.*;
 import controller.RestoU.EcouteurComboBox;
 
 public class VueDUnMenu extends JPanel{
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
+	
 	JPanel plats;
 	ArrayList<String> lesFiltres;
 	MenuRestoUParCategorie leMenu;
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 	
 	public VueDUnMenu(MenuRestoUParCategorie leMenu) {
 		this.leMenu=leMenu;
@@ -49,6 +58,10 @@ public class VueDUnMenu extends JPanel{
 		
 		
 	}
+
+	//--------------------------
+	// MÉTHODES
+	//--------------------------
 	
 	public void FiltrerPar(String filtre) {
 		this.plats.removeAll();

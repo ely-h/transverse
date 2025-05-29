@@ -8,9 +8,18 @@ import modele.Allergene;
 import modele.Plat;
 
 public class VueDetailsPlat extends JPanel{
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
+	
 	private JPanel ingredients;
 	private JPanel allergenes;
 	private JPanel valsNutritionnelles;
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 	
 	public VueDetailsPlat(Plat lePlat) {
 		JLabel nIngredients=new JLabel("Ingrédients :");

@@ -15,8 +15,17 @@ import controller.RestoU.EcouteurPlat;
 import modele.*;
 
 public class VuePlat extends JPanel{
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
+	
 	protected JLabel image;
 	protected PanelLabelBoutton nomEtBoutton;
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 	
 	public VuePlat(Plat lePlat) {
 		BufferedImage bufferedImg;

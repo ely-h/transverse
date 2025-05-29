@@ -6,6 +6,10 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 
 public class PageMenusRestoU extends JPanel{
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
+
 	PanelCategoriesMenuRestoU lesCategories;
 	
 	public PageMenusRestoU() {

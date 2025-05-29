@@ -9,16 +9,28 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 import modele.*;
-import vue.BandeHaut;
 
 public class PanelCategoriesMenuRestoU extends JPanel{
+
+	//--------------------------
+	// CONSTANTES
+	//--------------------------
 	public static int ENTREES=0;
 	public static int PLATS=1;
 	public static int DESSERTS=2;
 	public static int EXTRAS=3;
+
+	//--------------------------
+	// ATTRIBUTS
+	//--------------------------
 	
 	protected ArrayList<VueMenuRestoUParCategorie> lesVuesDeMenu;
 	protected ArrayList<String> lesCheminsDesImages;
+	
+
+	//--------------------------
+	// CONSTRUCTEUR
+	//--------------------------
 	
 	public PanelCategoriesMenuRestoU(ArrayList<MenuRestoUParCategorie> lesMenus) {
 		this.lesVuesDeMenu=new ArrayList<VueMenuRestoUParCategorie>(lesMenus.size());
@@ -36,9 +48,11 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 		this.setBorder(empty);
 		
 		
-		
-		
 	}
+
+	//--------------------------
+	// METHODES
+	//--------------------------
 	
 	private void inititializeLesImages() {
 		this.lesCheminsDesImages=new ArrayList<String>(4);
