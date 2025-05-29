@@ -32,7 +32,6 @@ public class PanelLigneEtudiant extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	
 	PanelLigneEtudiant(Etudiant e0) throws IOException{
 		_button = new PanelButton();
 		_nom = new PanelNom(e0.get_nom());
@@ -54,31 +53,7 @@ public class PanelLigneEtudiant extends JPanel{
 		
 		setLayout(new GridLayout(1,6));
 	}
-	
-	
-	/*Constructeur utilisé lors du développement et des tests
-	 * 
-	 * PanelLigneEtudiant(String nom, String prenom, String pays, int annee){
-		_button = new PanelButton();
-		_nom = new PanelNom(nom);
-		_prenom = new PanelPrenom(prenom);
-		_pays = new PanelPays(pays);
-		_annee = new PanelAnnee(annee);
-		
-		
-		 _lbp = new ListenerBoutonProfil();
-		 
-		 _button.getButton().addActionListener(_lbp);
-		 
-		add(_button);
-		add(_nom);
-		add(_prenom);
-		add(_pays);
-		add(_annee);
-		
-		setLayout(new GridLayout(1,6));
-	}*/
-	
+
 	//---------------
 	//MAIN
 	//---------------

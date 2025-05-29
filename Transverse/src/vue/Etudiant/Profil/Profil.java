@@ -44,20 +44,7 @@ public class Profil extends JPanel{
 		setLayout(new GridLayout(1,2));
 				
 	}
-	
-	/*Constructeur utilisé lors des tests et développement
-	 * 
-	 * Profil(String nom, String prenom, String mail, int annee, String nationalitee, String logement, String imgPath)
-	 throws IOException{
-		_pInfo = new PanelInfo(nom, prenom, mail, annee, nationalitee, logement);
-		_pPhoto = new PanelPhotoButtonModif(imgPath);
-		
-		add(_pPhoto);
-		add(_pInfo);
-		
-		setLayout(new GridLayout(1,2));
-	}*/
-	
+
 	//---------------
 	//MAIN
 	//---------------
@@ -90,15 +77,4 @@ public class Profil extends JPanel{
 		profil.add(this);
 		profil.setVisible(true);
 	}
-	
-	
-	//---------------
-	//TO DO
-	//---------------
-	/* Bidouiller pour que ça marche par rapport à un étudiant donné
-	 * 
-	 * 
-	 */
-	
-	
 }
