@@ -15,11 +15,7 @@ public class Profil extends JPanel{
 	//---------------
 	private PanelPhotoButtonModif _pPhoto;
 	private PanelInfo _pInfo;
-	
-	//---------------
-	//ACCESSEUR
-	//---------------
-	
+
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
@@ -52,9 +48,4 @@ public class Profil extends JPanel{
 			e.printStackTrace();
 		}
 	}
-	
-	//---------------
-	//METHODE
-	//---------------
-	
 }
