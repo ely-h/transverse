@@ -35,7 +35,7 @@ public class VueDetailsPlat extends JPanel{
 			lAllergenes="Le Plat ne possède pas d'allergènes";
 		}
 		for(Allergene a:lePlat.getAllergenes()) {
-			lAllergenes+=a+" ";
+			lAllergenes+=a.getNom()+" ";
 		}
 		JLabel listeAllergenes=new JLabel(lAllergenes);
 		

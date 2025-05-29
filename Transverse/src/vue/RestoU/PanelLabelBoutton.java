@@ -1,5 +1,6 @@
 package vue.RestoU;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
@@ -20,6 +21,8 @@ public class PanelLabelBoutton extends JPanel{
 		this.categorie.setHorizontalAlignment(JLabel.CENTER);
 		this.add(categorie);
 		this.add(bouttonChoisir);
+		this.bouttonChoisir.setBackground(new Color(78, 94, 99));
+		this.bouttonChoisir.setForeground(Color.WHITE);
 		this.bouttonChoisir.setFont(new Font(getFont().toString(),Font.BOLD,25));
 		
 		this.setLayout(new GridLayout(2,1));

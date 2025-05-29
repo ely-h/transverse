@@ -1,4 +1,5 @@
 package vue.RestoU;
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 
 import modele.*;
+import vue.BandeHaut;
 
 public class PanelCategoriesMenuRestoU extends JPanel{
 	public static int ENTREES=0;
@@ -58,9 +60,10 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 			int ySize = ((int) tk.getScreenSize().getHeight());
 			fenetre.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			fenetre.setSize(xSize,ySize);
-			fenetre.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			fenetre.add(vueTest);
+			JPanel panelGlobal=new JPanel(new BorderLayout());
+			panelGlobal.add(vueTest,BorderLayout.CENTER);
+			fenetre.add(panelGlobal);
 			fenetre.setVisible(true);
 		
 	}
