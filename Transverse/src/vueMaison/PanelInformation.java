@@ -22,8 +22,8 @@ public class PanelInformation extends JPanel {
         // Création des labels avec les info de la maison
         labelNom = new JLabel("Nom: " + maison.getNom());
         labelPays = new JLabel("Pays: " + maison.getNationalite().getNom());
-        labelChambres = new JLabel("Nombre de chambres: " + maison.getNbChambres());
-        labelLatitude = new JLabel("Latitude: " + maison.getLatitude());
+        labelChambres = new JLabel("Nombre de chambres: " + maison.getNombreChambres());
+        labelLatitude = new JLabel("Latitude: " + maison.getLattitude());
         labelLongitude = new JLabel("Longitude: " + maison.getLongitude());
         
         // Style des labels

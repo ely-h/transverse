@@ -26,7 +26,7 @@ public class VueListeMaison extends JPanel {
     
     private void initializeComponents() {
         panelMaisons = new JPanel();
-        panelMaisons.setLayout(new GridLayout(0, 3, 10, 10)); // 3 colonnes, lignes automatiques
+        panelMaisons.setLayout(new GridLayout(0, 3, 10, 10)); 
         panelMaisons.setBackground(Color.WHITE);
         
         scrollPane = new JScrollPane(panelMaisons);
@@ -68,25 +68,22 @@ public class VueListeMaison extends JPanel {
             }
         }
         
-        // Rafraîchir l'affichage
+        // 'Rafraîchir' l'affichage
         panelMaisons.revalidate();
         panelMaisons.repaint();
     }
     
     private void ajouterEcouteurs() {
-        // Les écouteurs seront ajoutés dynamiquement lors du chargement des maisons
         for (PanelMaison panelMaison : panelsMaison) {
-            // Écouteur pour le bouton Information
             EcouteurInformation ecouteurInfo = new EcouteurInformation(panelMaison.getMaison(), this);
             panelMaison.getBtnInformation().addActionListener(ecouteurInfo);
             
-            // Écouteur pour le bouton Supprimer
             EcouteurSupprimer ecouteurSuppr = new EcouteurSupprimer(panelMaison.getMaison(), this);
             panelMaison.getBtnSupprimer().addActionListener(ecouteurSuppr);
         }
     }
     
-    // Méthodes publiques pour être appelées par les écouteurs
+    // Méthodes pour les écouteurs
     public void afficherInformations(Maison maison) {
         JFrame frameInfo = new JFrame("Informations - " + maison.getNom());
         frameInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -109,13 +106,12 @@ public class VueListeMaison extends JPanel {
         frameSuppression.setVisible(true);
     }
     
-    // Méthode pour rafraîchir la liste après suppression
     public void actualiserListe() {
         chargerMaisons();
         ajouterEcouteurs();
     }
     
-    // Test de la classe
+    // Test
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Liste des Maisons");
@@ -123,11 +119,9 @@ public class VueListeMaison extends JPanel {
             frame.setSize(800, 600);
             frame.setLocationRelativeTo(null);
             
-            // Initialiser la factory et ajouter quelques maisons à la liste pour le test
             FactoryCIUP factory = FactoryCIUP.getInstance();
             factory.CreationObjets();
             
-            // Ajouter quelques maisons à la liste pour tester
             ArrayList<Maison> lesMaisons = factory.getLesMaisons();
             if (!lesMaisons.isEmpty()) {
                 factory.addMaisonToListe(lesMaisons.get(0));
