@@ -1,9 +1,9 @@
-package vue.Etudiant.Profil.Panels;
+package vue.Etudiant.Profil.Panels.Info;
 
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class PanelMail extends JPanel{
+public class PanelPrenom extends JPanel{
 
 
 	//---------------
@@ -16,8 +16,8 @@ public class PanelMail extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	
-	PanelMail(String val){
-		_type = new JLabel("Mail : ");
+	PanelPrenom(String val){
+		_type = new JLabel("Prénom : ");
 		_valeur = new JLabel(val);
 		
 		add(_type);
@@ -29,12 +29,12 @@ public class PanelMail extends JPanel{
 	//---------------
 	//MAIN
 	//---------------
-	public static void mainPanelMail(String arg[]) {
+	public static void mainPanelPrenom (String arg[]) {
 		JFrame frame = new JFrame ("Frame");
 		frame.setSize(50, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelMail p = new PanelMail("felicia.jones@gmail.com");
+		PanelPrenom p = new PanelPrenom("Felicia");
 		
 		frame.add(p);
 		

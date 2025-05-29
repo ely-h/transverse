@@ -1,8 +1,8 @@
 package vue.Etudiant.Profil;
 
-import modele.Etudiant;
-import vue.Etudiant.Profil.Panels.PanelInfo;
-import vue.Etudiant.Profil.Panels.PanelPhotoButtonModif;
+
+import vue.Etudiant.Profil.Panels.Info.PanelInfo;
+import vue.Etudiant.Profil.Panels.Photo.PanelPhotoButtonModif;
 
 import java.awt.GridLayout;
 import javax.swing.*;
@@ -48,4 +48,14 @@ public class Profil extends JPanel{
 			e.printStackTrace();
 		}
 	}
+	
+	//---------------
+	//TO DO
+	//---------------
+	/* Bidouiller pour que ça marche par rapport à un étudiant donné
+	 * 
+	 * 
+	 */
+	
+	
 }

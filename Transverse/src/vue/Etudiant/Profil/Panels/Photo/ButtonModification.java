@@ -1,4 +1,4 @@
-package vue.Etudiant.Profil.Panels;
+package vue.Etudiant.Profil.Panels.Photo;
 
 import javax.swing.*;
 

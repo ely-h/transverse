@@ -1,9 +1,9 @@
-package vue.Etudiant.Profil.Panels;
+package vue.Etudiant.Profil.Panels.Info;
 
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class PanelLogement extends JPanel{
+public class PanelNom extends JPanel{
 
 
 	//---------------
@@ -16,8 +16,8 @@ public class PanelLogement extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	
-	PanelLogement(String val){
-		_type = new JLabel("Logement : ");
+	PanelNom(String val){
+		_type = new JLabel("Nom : ");
 		_valeur = new JLabel(val);
 		
 		add(_type);
@@ -29,12 +29,12 @@ public class PanelLogement extends JPanel{
 	//---------------
 	//MAIN
 	//---------------
-	public static void mainPanelLogement (String arg[]) {
+	public static void mainPanelNom (String arg[]) {
 		JFrame frame = new JFrame ("Frame");
 		frame.setSize(50, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelLogement p = new PanelLogement("USA House");
+		PanelNom p = new PanelNom("Jones");
 		
 		frame.add(p);
 		

@@ -1,4 +1,4 @@
-package vue.Etudiant.Profil.Panels;
+package vue.Etudiant.Profil.Panels.Photo;
 
 import java.awt.GridLayout;
 import java.io.IOException;
