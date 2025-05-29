@@ -42,11 +42,6 @@ public class VueAjoutMaisonListe extends JPanel{
 			maisonTU = new PanelSelection(lesMaisons.get(3), lesMaisons.get(3).getNom(), "img/" + lesMaisons.get(3).getNom() );
 			maisonKR = new PanelSelection(lesMaisons.get(4), lesMaisons.get(4).getNom(), "img/" + lesMaisons.get(4).getNom() );
 			maisonInternationale = new PanelSelection(lesMaisons.get(5), lesMaisons.get(5).getNom(), "img/" + lesMaisons.get(5).getNom() ); 
-
-			/*maisonFR = new PanelSelection(lesMaisons.get(1), "Maison France", "img/maison-france");
-			maisonES = new PanelSelection(lesMaisons.get(2), "Maison Espagne", "img/maison-espagne");
-			maisonJP = new PanelSelection(lesMaisons.get(3), "Maison Japon", "img/maison-japon");
-			maisonTU = new PanelSelection(lesMaisons.get(4), "Maison Tunisie", "img/maison-tunisie");*/
 			
             selectionPanels.add(maisonInternationale);
             selectionPanels.add(maisonFR);
@@ -54,11 +49,6 @@ public class VueAjoutMaisonListe extends JPanel{
             selectionPanels.add(maisonJP);
             selectionPanels.add(maisonTU);
             selectionPanels.add(maisonKR);
-
-            /*selectionPanels.add(maisonFR);
-            selectionPanels.add(maisonES);
-            selectionPanels.add(maisonJP);
-            selectionPanels.add(maisonTU);*/
 			
 			for (PanelSelection panel : selectionPanels) {
 	            panelMaisons.add(panel);
@@ -68,7 +58,7 @@ public class VueAjoutMaisonListe extends JPanel{
 		}
         add(panelMaisons, BorderLayout.CENTER);
         
-        JPanel panelActions = new JPanel(); //new GridLayout(4,1)
+        JPanel panelActions = new JPanel();
         panelActions.setLayout(new BoxLayout(panelActions, BoxLayout.Y_AXIS));
         JLabel confirmation = new JLabel("Création de la liste");
         btnSelectAll = new JButton("Tout sélectionner");
