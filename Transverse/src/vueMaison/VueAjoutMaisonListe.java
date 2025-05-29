@@ -99,7 +99,7 @@ public class VueAjoutMaisonListe extends JPanel{
 	}
 	
 	public static void main(String[] args) {
-        JFrame fenetre = new JFrame("Calcul Perimètre");
+        JFrame fenetre = new JFrame("Création de la liste");
         fenetre.setSize(700, 700);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();

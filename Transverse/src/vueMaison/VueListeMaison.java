@@ -1,6 +1,7 @@
 package vueMaison;
 
 import modele.FactoryCIUP;
+
 import modele.Maison;
 import javax.swing.*;
 import java.awt.*;
@@ -13,8 +14,15 @@ public class VueListeMaison extends JPanel {
     private JScrollPane scrollPane;
     private ArrayList<PanelMaison> panelsMaison;
     private FactoryCIUP factory;
-    
+    private JButton btnRetourCreation;
+    private JFrame fenetreParent; 
+ 
     public VueListeMaison() {
+        this(null);
+    }
+    
+    public VueListeMaison(JFrame fenetreParent) {
+    	this.fenetreParent = fenetreParent;
         factory = FactoryCIUP.getInstance();
         panelsMaison = new ArrayList<>();
         
@@ -32,18 +40,43 @@ public class VueListeMaison extends JPanel {
         scrollPane = new JScrollPane(panelMaisons);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        
+        if (fenetreParent != null) {
+            btnRetourCreation = new JButton("Créer une nouvelle liste");
+            btnRetourCreation.setPreferredSize(new Dimension(200, 35));
+            btnRetourCreation.setBackground(new Color(33, 150, 243));
+            btnRetourCreation.setForeground(Color.WHITE);
+        }
     }
     
     private void setupLayout() {
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
         
+        JPanel panelDuHaut = new JPanel(new BorderLayout());
+        
         // Titre
         JLabel titre = new JLabel("Liste des Maisons Sélectionnées", JLabel.CENTER);
         titre.setFont(new Font("Arial", Font.BOLD, 18));
         titre.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
+        panelDuHaut.add(titre, BorderLayout.CENTER);
         
-        add(titre, BorderLayout.NORTH);
+        if (btnRetourCreation != null) {
+            JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+            buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 10));
+            buttonPanel.add(btnRetourCreation);
+            panelDuHaut.add(buttonPanel, BorderLayout.EAST);
+            
+            // Écouteur pour le bouton retour
+            btnRetourCreation.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    retournerVersCreation();
+                }
+            });
+        }
+        
+        add(panelDuHaut, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
     }
     
@@ -83,7 +116,24 @@ public class VueListeMaison extends JPanel {
         }
     }
     
-    // Méthodes pour les écouteurs
+    private void retournerVersCreation() {
+        if (fenetreParent != null) {
+            // Retourner à la vue de sélection
+            fenetreParent.getContentPane().removeAll();
+            fenetreParent.setTitle("Calcul Perimètre");
+            
+            VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+            fenetreParent.add(vueAjout);
+            
+            EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetreParent);
+            vueAjout.getBtnConfirm().addActionListener(ecouteur);
+            
+            fenetreParent.revalidate();
+            fenetreParent.repaint();
+        }
+    }
+    
+    // Méthodes utilisées par les écouteurs
     public void afficherInformations(Maison maison) {
         JFrame frameInfo = new JFrame("Informations - " + maison.getNom());
         frameInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -109,28 +159,5 @@ public class VueListeMaison extends JPanel {
     public void actualiserListe() {
         chargerMaisons();
         ajouterEcouteurs();
-    }
-    
-    // Test
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Liste des Maisons");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(800, 600);
-            frame.setLocationRelativeTo(null);
-            
-            FactoryCIUP factory = FactoryCIUP.getInstance();
-            factory.CreationObjets();
-            
-            ArrayList<Maison> lesMaisons = factory.getLesMaisons();
-            if (!lesMaisons.isEmpty()) {
-                factory.addMaisonToListe(lesMaisons.get(0));
-                factory.addMaisonToListe(lesMaisons.get(1));
-            }
-            
-            VueListeMaison vueListeMaison = new VueListeMaison();
-            frame.add(vueListeMaison);
-            frame.setVisible(true);
-        });
     }
 }
