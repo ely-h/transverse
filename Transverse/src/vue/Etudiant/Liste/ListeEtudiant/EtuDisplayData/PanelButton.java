@@ -2,7 +2,7 @@ package vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData;
 
 import javax.swing.*;
 
-import vue.Etudiant.Profil.Panels.ButtonModification;
+import vue.Etudiant.Profil.Panels.Photo.ButtonModification;
 
 public class PanelButton extends JPanel{
 
