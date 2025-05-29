@@ -22,12 +22,7 @@ public class EcouteurConfirmation implements ActionListener {
         
         // Vérifier que au moins une maison est sélectionné
         if (maisonsSelectionnees.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(
-                fenetre, 
-                "Veuillez sélectionner au moins une maison.", 
-                "Aucune sélection", 
-                javax.swing.JOptionPane.WARNING_MESSAGE
-            );
+            javax.swing.JOptionPane.showMessageDialog(fenetre, "Veuillez sélectionner au moins une maison.", "Aucune sélection", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -35,6 +30,9 @@ public class EcouteurConfirmation implements ActionListener {
         
         EcouteurRetour ecouteurRetour = new EcouteurRetour(vueAjout, fenetre);
         panelConfirmation.getBtnRetour().addActionListener(ecouteurRetour);
+
+        EcouteurValider ecouteurValider = new EcouteurValider(maisonsSelectionnees, fenetre);
+        panelConfirmation.getBtnValider().addActionListener(ecouteurValider);
         
         // Remplacer contenu de la fenêtre
         fenetre.getContentPane().removeAll();
