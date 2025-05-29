@@ -1,22 +1,22 @@
-package vue.Etudiant.Liste.EtuDisplayData;
+package vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData;
 
 import javax.swing.*;
 
-import vue.Etudiant.Liste.PanelLigneEtudiant;
+import vue.Etudiant.Liste.ListeEtudiant.PanelLigneEtudiant;
 
-public class PanelNom extends JPanel {
+public class PanelAnnee extends JPanel {
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private JLabel _nom;
+	private JLabel _annee;
 
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public PanelNom(String nom){
-		_nom = new JLabel(nom);
-		add(_nom);
+	public PanelAnnee(int annee){
+		_annee = new JLabel(String.valueOf(annee));
+		add(_annee);
 	}
 	
 	//---------------
@@ -24,12 +24,12 @@ public class PanelNom extends JPanel {
 	//---------------
 	public static void main(String[] arg) {
 		JFrame liste = new JFrame("liste");
-		liste.setSize(50, 100);
+		liste.setSize(700, 300);
 		liste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelNom pn = new PanelNom("Johns");
+		PanelAnnee pa = new PanelAnnee(5);
 		
-		liste.add(pn);
+		liste.add(pa);
 		liste.setVisible(true);
 		
 }

@@ -1,22 +1,22 @@
-package vue.Etudiant.Liste.EtuDisplayData;
+package vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData;
 
 import javax.swing.*;
 
-import vue.Etudiant.Liste.PanelLigneEtudiant;
+import vue.Etudiant.Liste.ListeEtudiant.PanelLigneEtudiant;
 
-public class PanelPays extends JPanel {
+public class PanelNom extends JPanel {
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private JLabel _pays;
+	private JLabel _nom;
 
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public PanelPays(String pays){
-		_pays = new JLabel(pays);
-		add(_pays);
+	public PanelNom(String nom){
+		_nom = new JLabel(nom);
+		add(_nom);
 	}
 	
 	//---------------
@@ -24,12 +24,12 @@ public class PanelPays extends JPanel {
 	//---------------
 	public static void main(String[] arg) {
 		JFrame liste = new JFrame("liste");
-		liste.setSize(700, 300);
+		liste.setSize(50, 100);
 		liste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		PanelPays pp = new PanelPays("Amérique");
+		PanelNom pn = new PanelNom("Johns");
 		
-		liste.add(pp);
+		liste.add(pn);
 		liste.setVisible(true);
 		
 }

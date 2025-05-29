@@ -7,6 +7,7 @@ import java.util.*;
 import modele.FactoryCIUP;
 import modele.Maison;
 import vue.Etudiant.Liste.Filtre.PanelFiltre;
+import vue.Etudiant.Liste.ListeEtudiant.PanelLigneEtudiant;
 
 public class Liste extends JPanel{
 

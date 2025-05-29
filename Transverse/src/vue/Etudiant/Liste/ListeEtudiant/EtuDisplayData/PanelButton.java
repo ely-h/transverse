@@ -1,4 +1,4 @@
-package vue.Etudiant.Liste.EtuDisplayData;
+package vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData;
 
 import javax.swing.*;
 

@@ -1,8 +1,8 @@
-package vue.Etudiant.Liste.EtuDisplayData;
+package vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData;
 
 import javax.swing.*;
 
-import vue.Etudiant.Liste.PanelLigneEtudiant;
+import vue.Etudiant.Liste.ListeEtudiant.PanelLigneEtudiant;
 
 public class PanelPrenom extends JPanel {
 
