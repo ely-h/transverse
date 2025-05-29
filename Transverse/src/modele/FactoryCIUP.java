@@ -8,6 +8,7 @@ public class FactoryCIUP {
 	private ArrayList<Maison> listeMaisons;
 	private ArrayList<Etudiant> lesEtudiants;
 	private ArrayList<Etudiant> listeAttente;
+	private ArrayList<String> lesFiltres;
 	
 	private FactoryCIUP() {
 		
@@ -164,11 +165,17 @@ public class FactoryCIUP {
         Plat extra2 = new Plat("Pizza Margherita", ingredientsPizza, "Calories: 650 kcal");
 
         // Ajout d'allergènes et d'étiquettes aux plats
+        this.lesFiltres=new ArrayList<String>();
         Allergene allergeneLactose = new Allergene("Lactose");
+        this.lesFiltres.add(allergeneLactose.getNom());
         Allergene allergeneGluten = new Allergene("Gluten");
+        
         Etiquette etiquetteVegetarien = new Etiquette("Végétarien");
         Etiquette etiquetteSansGluten = new Etiquette("Sans gluten");
 
+        this.lesFiltres.add(etiquetteSansGluten.getNom());
+        this.lesFiltres.add(etiquetteVegetarien.getNom());
+        
         entree1.addEtiquette(etiquetteSansGluten);
         entree1.addAllergene(allergeneLactose);
 
@@ -244,5 +251,34 @@ public class FactoryCIUP {
 		return lesEtudiants;
 	}
 	
+	public ArrayList<String> getLesFiltres(){
+		return lesFiltres;
+	}
+	
+	public void addMaisonToListe(Maison maison) {
+	    if (listeMaisons == null) {
+	        listeMaisons = new ArrayList<Maison>();
+	    }
+	    listeMaisons.add(maison);
+	}
+	
+	public ArrayList<Maison> getListeMaisons() {
+	    if (listeMaisons == null) {
+	        listeMaisons = new ArrayList<Maison>();
+	    }
+	    return listeMaisons;
+	}
 
+	public void removeMaisonFromListe(Maison maison) {
+	    if (listeMaisons != null) {
+	        listeMaisons.remove(maison);
+	    }
+	}
+
+	public void clearListeMaisons() {
+	    if (listeMaisons != null) {
+	        listeMaisons.clear();
+	    }
+	}
+	
 }
