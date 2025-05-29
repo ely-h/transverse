@@ -1,8 +1,13 @@
+package vue;
 import javax.swing.*;
 import java.awt.*;
 
-public class Bloc extends JPanel {
-    public Bloc(String titre) {
+/*---------------------------------------------------------
+ * Classe des blocs pour les éléments résidents restoU et etudiants
+ * --------------------------------------------------------
+ */
+public class Block extends JPanel {
+    public Block(String titre)  {
         setPreferredSize(new Dimension(200, 150));
         setBackground(new Color(250, 248, 243));
         setLayout(new BorderLayout());

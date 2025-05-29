@@ -1,7 +1,8 @@
+package vue;
 import javax.swing.*;
 import java.awt.*;
 
-public class DashboardMain extends JFrame {
+public class DashboardMain extends  JFrame {
     public DashboardMain() {
         setTitle("Admin Dashboard");
         setSize(800, 600);
@@ -9,17 +10,17 @@ public class DashboardMain extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // BandeHaut déjà créée ailleurs
-        add(new BandeHaut(), BorderLayout.NORTH);
+        // Bordereau déjà créée dans une autre classe
+        add(new adminDashboard(), BorderLayout.NORTH);
 
         JPanel centre = new JPanel();
         centre.setBackground(Color.WHITE);
         centre.setLayout(new FlowLayout(FlowLayout.CENTER, 40, 100));
 
         // Utilisation des blocs
-        centre.add(new Bloc("Résidences"));
-        centre.add(new Bloc("Étudiants"));
-        centre.add(new Bloc("Resto U"));
+        centre.add(new Block("Résidences"));
+        centre.add(new Block("Étudiants"));
+        centre.add(new Block("Resto U"));
 
         add(centre, BorderLayout.CENTER);
         setVisible(true);

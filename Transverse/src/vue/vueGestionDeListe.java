@@ -1,17 +1,17 @@
+package vue;
 import javax.swing.*;
 import java.awt.*;
+public class vueGestionDeListe extends  JFrame {
 
-public class vueGestionDeListe extends JFrame {
-
-    public PageGestionListe() {
+    public vueGestionDeListe() {
         setTitle("Gestion de liste");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Bande du haut déjà existante
-        add(new BandeHaut(), BorderLayout.NORTH);
+        // Bordereau déjà existante
+        add(new adminDashboard(), BorderLayout.NORTH);
 
         // Titre de la page
         JPanel panelTitre = new JPanel();
@@ -68,6 +68,6 @@ public class vueGestionDeListe extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new PageGestionListe().setVisible(true));
+        SwingUtilities.invokeLater(() -> new vueGestionDeListe().setVisible(true));
     }
 }
