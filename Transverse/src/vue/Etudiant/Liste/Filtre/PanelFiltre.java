@@ -1,4 +1,4 @@
-package vue.Etudiant.Liste;
+package vue.Etudiant.Liste.Filtre;
 
 import javax.swing.*;
 import java.awt.GridLayout;
@@ -24,7 +24,7 @@ public class PanelFiltre extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	PanelFiltre(ArrayList<Maison> alMaison){
+	public PanelFiltre(ArrayList<Maison> alMaison){
 		_label = new PanelFiltreLabel();
 		
 		add(_label);

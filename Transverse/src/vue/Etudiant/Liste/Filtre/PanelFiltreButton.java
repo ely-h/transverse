@@ -1,4 +1,4 @@
-package vue.Etudiant.Liste;
+package vue.Etudiant.Liste.Filtre;
 
 import javax.swing.*;
 import java.awt.GridLayout;
