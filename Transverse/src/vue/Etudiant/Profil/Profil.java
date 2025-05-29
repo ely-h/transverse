@@ -73,6 +73,7 @@ public class Profil extends JPanel{
 	public void openProfil() {
 		JFrame profil = new JFrame("Profil");
 		profil.setSize(700, 300);
+		profil.setResizable(false);
 		profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		profil.add(this);
 		profil.setVisible(true);
