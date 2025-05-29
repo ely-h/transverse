@@ -262,4 +262,23 @@ public class FactoryCIUP {
 	    listeMaisons.add(maison);
 	}
 	
+	public ArrayList<Maison> getListeMaisons() {
+	    if (listeMaisons == null) {
+	        listeMaisons = new ArrayList<Maison>();
+	    }
+	    return listeMaisons;
+	}
+
+	public void removeMaisonFromListe(Maison maison) {
+	    if (listeMaisons != null) {
+	        listeMaisons.remove(maison);
+	    }
+	}
+
+	public void clearListeMaisons() {
+	    if (listeMaisons != null) {
+	        listeMaisons.clear();
+	    }
+	}
+	
 }
