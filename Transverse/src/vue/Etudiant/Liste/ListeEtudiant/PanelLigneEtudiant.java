@@ -39,7 +39,7 @@ public class PanelLigneEtudiant extends JPanel{
 		_pays = new PanelPays(e0.get_saNationnalite().getNom());
 		_annee = new PanelAnnee(e0.get_anneeEtude());
 		_etudiant = e0;
-		_profil = new Profil(e0, "img/example.jpg");
+		_profil = new Profil(e0);
 		
 		_lbp = new ListenerBoutonProfil();
 		 

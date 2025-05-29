@@ -20,7 +20,7 @@ public class Profil extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public Profil(Etudiant e0, String imgPath) throws IOException{
+	public Profil(Etudiant e0) throws IOException{
 		String logement;
 		
 		if (e0.get_saMaison() == null)
@@ -36,7 +36,7 @@ public class Profil extends JPanel{
 				e0.get_saNationnalite().getNom(),
 				logement
 				);
-		_pPhoto = new PanelPhotoButtonModif(imgPath);
+		_pPhoto = new PanelPhotoButtonModif(e0.getPathImg());
 		
 		add(_pPhoto);
 		add(_pInfo);
@@ -57,7 +57,7 @@ public class Profil extends JPanel{
 			profil.setSize(700, 300);
 			profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-			Profil p = new Profil (facto.getLesEtudiants().get(1), "img/example.jpg");
+			Profil p = new Profil (facto.getLesEtudiants().get(1));
 			
 			profil.add(p);
 			profil.setVisible(true);
