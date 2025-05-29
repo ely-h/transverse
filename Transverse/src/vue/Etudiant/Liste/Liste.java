@@ -21,7 +21,7 @@ public class Liste extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	Liste(ArrayList<Maison> alMaison, ArrayList<Etudiant> alEtu){
+	public Liste(ArrayList<Maison> alMaison, ArrayList<Etudiant> alEtu){
 		_pFiltre = new PanelFiltre(alMaison);
 		_pListeEtu = new PanelListeEtudiant(alEtu);
 		

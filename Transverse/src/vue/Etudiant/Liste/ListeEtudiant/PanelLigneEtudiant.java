@@ -2,11 +2,13 @@ package vue.Etudiant.Liste.ListeEtudiant;
 
 import javax.swing.*;
 import java.awt.GridLayout;
+import java.io.IOException;
 
 import modele.Etudiant;
 import modele.FactoryCIUP;
 import controller.Etudiant.ListenerBoutonProfil;
 import vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData.*;
+import vue.Etudiant.Profil.Profil;
 
 public class PanelLigneEtudiant extends JPanel{
 
@@ -19,21 +21,26 @@ public class PanelLigneEtudiant extends JPanel{
 	private PanelPays _pays;
 	private PanelAnnee _annee;
 	private ListenerBoutonProfil _lbp;
+	private Etudiant _etudiant;
+	private Profil _profil;
 	
 	//---------------
 	//ACCESSEUR
 	//---------------
+	public Etudiant getEtudiant() {return _etudiant;}
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	
-	PanelLigneEtudiant(Etudiant e0){
+	PanelLigneEtudiant(Etudiant e0) throws IOException{
 		_button = new PanelButton();
 		_nom = new PanelNom(e0.get_nom());
 		_prenom = new PanelPrenom(e0.get_prenom());
 		_pays = new PanelPays(e0.get_saNationnalite().getNom());
 		_annee = new PanelAnnee(e0.get_anneeEtude());
+		_etudiant = e0;
+		_profil = new Profil(e0, "img/example.jpg");
 		
 		_lbp = new ListenerBoutonProfil();
 		 
@@ -76,8 +83,9 @@ public class PanelLigneEtudiant extends JPanel{
 	//MAIN
 	//---------------
 	public static void main(String[] arg) {
-		FactoryCIUP facto = FactoryCIUP.getInstance();
-		facto.CreationObjets();
+		try {
+			FactoryCIUP facto = FactoryCIUP.getInstance();
+			facto.CreationObjets();
 		
 			JFrame liste = new JFrame("liste");
 			liste.setSize(500, 100);
@@ -87,10 +95,15 @@ public class PanelLigneEtudiant extends JPanel{
 			
 			liste.add(ple);
 			liste.setVisible(true);
-			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//---------------
 	//METHODE
 	//---------------
+	public void displayProfil() {
+		_profil.openProfil();
+	}
 }

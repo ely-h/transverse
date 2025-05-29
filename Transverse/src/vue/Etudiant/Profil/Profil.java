@@ -20,7 +20,7 @@ public class Profil extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	Profil(Etudiant e0, String imgPath) throws IOException{
+	public Profil(Etudiant e0, String imgPath) throws IOException{
 		String logement;
 		
 		if (e0.get_saMaison() == null)
@@ -79,6 +79,18 @@ public class Profil extends JPanel{
 			e.printStackTrace();
 		}
 	}
+	
+	//---------------
+	//METHODE
+	//---------------
+	public void openProfil() {
+		JFrame profil = new JFrame("Profil");
+		profil.setSize(700, 300);
+		profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		profil.add(this);
+		profil.setVisible(true);
+	}
+	
 	
 	//---------------
 	//TO DO
