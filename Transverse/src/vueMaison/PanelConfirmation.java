@@ -13,6 +13,8 @@ public class PanelConfirmation extends JPanel {
 	
 	 public PanelConfirmation(List<Maison> selectedMaisons) {
 		 initializeComponents();
+		 setupLayout();
+		 affichageSelection();
 	     this.selectedMaisons = selectedMaisons;
 	 }
 	 
@@ -38,5 +40,52 @@ public class PanelConfirmation extends JPanel {
         btnValider.setForeground(Color.WHITE);
         btnRetour.setBackground(new Color(158, 158, 158));
         btnRetour.setForeground(Color.WHITE);
+    }
+    
+    private void setupLayout() {
+        setLayout(new BorderLayout(20, 20));
+        setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        // Panel titre
+        JPanel titlePanel = new JPanel();
+        titlePanel.add(titleLabel);
+        
+        // Panel liste maison selectionné
+        JPanel centerPanel = new JPanel(new BorderLayout());
+        JLabel instructionLabel = new JLabel("Maisons sélectionnées :");
+        instructionLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        centerPanel.add(instructionLabel, BorderLayout.NORTH);
+        
+        JScrollPane scrollPane = new JScrollPane(selectedHousesArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        centerPanel.add(scrollPane, BorderLayout.CENTER);
+        
+        //Boutons
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        buttonPanel.add(btnRetour);
+        buttonPanel.add(btnValider);
+        
+        //Ajout boutons au panel principal
+        add(titlePanel, BorderLayout.NORTH);
+        add(centerPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+    }
+    
+    private void affichageSelection() {
+        if (selectedMaisons == null || selectedMaisons.isEmpty()) {
+            selectedHousesArea.setText("Aucune maison sélectionnée.");
+            return;
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombre de maisons sélectionnées : ").append(selectedMaisons.size()).append("\n\n");
+        
+        for (int i = 0; i < selectedMaisons.size(); i++) {
+            Maison maison = selectedMaisons.get(i);
+            sb.append((i + 1)).append(". ").append(maison.getNom()).append("\n");
+        }
+        
+        selectedHousesArea.setText(sb.toString());
+        selectedHousesArea.setCaretPosition(0);
     }
 }
