@@ -255,5 +255,11 @@ public class FactoryCIUP {
 		return lesFiltres;
 	}
 	
-
+	public void addMaisonToListe(Maison maison) {
+	    if (listeMaisons == null) {
+	        listeMaisons = new ArrayList<Maison>();
+	    }
+	    listeMaisons.add(maison);
+	}
+	
 }
