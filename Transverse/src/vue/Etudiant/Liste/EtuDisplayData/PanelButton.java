@@ -14,6 +14,8 @@ public class PanelButton extends JPanel{
 	//---------------
 	//ACCESSEUR
 	//---------------
+	public JButton getButton() {return _button;}
+	
 	
 	//---------------
 	//CONSTRUCTEUR

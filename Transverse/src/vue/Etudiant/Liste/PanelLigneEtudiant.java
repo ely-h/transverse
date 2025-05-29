@@ -1,6 +1,9 @@
 package vue.Etudiant.Liste;
 
 import javax.swing.*;
+
+import controller.Etudiant.ListenerBoutonProfil;
+
 import java.awt.GridLayout;
 import java.io.IOException;
 
@@ -18,11 +21,14 @@ public class PanelLigneEtudiant extends JPanel{
 	private PanelPrenom _prenom;
 	private PanelPays _pays;
 	private PanelAnnee _annee;
+	private int _numEtu;
+	private ListenerBoutonProfil _lbp;
 	
 	
 	//---------------
 	//ACCESSEUR
 	//---------------
+	public int getNumEtu() {return _numEtu;}
 	
 	//---------------
 	//CONSTRUCTEUR
@@ -33,7 +39,13 @@ public class PanelLigneEtudiant extends JPanel{
 		_prenom = new PanelPrenom(prenom);
 		_pays = new PanelPays(pays);
 		_annee = new PanelAnnee(annee);
+		_numEtu = 0;
 		
+		
+		 _lbp = new ListenerBoutonProfil();
+		 
+		 _button.getButton().addActionListener(_lbp);
+		 
 		add(_button);
 		add(_nom);
 		add(_prenom);
