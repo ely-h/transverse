@@ -76,16 +76,16 @@ public class FactoryCIUP {
 		 * ------------------------------ 
 		 */
 		
-		Etudiant etudiant1=new Etudiant("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES, "img/RonaldoDicaprio.jpg");
-		Etudiant etudiant2=new Etudiant("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR, "img/LarryTocrate.jpg");
-		Etudiant etudiant3=new Etudiant("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN, "img/YasmineAny.jpg");
-        Etudiant etudiant4 = new Etudiant("Akira", "Tanaka", "akira.tanaka@gmail.com", 4, JP, "img/AkiraTanaka.jpg");
-        Etudiant etudiant5 = new Etudiant("Minji", "Kim", "minji.kim@naver.com", 2, KR, "img/MinjiKim.jpg");
-        Etudiant etudiant6 = new Etudiant("Sophie", "Dupont", "sophie.dupont@gmail.com", 3, FR, "img/SophieDupont.jpg");
-        Etudiant etudiant7 = new Etudiant("Carlos", "Gomez", "carlos.gomez@yahoo.es", 1, ES, "img/CarlosGomez.jpg");
-        Etudiant etudiant8 = new Etudiant("Aya", "Nakamura", "aya.nakamura@gmail.com", 5, JP, "img/AyaNakamura.jpg");
-        Etudiant etudiant9 = new Etudiant("Amir", "Ben Ali", "amir.benali@yahoo.fr", 2, TN, "img/AmirBenAli.jpg");
-        Etudiant etudiant10 = new Etudiant("Junho", "Lee", "junho.lee@naver.com", 4, KR, "img/JunhoLee.jpg");
+		Etudiant etudiant1=new Etudiant("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES, "img/Etudiants/RonaldoDicaprio.jpg");
+		Etudiant etudiant2=new Etudiant("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR, "img/Etudiants/LarryTocrate.jpg");
+		Etudiant etudiant3=new Etudiant("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN, "img/Etudiants/YasmineAny.jpg");
+        Etudiant etudiant4 = new Etudiant("Akira", "Tanaka", "akira.tanaka@gmail.com", 4, JP, "img/Etudiants/AkiraTanaka.jpg");
+        Etudiant etudiant5 = new Etudiant("Minji", "Kim", "minji.kim@naver.com", 2, KR, "img/Etudiants/MinjiKim.jpg");
+        Etudiant etudiant6 = new Etudiant("Sophie", "Dupont", "sophie.dupont@gmail.com", 3, FR, "img/Etudiants/SophieDupont.jpg");
+        Etudiant etudiant7 = new Etudiant("Carlos", "Gomez", "carlos.gomez@yahoo.es", 1, ES, "img/Etudiants/CarlosGomez.jpg");
+        Etudiant etudiant8 = new Etudiant("Aya", "Nakamura", "aya.nakamura@gmail.com", 5, JP, "img/Etudiants/AyaNakamura.jpg");
+        Etudiant etudiant9 = new Etudiant("Amir", "Ben Ali", "amir.benali@yahoo.fr", 2, TN, "img/Etudiants/AmirBenAli.jpg");
+        Etudiant etudiant10 = new Etudiant("Junho", "Lee", "junho.lee@naver.com", 4, KR, "img/Etudiants/JunhoLee.jpg");
         
 		maisonEspagne.addEtudiant(etudiant1);
 		maisonFrance.addEtudiant(etudiant2);
