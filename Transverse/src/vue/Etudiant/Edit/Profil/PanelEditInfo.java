@@ -1,19 +1,21 @@
-package vue.Etudiant.Edit.Profil.EditInfo;
+package vue.Etudiant.Edit.Profil;
 
 import java.awt.GridLayout;
 import javax.swing.*;
+
+import vue.Etudiant.Component.*;
 
 public class PanelEditInfo extends JPanel {
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelModification _pNom;
-	private PanelModification _pPrenom;
-	private PanelModification _pMail;
-	private PanelModification _pAnnee;
-	private PanelModification _pNationalitee;
-	private PanelModification _pLogement;
+	private ComponentTextField _pNom;
+	private ComponentTextField _pPrenom;
+	private ComponentTextField _pMail;
+	private ComponentTextField _pAnnee;
+	private ComponentTextField _pNationalitee;
+	private ComponentTextField _pLogement;
 	
 	//---------------
 	//ACCESSEUR
@@ -22,13 +24,13 @@ public class PanelEditInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public PanelEditInfo(){
-		_pNom = new PanelModification("Nom :");
-		_pPrenom = new PanelModification("Prénom :");
-		_pMail = new PanelModification("Mail :");
-		_pAnnee = new PanelModification("Année Étude :");
-		_pNationalitee = new PanelModification("Nationalitée :");
-		_pLogement = new PanelModification("Logement :");
+	protected PanelEditInfo(){
+		_pNom = new ComponentTextField("Nom :");
+		_pPrenom = new ComponentTextField("Prénom :");
+		_pMail = new ComponentTextField("Mail :");
+		_pAnnee = new ComponentTextField("Année Étude :");
+		_pNationalitee = new ComponentTextField("Nationalitée :");
+		_pLogement = new ComponentTextField("Logement :");
 		
 		add(_pNom);
 		add(_pPrenom);

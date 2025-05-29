@@ -1,16 +1,18 @@
-package vue.Etudiant.Profil.Panels.Photo;
+package vue.Etudiant.Profil;
 
 import java.awt.GridLayout;
 import java.io.IOException;
 import javax.swing.*;
+
+import vue.Etudiant.Component.*;
 
 public class PanelPhotoButtonModif extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelPhoto _pPhoto;
-	private ButtonModification _pbutton;
+	private ComponentPhoto _pPhoto;
+	private ComponentButton _pbutton;
 	
 	//---------------
 	//ACCESSEUR
@@ -19,9 +21,9 @@ public class PanelPhotoButtonModif extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public PanelPhotoButtonModif(String imgPath)throws IOException{
-		_pPhoto = new PanelPhoto(imgPath);
-		_pbutton = new ButtonModification();
+	protected PanelPhotoButtonModif(String imgPath)throws IOException{
+		_pPhoto = new ComponentPhoto(imgPath);
+		_pbutton = new ComponentButton("Modifier");
 		
 		add(_pPhoto);
 		add(_pbutton);

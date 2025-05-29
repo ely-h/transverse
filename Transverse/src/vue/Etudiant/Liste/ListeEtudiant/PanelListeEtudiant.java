@@ -8,15 +8,6 @@ import java.util.*;
 import modele.Etudiant;
 
 public class PanelListeEtudiant extends JPanel{
-
-	//---------------
-	//ATTRIBUTS
-	//---------------
-	
-	//---------------
-	//ACCESSEUR
-	//---------------
-	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
@@ -28,20 +19,4 @@ public class PanelListeEtudiant extends JPanel{
 		
 		setLayout(new GridLayout(_lE.size(),1));
 	}
-	
-	//---------------
-	//MAIN
-	//---------------
-	
-	//---------------
-	//METHODE
-	//---------------
-	
-	//---------------
-	//TO DO
-	//---------------
-	/* Créer la liste en récupérant le nombre d'étudiant d'une liste donnée
-	 * Créer un PanelLigneEtudiant par Etudiant la liste
-	 * 
-	 */
-	}
+}

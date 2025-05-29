@@ -1,6 +1,5 @@
-package vue.Etudiant.Profil.Panels.Photo;
+package vue.Etudiant.Component;
 
-import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import javax.swing.*;
 import java.awt.Image;
@@ -9,7 +8,7 @@ import javax.imageio.*;
 import java.io.File;
 import java.io.IOException;
 
-public class PanelPhoto extends JPanel {
+public class ComponentPhoto extends JPanel  {
 
 	//---------------
 	//ATTRIBUTS
@@ -20,7 +19,7 @@ public class PanelPhoto extends JPanel {
 	//CONSTRUCTEUR
 	//---------------
 	
-	PanelPhoto(String val) throws IOException{
+	public ComponentPhoto(String val) throws IOException{
 		BufferedImage bufferedImg = ImageIO.read(new File(val));
 		Image imgName = bufferedImg.getScaledInstance (200, 150, Image.SCALE_DEFAULT);
 		
@@ -29,28 +28,4 @@ public class PanelPhoto extends JPanel {
 		this.setLayout(new BorderLayout());
 		this.add(_pPhoto, BorderLayout.CENTER);
 	}
-	
-	//---------------
-	//MAIN
-	//---------------
-	public static void main (String arg[]) {
-		try {
-		JFrame frame = new JFrame ("Frame");
-		frame.setSize(250, 250);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		PanelPhoto p = new PanelPhoto("img/example.jpg");
-		
-		frame.add(p);
-		
-		frame.setVisible(true);
-		
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	//---------------
-	//METHODES
-	//---------------
-	
 }

@@ -1,19 +1,21 @@
-package vue.Etudiant.Profil.Panels.Info;
+package vue.Etudiant.Profil;
 
 import java.awt.GridLayout;
 import javax.swing.*;
+
+import vue.Etudiant.Component.ComponentInfo;
 
 public class PanelInfo extends JPanel {
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelNom _pNom;
-	private PanelPrenom _pPrenom;
-	private PanelMail _pMail;
-	private PanelAnneeEtude _pAnnee;
-	private PanelNationalitee _pNationalitee;
-	private PanelLogement _pLogement;
+	private ComponentInfo _pNom;
+	private ComponentInfo _pPrenom;
+	private ComponentInfo _pMail;
+	private ComponentInfo _pAnnee;
+	private ComponentInfo _pNationalitee;
+	private ComponentInfo _pLogement;
 	
 	//---------------
 	//ACCESSEUR
@@ -22,13 +24,13 @@ public class PanelInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public PanelInfo(String nom, String prenom, String mail, int annee, String nationalitee, String logement){
-		_pNom = new PanelNom(nom);
-		_pPrenom = new PanelPrenom(prenom);
-		_pMail = new PanelMail(mail);
-		_pAnnee = new PanelAnneeEtude(annee);
-		_pNationalitee = new PanelNationalitee(nationalitee);
-		_pLogement = new PanelLogement(logement);
+	protected PanelInfo(String nom, String prenom, String mail, int annee, String nationalite, String logement){
+		_pNom = new ComponentInfo("Nom", nom);
+		_pPrenom = new ComponentInfo("Prénom", prenom);
+		_pMail = new ComponentInfo("Mail", mail);
+		_pAnnee = new ComponentInfo("Année Étude", annee);
+		_pNationalitee = new ComponentInfo("Nationalite", nationalite);
+		_pLogement = new ComponentInfo("Logement", logement);
 		
 		add(_pNom);
 		add(_pPrenom);
