@@ -25,8 +25,7 @@ public class VueMenuRestoUParCategorie extends JPanel {
 		
 			imgCategorie=new JLabel(new ImageIcon(imgCat));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			imgCategorie=new JLabel(new ImageIcon("img/placeholder-food.png"));
 		}
 		
 		

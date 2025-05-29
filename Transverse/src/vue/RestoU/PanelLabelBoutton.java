@@ -24,5 +24,9 @@ public class PanelLabelBoutton extends JPanel{
 		
 		this.setLayout(new GridLayout(2,1));
 	}
+	
+	public JButton getBoutton() {
+		return bouttonChoisir;
+	}
 
 }

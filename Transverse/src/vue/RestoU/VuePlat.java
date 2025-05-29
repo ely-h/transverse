@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import controller.RestoU.EcouteurPlat;
 import modele.*;
 
 public class VuePlat extends JPanel{
@@ -20,11 +21,10 @@ public class VuePlat extends JPanel{
 	public VuePlat(Plat lePlat) {
 		BufferedImage bufferedImg;
 		try {
-			bufferedImg = ImageIO.read(new File("img/"+lePlat.getNomDuPlat()+".jpg"));
+			bufferedImg = ImageIO.read(new File("img/"+lePlat.getNomDuPlat()+".png"));
 			Image imgPlat=bufferedImg.getScaledInstance(300,250, Image.SCALE_DEFAULT);
 			image=new JLabel(new ImageIcon(imgPlat));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			image=new JLabel(new ImageIcon("img/pizza.jpg"));
 			System.out.println("L'image du plat "+lePlat.getNomDuPlat()+" n'a pas été trouvée");
 		}
@@ -41,6 +41,7 @@ public class VuePlat extends JPanel{
 	    
 	    this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY,3));
 		
+	    this.nomEtBoutton.getBoutton().addActionListener(new EcouteurPlat(lePlat));
 		
 	}
 	
