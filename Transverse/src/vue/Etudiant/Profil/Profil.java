@@ -2,8 +2,6 @@ package vue.Etudiant.Profil;
 
 import modele.Etudiant;
 import modele.FactoryCIUP;
-import vue.Etudiant.Profil.Panels.Info.PanelInfo;
-import vue.Etudiant.Profil.Panels.Photo.PanelPhotoButtonModif;
 
 import java.awt.GridLayout;
 import javax.swing.*;

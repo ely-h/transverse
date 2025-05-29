@@ -2,8 +2,6 @@ package vue.Etudiant.Edit.Profil;
 
 import modele.Etudiant;
 import modele.FactoryCIUP;
-import vue.Etudiant.Edit.Profil.EditInfo.*;
-import vue.Etudiant.Edit.Profil.EditPhoto.*;
 
 import java.awt.GridLayout;
 import javax.swing.*;

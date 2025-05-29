@@ -7,19 +7,19 @@ import java.io.IOException;
 import modele.Etudiant;
 import modele.FactoryCIUP;
 import controller.Etudiant.ListenerBoutonProfil;
-import vue.Etudiant.Liste.ListeEtudiant.EtuDisplayData.*;
 import vue.Etudiant.Profil.Profil;
+import vue.Etudiant.Component.*;
 
 public class PanelLigneEtudiant extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelButton _button;
-	private PanelNom _nom;
-	private PanelPrenom _prenom;
-	private PanelPays _pays;
-	private PanelAnnee _annee;
+	private ComponentButton _button;
+	private ComponentInfo _nom;
+	private ComponentInfo _prenom;
+	private ComponentInfo _pays;
+	private ComponentInfo _annee;
 	private ListenerBoutonProfil _lbp;
 	private Etudiant _etudiant;
 	private Profil _profil;
@@ -33,11 +33,11 @@ public class PanelLigneEtudiant extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	PanelLigneEtudiant(Etudiant e0) throws IOException{
-		_button = new PanelButton();
-		_nom = new PanelNom(e0.get_nom());
-		_prenom = new PanelPrenom(e0.get_prenom());
-		_pays = new PanelPays(e0.get_saNationnalite().getNom());
-		_annee = new PanelAnnee(e0.get_anneeEtude());
+		_button = new ComponentButton("Profil");
+		_nom = new ComponentInfo(e0.get_nom());
+		_prenom = new ComponentInfo(e0.get_prenom());
+		_pays = new ComponentInfo(e0.get_saNationnalite().getNom());
+		_annee = new ComponentInfo(e0.get_anneeEtude());
 		_etudiant = e0;
 		_profil = new Profil(e0);
 		

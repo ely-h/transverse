@@ -1,21 +1,19 @@
-package vue.Etudiant.Liste.Filtre;
+package vue.Etudiant.Liste;
 
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.util.*;
 
 import modele.Maison;
-import modele.MaisonInternationale;
-import modele.Nationnalite;
-import vue.Etudiant.Profil.Profil;
 import modele.FactoryCIUP;
+import vue.Etudiant.Component.*;
 
 public class PanelFiltre extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private PanelFiltreLabel _label;
+	private ComponentInfo _label;
 	
 	//---------------
 	//ACCESSEUR
@@ -25,12 +23,12 @@ public class PanelFiltre extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	public PanelFiltre(ArrayList<Maison> alMaison){
-		_label = new PanelFiltreLabel();
+		_label = new ComponentInfo("Filtre");
 		
 		add(_label);
 		
 		for (int i=0; i < alMaison.size(); i++) {
-			PanelFiltreButton _button = new PanelFiltreButton(alMaison.get(i).getNationalite().getNom());
+			ComponentButton _button = new ComponentButton(alMaison.get(i).getNationalite().getNom());
 			add(_button);
 		}
 		
