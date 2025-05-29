@@ -8,6 +8,7 @@ public class FactoryCIUP {
 	private ArrayList<Maison> listeMaisons;
 	private ArrayList<Etudiant> lesEtudiants;
 	private ArrayList<Etudiant> listeAttente;
+	private ArrayList<String> lesFiltres;
 	
 	private ArrayList<MenuRestoUParCategorie> lesCategories;
 	
@@ -166,11 +167,17 @@ public class FactoryCIUP {
         Plat extra2 = new Plat("Pizza Margherita", ingredientsPizza, "Calories: 650 kcal");
 
         // Ajout d'allergènes et d'étiquettes aux plats
+        this.lesFiltres=new ArrayList<Allergene>();
         Allergene allergeneLactose = new Allergene("Lactose");
+        this.lesFiltres.add(allergeneLactose.getNom());
         Allergene allergeneGluten = new Allergene("Gluten");
+        
         Etiquette etiquetteVegetarien = new Etiquette("Végétarien");
         Etiquette etiquetteSansGluten = new Etiquette("Sans gluten");
 
+        this.lesFiltres.add(etiquetteSansGluten.getNom());
+        this.lesFiltres.add(etiquetteVegetarien.getNom());
+        
         entree1.addEtiquette(etiquetteSansGluten);
         entree1.addAllergene(allergeneLactose);
 
@@ -254,6 +261,10 @@ public class FactoryCIUP {
 	
 	public ArrayList<Etudiant> getLesEtudiants(){
 		return lesEtudiants;
+	}
+	
+	public ArrayList<String> getLesFiltres(){
+		return lesFiltres;
 	}
 	
 
