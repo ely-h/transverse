@@ -103,12 +103,19 @@ public class VueAjoutMaisonListe extends JPanel{
     public List<PanelSelection> getSelectionPanels() {
 		return selectionPanels;
 	}
-
+    
+	public JButton getBtnConfirm() {
+		return btnConfirm;
+	}
+	
 	public static void main(String[] args) {
         JFrame fenetre = new JFrame("Calcul Perimètre");
         fenetre.setSize(700, 700);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fenetre.add(new VueAjoutMaisonListe());
+        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+        fenetre.add(vueAjout);
+        EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetre);
+        vueAjout.getBtnConfirm().addActionListener(ecouteur);
         fenetre.setVisible(true);
     }
 }

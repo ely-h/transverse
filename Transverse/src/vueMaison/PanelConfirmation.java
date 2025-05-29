@@ -12,10 +12,10 @@ public class PanelConfirmation extends JPanel {
 	private List<Maison> selectedMaisons;
 	
 	 public PanelConfirmation(List<Maison> selectedMaisons) {
+	     this.selectedMaisons = selectedMaisons;
 		 initializeComponents();
 		 setupLayout();
 		 affichageSelection();
-	     this.selectedMaisons = selectedMaisons;
 	 }
 	 
     private void initializeComponents() {
@@ -87,5 +87,23 @@ public class PanelConfirmation extends JPanel {
         
         selectedHousesArea.setText(sb.toString());
         selectedHousesArea.setCaretPosition(0);
+    }
+
+	public JButton getBtnRetour() {
+		return btnRetour;
+	}
+
+	public JButton getBtnValider() {
+		return btnValider;
+	}
+
+	public List<Maison> getSelectedMaisons() {
+		return selectedMaisons;
+	}
+	
+    //mettre à jour la liste des maisons sélectionnées
+    public void updateSelectedMaisons(List<Maison> newSelectedMaisons) {
+        this.selectedMaisons = newSelectedMaisons;
+        affichageSelection();
     }
 }
