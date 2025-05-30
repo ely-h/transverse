@@ -4,8 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+/**
+ * Fenêtre principale du tableau de bord administratif.
+ */
+
 public class vueDashboard extends JFrame {
-    public vueDashboard() {
+   
+	/**
+     * Construit la fenêtre principale du dashboard.
+     * Initialise les différents composants de l'interface.
+     */
+	
+	public vueDashboard() {
         setTitle("Admin Dashboard");
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,6 +44,11 @@ public class vueDashboard extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Point d'entrée de l'application.
+     * @param args Arguments de la ligne de commande
+     */
+	
     public static void main(String[] args) {
         new vueDashboard();
     }

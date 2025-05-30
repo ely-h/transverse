@@ -7,9 +7,18 @@ import java.awt.*;
  * Classe des blocs pour les éléments Résidences, Resto U et Étudiants
  * --------------------------------------------------------
  */
+/**
+ * Panel représentant un bloc de menu avec un titre et un bouton.
+ */
+
 public class panelBlockMenu extends JPanel {
 
     private JButton bouton;
+    
+    /**
+     * Construit un bloc de menu.
+     * @param titre Le titre à afficher dans le bloc
+     */
 
     public panelBlockMenu(String titre) {
         setPreferredSize(new Dimension(200, 150));
