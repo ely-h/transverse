@@ -4,17 +4,17 @@ import vue.panelNavigationBar;
 import javax.swing.*;
 import java.awt.*;
 
-public class vueGestionDeListe extends JFrame {
+public class vueGestionDeListe extends JPanel {
 
     public vueGestionDeListe() {
-        setTitle("Gestion de liste");
-        setSize(800, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout());
+//        setTitle("Gestion de liste");
+//        setSize(800, 600);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setLocationRelativeTo(null);
+//        setLayout(new BorderLayout());
 
         // Bandeau du haut
-        add(new adminDashboard(), BorderLayout.NORTH);
+        add(new adminDashboard(null), BorderLayout.NORTH);
 
         // Panel global central
         JPanel contenuCentral = new JPanel();

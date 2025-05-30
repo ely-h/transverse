@@ -59,12 +59,12 @@ public class adminDashboard extends JPanel {
     public void actionPerformed(ActionEvent e) */{
     	listener.changeVers("Residences");
     });
-    btnEtudiants.addActionListener(e ->{
-    	listener.changeVers("Etudiants");
-    });
-    btnRestoU.addActionListener(e ->{
-    	listener.changeVers("RestoU");
-    });
+//    btnEtudiants.addActionListener(e ->{
+//    	listener.changeVers("Etudiants");
+//    });
+//    btnRestoU.addActionListener(e ->{
+//    	listener.changeVers("RestoU");
+//    });
 
     Dimension btnSize = new Dimension(120, 30);
     btnResidences.setPreferredSize(btnSize);

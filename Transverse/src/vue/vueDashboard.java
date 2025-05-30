@@ -14,7 +14,7 @@ public class vueDashboard extends JFrame {
 
         // ---- BORDEREAU AVEC SELECTEUR ----
         JPanel topPanel = new JPanel(new BorderLayout());
-        topPanel.add(new adminDashboard(), BorderLayout.NORTH);
+        topPanel.add(new adminDashboard(null), BorderLayout.NORTH);
 
         add(topPanel, BorderLayout.NORTH);
 

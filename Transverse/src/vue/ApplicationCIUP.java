@@ -28,16 +28,19 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
         setUpComponents();
         
         this.panelEntier.add(panelCentral,BorderLayout.CENTER);
-        this.panelEntier.add(new blocPanel(),BorderLayout.NORTH);
+        this.panelEntier.add(new adminDashboard(this),BorderLayout.NORTH);
+        
+        this.add(panelEntier);
     }
     
     private void setUpComponents(){
+    	
     	cardLayout=new CardLayout();
     	this.panelCentral=new JPanel(cardLayout);
-    	this.panelCentral.add(new blocPanel(),"Accueil");
-    	this.panelCentral.add(new VueAjoutMaisonListe(this),"Residences");
-    	this.panelCentral.add(new Etudiant(),"Etudiants");
-    	this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
+    	this.panelCentral.add(new blocPanel(this),"Accueil");
+    	this.panelCentral.add(new vueGestionDeListe(),"Residences");
+    	//this.panelCentral.add(new Etudiant(),"Etudiants");
+    	//this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
     	
     }
 

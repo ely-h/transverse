@@ -27,5 +27,9 @@ public class panelBlockMenu extends JPanel {
         add(label, BorderLayout.CENTER);
         add(bouton, BorderLayout.SOUTH);
     }
+    
+    public JButton getBouton() {
+    	return this.bouton;
+    }
 
 }
