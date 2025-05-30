@@ -1,13 +1,30 @@
-package vueMaison;
+package vue.listeMaison;
 import modele.FactoryCIUP;
 import javax.swing.*;
+
+import controller.listeMaison.EcouteurConfirmation;
+import controller.listeMaison.EcouteurToutSelect;
+
 import java.awt.*; 
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author elyssa
+ * 
+ * Vue principale pour la création d'une liste de maisons.
+ * 
+ * Cette classe permet à l'utilisateur de sélectionner des maisons parmi celles disponibles dans la factory CIUP pour créer une liste personnalisée.
+ * L'interface présente toutes les maisons disponibles avec des cases à cocher pour permettre la sélection multiple.
+ */
 public class VueAjoutMaisonListe extends JPanel{
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+
 	private JPanel panelMaisons;
     private JButton btnSelectAll;
     private JButton btnConfirm;
@@ -22,7 +39,18 @@ public class VueAjoutMaisonListe extends JPanel{
     private PanelSelection maisonTU;
     private PanelSelection maisonKR;
     
-    public VueAjoutMaisonListe() {
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+
+    
+    /**
+     * Constructeur de la vue d'ajout de maisons à la liste.
+     * Initialise tous les composants graphiques, charge les maisons depuis la factory
+     * et met en place la disposition visuelle avec les panels de sélection.
+     * Ajoute également l'écouteur pour le bouton "Tout sélectionner".
+     */
+    public VueAjoutMaisonListe(JFrame fenetre) {
         setLayout(new BorderLayout(20,20));
         selectionPanels = new ArrayList<>();
 
@@ -42,11 +70,6 @@ public class VueAjoutMaisonListe extends JPanel{
 			maisonTU = new PanelSelection(lesMaisons.get(3), lesMaisons.get(3).getNom(), "img/" + lesMaisons.get(3).getNom() );
 			maisonKR = new PanelSelection(lesMaisons.get(4), lesMaisons.get(4).getNom(), "img/" + lesMaisons.get(4).getNom() );
 			maisonInternationale = new PanelSelection(lesMaisons.get(5), lesMaisons.get(5).getNom(), "img/" + lesMaisons.get(5).getNom() ); 
-
-			/*maisonFR = new PanelSelection(lesMaisons.get(1), "Maison France", "img/maison-france");
-			maisonES = new PanelSelection(lesMaisons.get(2), "Maison Espagne", "img/maison-espagne");
-			maisonJP = new PanelSelection(lesMaisons.get(3), "Maison Japon", "img/maison-japon");
-			maisonTU = new PanelSelection(lesMaisons.get(4), "Maison Tunisie", "img/maison-tunisie");*/
 			
             selectionPanels.add(maisonInternationale);
             selectionPanels.add(maisonFR);
@@ -54,11 +77,6 @@ public class VueAjoutMaisonListe extends JPanel{
             selectionPanels.add(maisonJP);
             selectionPanels.add(maisonTU);
             selectionPanels.add(maisonKR);
-
-            /*selectionPanels.add(maisonFR);
-            selectionPanels.add(maisonES);
-            selectionPanels.add(maisonJP);
-            selectionPanels.add(maisonTU);*/
 			
 			for (PanelSelection panel : selectionPanels) {
 	            panelMaisons.add(panel);
@@ -68,7 +86,7 @@ public class VueAjoutMaisonListe extends JPanel{
 		}
         add(panelMaisons, BorderLayout.CENTER);
         
-        JPanel panelActions = new JPanel(); //new GridLayout(4,1)
+        JPanel panelActions = new JPanel();
         panelActions.setLayout(new BoxLayout(panelActions, BoxLayout.Y_AXIS));
         JLabel confirmation = new JLabel("Création de la liste");
         btnSelectAll = new JButton("Tout sélectionner");
@@ -90,15 +108,17 @@ public class VueAjoutMaisonListe extends JPanel{
         add(panelActions, BorderLayout.EAST);
         
         //ECOUTEURS
-        btnSelectAll.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (PanelSelection panel : selectionPanels) {
-                    panel.checkbox.setSelected(true);
-                }
-            }
-        });
+        EcouteurToutSelect ecouteurToutSelect = new EcouteurToutSelect(selectionPanels);
+        btnSelectAll.addActionListener(ecouteurToutSelect);
+        
+        EcouteurConfirmation ecouteur = new EcouteurConfirmation(this, fenetre);
+        btnConfirm.addActionListener(ecouteur);
     }
+    
+	//-------------------------
+	// GETTERS
+	//-------------------------
+
 
     public List<PanelSelection> getSelectionPanels() {
 		return selectionPanels;
@@ -108,14 +128,22 @@ public class VueAjoutMaisonListe extends JPanel{
 		return btnConfirm;
 	}
 	
+	/**
+	 * Méthode main pour tester la vue indépendamment.
+	 * Crée une fenêtre maximisée avec la vue d'ajout et son écouteur de confirmation.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
-        JFrame fenetre = new JFrame("Calcul Perimètre");
-        fenetre.setSize(700, 700);
+        JFrame fenetre = new JFrame("Création de la liste");
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        fenetre.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        fenetre.setSize(xSize,ySize);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe(fenetre);
         fenetre.add(vueAjout);
-        EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetre);
-        vueAjout.getBtnConfirm().addActionListener(ecouteur);
         fenetre.setVisible(true);
     }
 }
