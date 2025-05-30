@@ -30,7 +30,7 @@ public class PanelEditInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	protected PanelEditInfo(){
+	public PanelEditInfo(){
 		_pNom = new ComponentTextField("Nom :");
 		_pPrenom = new ComponentTextField("Prénom :");
 		_pMail = new ComponentTextField("Mail :");

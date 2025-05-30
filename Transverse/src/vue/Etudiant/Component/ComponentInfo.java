@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public class ComponentInfo extends JPanel {
 
-
 	//---------------
 	//ATTRIBUTS
 	//---------------
@@ -13,7 +12,7 @@ public class ComponentInfo extends JPanel {
 	private JLabel _valeur;
 	
 	//---------------
-	//CONSTRUCTEUR
+	//CONSTRUCTEURS
 	//---------------
 	public ComponentInfo(String val){
 		_valeur = new JLabel(val);

@@ -2,30 +2,33 @@ package vue.Etudiant;
 
 import javax.swing.*;
 
-import vue.Etudiant.Liste.Liste;
-import vue.Etudiant.Profil.Profil;
+import vue.Etudiant.MiseEnPage.*;
 
-public class Etudiant {
+public class Etudiant extends JFrame{
 
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	
-	//---------------
-	//ACCESSEUR
-	//---------------
+	private MainPane _panelMain;
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
+	public Etudiant() {
+		_panelMain = new MainPane();
+		
+		setSize(700, 300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(_panelMain);
+		setVisible(true);
+	}
 	
 	//---------------
 	//MAIN
 	//---------------
-	
-	//---------------
-	//METHODE
-	//---------------
+	public static void main(String[] arg) {
+		Etudiant etu = new Etudiant();
+	}
 	
 	//---------------
 	//TO DO
