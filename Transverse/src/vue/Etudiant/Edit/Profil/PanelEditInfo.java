@@ -39,7 +39,7 @@ public class PanelEditInfo extends JPanel {
 		add(_pNationalitee);
 		add(_pLogement);
 		
-		setLayout(new GridLayout(6,1));
+		setLayout(new GridLayout(6,1, 4,4));
 	}
 	
 	//---------------

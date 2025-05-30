@@ -28,6 +28,7 @@ public class PanelPhotoButtonModif extends JPanel{
 		add(_pPhoto);
 		add(_pbutton);
 		
-		setLayout(new GridLayout(2,1));
+		
+		setLayout(new GridLayout(2,1, 4, 4));
 	}
 }

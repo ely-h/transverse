@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.GridLayout;
 import java.io.IOException;
 
+import controller.Etudiant.Liste.ListenerBoutonProfil;
 import modele.Etudiant;
-import modele.FactoryCIUP;
-import controller.Etudiant.ListenerBoutonProfil;
 import vue.Etudiant.Profil.Profil;
 import vue.Etudiant.Component.*;
 

@@ -14,7 +14,12 @@ public class ComponentTextField extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	
+	public ComponentTextField(){ 
+		_valeur = new JTextField(20);
+		
+		add(_valeur);
+	}
+
 	public ComponentTextField(String type){ 
 		
 		_type = new JLabel(type);

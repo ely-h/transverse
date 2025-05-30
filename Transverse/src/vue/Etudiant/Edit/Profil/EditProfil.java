@@ -39,6 +39,7 @@ public class EditProfil extends JPanel{
 			
 			JFrame profil = new JFrame("Profil");
 			profil.setSize(700, 300);
+			profil.setResizable(false);
 			profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 			EditProfil p = new EditProfil (facto.getLesEtudiants().get(1));

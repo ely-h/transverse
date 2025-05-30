@@ -2,6 +2,9 @@ package vue.Etudiant;
 
 import javax.swing.*;
 
+import vue.Etudiant.Liste.Liste;
+import vue.Etudiant.Profil.Profil;
+
 public class Etudiant {
 
 	//---------------
