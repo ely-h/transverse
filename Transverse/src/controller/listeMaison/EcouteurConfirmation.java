@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import modele.Maison;
+import vue.ApplicationCIUP;
 import vue.listeMaison.PanelConfirmation;
 import vue.listeMaison.PanelSelection;
 import vue.listeMaison.VueAjoutMaisonListe;
@@ -73,10 +74,11 @@ public class EcouteurConfirmation implements ActionListener {
         panelConfirmation.getBtnValider().addActionListener(ecouteurValider);
         
         // Remplacer contenu de la fenêtre
-        fenetre.getContentPane().removeAll();
-        fenetre.add(panelConfirmation);
-        fenetre.revalidate();
-        fenetre.repaint();
+        if (fenetre instanceof ApplicationCIUP) {
+            ApplicationCIUP app = (ApplicationCIUP) fenetre;
+            app.getPanelCentral().add(panelConfirmation, "Confirmation");
+            app.changeVers("Confirmation");
+        }
     }
     
 	//-------------------------

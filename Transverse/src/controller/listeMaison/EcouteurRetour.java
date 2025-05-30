@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
+import vue.ApplicationCIUP;
 import vue.listeMaison.VueAjoutMaisonListe;
 
 /**
@@ -51,9 +52,9 @@ public class EcouteurRetour implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // Remettre la vueAjout dans la fenêtre principale
-        fenetre.getContentPane().removeAll();
-        fenetre.add(vueAjout);
-        fenetre.revalidate();
-        fenetre.repaint();
+    	if (fenetre instanceof ApplicationCIUP) {
+            ApplicationCIUP app = (ApplicationCIUP) fenetre;
+            app.changeVers("Residences");
+    	}
     }
 }

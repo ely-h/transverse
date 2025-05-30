@@ -56,5 +56,9 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
 		// TODO Auto-generated method stub
 		cardLayout.show(panelCentral, nomPanel);
 	}
+	
+	public JPanel getPanelCentral() {
+	    return panelCentral;
+	}
 
 }
