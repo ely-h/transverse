@@ -16,6 +16,8 @@ import controller.RestoU.EcouteurRetour;
 /**
  * Classe représentant la vue graphique des plats d'un menu RestoU
  * qui nous permet également de filtrer selon les allergènes
+ * 
+ * @author hassine
  */
 public class VueDUnMenu extends JPanel{
 	
@@ -49,6 +51,9 @@ public class VueDUnMenu extends JPanel{
 	/**
 	 * Constructeur de la classe VueDUnMenu.
 	 * Initialise l'affichage des plats, configure la ComboBox et initialise l'arraylist des filtres
+	 * 
+	 * @param leMenu Le menu qu'on veut afficher
+	 * 
 	 */
 	public VueDUnMenu(MenuRestoUParCategorie leMenu) {
 		this.leMenu=leMenu;

@@ -3,9 +3,18 @@ package vue;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Barre de navigation avec un bouton retour et un titre.
+ */
+
 public class panelNavigationBar extends JPanel {
     private JButton backButton;
     private JLabel titleLabel;
+    
+    /**
+     * Construit une barre de navigation.
+     * @param titre Le titre à afficher dans la barre
+     */  
 
     public panelNavigationBar(String titre) {
         setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -32,10 +41,19 @@ public class panelNavigationBar extends JPanel {
         //add(backButton);
         add(titleLabel);
     }
+    
+    /**
+     * @return Le bouton de retour
+     */
 
     public JButton getBackButton() {
         return backButton;
     }
+    
+    /**
+     * Modifie le titre de la barre.
+     * @param text Le nouveau texte à afficher
+     */
 
     public void setTitle(String text) {
         titleLabel.setText(text);

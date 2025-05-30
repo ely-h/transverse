@@ -12,14 +12,27 @@ import controller.listeMaison.EcouteurVoirListe;
 
 import java.awt.*;
 
+/**
+ * Panel pour la gestion des listes (création et visualisation).
+ */
+
 public class vueGestionDeListe extends JPanel {
 	
 	private JPanel contenuCentral;
     private JFrame fenetreParent;
     
+    /**
+     * Constructeur par défaut.
+     */
+    
     public vueGestionDeListe() {
         this(null);
     }
+    
+    /**
+     * Construit le panel de gestion de liste.
+     * @param fenetreParent La fenêtre parente
+     */
     
     public vueGestionDeListe(JFrame fenetreParent) {
     	this.fenetreParent = fenetreParent;
@@ -36,6 +49,10 @@ public class vueGestionDeListe extends JPanel {
         // Ajout du contenu central à la fenêtre
         add(contenuCentral, BorderLayout.CENTER);
     }
+    
+    /**
+     * Affiche le menu principal avec les options de création et visualisation.
+     */  
     
     private void afficherMenuPrincipal() {
         // Nettoyer le contenu actuel
@@ -72,6 +89,14 @@ public class vueGestionDeListe extends JPanel {
         contenuCentral.repaint();
     }
     
+    /**
+     * Crée un bloc de menu.
+     * @param titre Le titre du bloc
+     * @param texteBouton Le texte du bouton
+     * @param ecouteur L'écouteur d'événements pour le bouton
+     * @return Le panel créé
+     */
+    
     private JPanel creerBloc(String titre, String texteBouton, java.awt.event.ActionListener ecouteur) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setPreferredSize(new Dimension(180, 150));
@@ -94,6 +119,10 @@ public class vueGestionDeListe extends JPanel {
         return panel;
     }
     
+    /**
+     * Affiche l'interface de création de liste.
+     */
+    
     public void afficherVueCreation() {
         if (fenetreParent != null) {
             contenuCentral.removeAll();
@@ -114,6 +143,10 @@ public class vueGestionDeListe extends JPanel {
             contenuCentral.repaint();
         }
     }
+    
+    /**
+     * Affiche l'interface de visualisation de liste.
+     */
     
     public void afficherVueListe() {
         if (fenetreParent != null) {
@@ -136,12 +169,21 @@ public class vueGestionDeListe extends JPanel {
         }
     }
     
+    /**
+     * Retourne au menu principal.
+     */
+    
     public void retournerAuMenu() {
         if (fenetreParent != null) {
             fenetreParent.setTitle("Gestion de liste");
             afficherMenuPrincipal();
         }
     }
+    
+    /**
+     * Point d'entrée pour tester le panel de gestion.
+     * @param args Arguments de la ligne de commande
+     */
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

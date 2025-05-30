@@ -6,6 +6,9 @@ import vue.miseEnLienDesPages.PanelChangeListener;
 
 import java.awt.*;
 
+/**
+ * Panel contenant les blocs de menu pour les différentes sections.
+ */
 public class blocPanel extends JPanel {
 
     // Champs privés pour les blocs
@@ -14,10 +17,17 @@ public class blocPanel extends JPanel {
     private panelBlockMenu blocRestoU;
     
     private PanelChangeListener listener;
-
+    
+    /**
+     * Construit le panel contenant les blocs de menu.
+     * Initialise les blocs pour Résidences, Étudiants et Resto U.
+     */
     public blocPanel(PanelChangeListener listener) {
     	this.listener=listener;
-    	
+	}
+    
+    public blocPanel() {
+
         setLayout(new FlowLayout(FlowLayout.CENTER, 40, 60));
         setBackground(Color.WHITE);
 
@@ -43,14 +53,25 @@ public class blocPanel extends JPanel {
         });
     }
 
+    /**
+     * @return Le bloc des résidences
+     */
     // Getters simples 
     public panelBlockMenu getBlocResidences() {
         return blocResidences;
     }
+   
+    /**
+     * @return Le bloc des étudiants
+     */
 
     public panelBlockMenu getBlocEtudiants() {
         return blocEtudiants;
     }
+    
+    /**
+     * @return Le bloc du resto U
+     */
 
     public panelBlockMenu getBlocRestoU() {
         return blocRestoU;

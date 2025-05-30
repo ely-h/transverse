@@ -1,3 +1,6 @@
+/**
+ * Package contenant les classes d'interface utilisateur pour l'application d'administration.
+ */
 package vue;
 
 import javax.swing.*;
@@ -9,8 +12,15 @@ import java.awt.*;
 public class adminDashboard extends JPanel {
 	private PanelChangeListener listener;
 
+    /**
+     * Construit le tableau de bord de l'administrateur.
+     * Initialise les composants graphiques et leur disposition.
+     */
     public adminDashboard(PanelChangeListener listener) {
     	this.listener=listener;
+    }
+    public adminDashboard() {
+
         setLayout(new BorderLayout());
         setBackground(new Color(77, 111, 122)); // fond bleu-gris
 /*----------------------------------------------
