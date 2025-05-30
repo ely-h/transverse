@@ -18,9 +18,15 @@ public class PanelEditInfo extends JPanel {
 	private ComponentTextField _pLogement;
 	
 	//---------------
-	//ACCESSEUR
+	//GETTERS
 	//---------------
-	
+	public ComponentTextField getNom() {return _pNom;}
+	public ComponentTextField getPrenom() {return _pPrenom;}
+	public ComponentTextField getMail() {return _pMail;}
+	public ComponentTextField getAnnee() {return _pAnnee;}
+	public ComponentTextField getNationalitee() {return _pNationalitee;}
+	public ComponentTextField getLogement() {return _pLogement;}
+
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
@@ -45,4 +51,7 @@ public class PanelEditInfo extends JPanel {
 	//---------------
 	//METHODE
 	//---------------
+
+	
+	
 }

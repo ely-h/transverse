@@ -14,13 +14,21 @@ public class EditProfil extends JPanel{
 	//---------------
 	private PanelPhotoButtonModif _pPhoto;
 	private PanelEditInfo _pInfo;
-
+	private Etudiant _e0;
+	
+	//---------------
+	//ACCESSEUR
+	//---------------
+	public PanelEditInfo getEditInfo() {return _pInfo;}
+	public Etudiant getEtu() {return _e0;}
+	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	public EditProfil(Etudiant e0) throws IOException{
 		_pInfo = new PanelEditInfo();
 		_pPhoto = new PanelPhotoButtonModif(e0.getPathImg());
+		_e0 = e0;
 		
 		add(_pPhoto);
 		add(_pInfo);

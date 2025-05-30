@@ -12,6 +12,11 @@ public class ComponentTextField extends JPanel{
 	private JTextField _valeur;
 	
 	//---------------
+	//ACCESSEUR
+	//---------------
+	public JTextField getTextField() {return  _valeur;}
+	
+	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	public ComponentTextField(){ 

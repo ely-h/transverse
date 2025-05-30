@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.swing.*;
 
 import vue.Etudiant.Component.*;
+import controller.Etudiant.Edit.*;
 
 public class PanelPhotoButtonModif extends JPanel{
 
@@ -14,6 +15,7 @@ public class PanelPhotoButtonModif extends JPanel{
 	private ComponentPhoto _pPhoto;
 	private ComponentButton _pBSave;
 	private ComponentButton _pBChange;
+	private ListenerSave _lS;
 	
 	//---------------
 	//CONSTRUCTEUR
@@ -22,6 +24,10 @@ public class PanelPhotoButtonModif extends JPanel{
 		_pPhoto = new ComponentPhoto(imgPath);
 		_pBSave = new ComponentButton("Sauvegarder");
 		_pBChange = new ComponentButton("Modifié");
+		_lS = new ListenerSave();
+		
+		_pBSave.getButton().addActionListener(_lS);
+		
 		
 		/*Ecouteur pour _pBSave qui sauvegarderas les données dans les JTextFields et qui les
 		 * enregistras dans le modele
