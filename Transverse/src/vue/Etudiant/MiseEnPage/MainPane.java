@@ -12,7 +12,7 @@ public class MainPane extends JPanel{
 	//---------------
 	private CompsButtonTitle _cbtListe;
 	private CompsButtonTitle _cbtEtu;
-	
+
 	//---------------
 	//GETTERS
 	//---------------
@@ -37,12 +37,6 @@ public class MainPane extends JPanel{
 		jp2.add(jp1);
 		jp2.setLayout(new GridLayout(1,2, 15, 15));
 		
-		JLabel title = new JLabel("Gestion Étudiants");
-		title.setAlignmentX(CENTER_ALIGNMENT);
-		title.setAlignmentY(CENTER_ALIGNMENT);
-		title.setHorizontalTextPosition(SwingConstants.CENTER);
-		
-		//add(title);	il est pas centrer :(
 		add(jp2);
 		
 		setLayout(new GridLayout(2, 1, 2, 2));

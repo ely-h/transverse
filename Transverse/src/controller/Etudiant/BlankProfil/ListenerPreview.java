@@ -1,25 +1,28 @@
-package controller.Etudiant.Edit;
+package controller.Etudiant.BlankProfil;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
-import vue.Etudiant.Edit.Profil.*;
-import vue.Etudiant.Profil.Profil;
 import modele.Etudiant;
+import vue.Etudiant.Edit.Profil.EditProfil;
+import vue.Etudiant.Edit.Profil.PanelEditInfo;
+import vue.Etudiant.Edit.ProfilVierge.ProfilVierge;
+import vue.Etudiant.Profil.Profil;
 
-public class ListenerSave implements ActionListener{
-
+public class ListenerPreview implements ActionListener {
+	
 	//---------------
 	//ATTRIBUTS
 	//---------------
 	private JButton _buttonSRC;
-	private EditProfil _panelSRC;
+	private ProfilVierge _panelSRC;
 	private PanelEditInfo _panelInfo;
 	private JFrame _frameSRC;
-	private Etudiant _targetEtu;
-	private Profil _profil;
+	
+	private Etudiant _tempEtu;
+	private Profil _tempProfil;
 	private String _nom;
 	private String _prenom;
 	private String _mail;
@@ -27,30 +30,31 @@ public class ListenerSave implements ActionListener{
 	private String _nation;
 	private String _logment;
 	private String _ImgPath;
-	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerSave(){}
-	
+	public ListenerPreview (JFrame frame) {
+		
+		_frameSRC = frame;
+	}
 	//---------------
 	//MAIN
 	//---------------
 	public void actionPerformed(ActionEvent e) {
 		_buttonSRC = (JButton) e.getSource();
-		_panelSRC = (EditProfil) _buttonSRC.getParent().getParent().getParent().getParent();
-		_frameSRC = (JFrame) _panelSRC.getParent().getParent().getParent().getParent() ;
+		_panelSRC = (ProfilVierge) _buttonSRC.getParent().getParent().getParent();
 		_panelInfo = _panelSRC.getEditInfo();
-		_targetEtu = _panelSRC.getEtu();
+		_tempEtu = _panelSRC.getEtu();
 		
 		loadString();
-		updateEtuData();
+		createTempEtu();
 		loadUpdateProfil();
 		closeFrame();
+		
 	}
 	
 	//---------------
-	//METHODES
+	//METHODE
 	//---------------
 	private void loadString() {
 		_nom = _panelInfo.getNom().getTextField().getText();
@@ -62,30 +66,20 @@ public class ListenerSave implements ActionListener{
 		_ImgPath = _panelInfo.getImgPath().getTextField().getText();
 	}
 	
-	private void updateEtuData() {
-		if (!_nom.equals("")) {
-			_targetEtu.set_nom(_nom);
-		}
+	private void createTempEtu() {
 		
-		if (!_prenom.equals("")) {
-			_targetEtu.set_prenom(_prenom);
-		}
+		if(_ImgPath.equals(""))
+			_ImgPath = "img/Etudiants/example.jpg";
+		if(_annee.equals(""))
+			_annee = "0";
 		
-		if (!_mail.equals("")) {
-			_targetEtu.set_mail(_mail);
-		}
+		_tempEtu = new Etudiant(_nom, _prenom, _mail, Integer.valueOf(_annee), null, _ImgPath);
 		
-		if (!_annee.equals("")) {
-			_targetEtu.set_anneeEtude(Integer.valueOf(_annee));
-		}
-		if (!_ImgPath.equals("")) {
-			_targetEtu.setPathImg(_ImgPath);
-		}
 	}
 	
 	private void loadUpdateProfil() {
 		try {
-			_profil = new Profil(_targetEtu);
+			_tempProfil = new Profil(_tempEtu);
 		
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -94,17 +88,8 @@ public class ListenerSave implements ActionListener{
 
 	private void closeFrame() {
 		_frameSRC.getContentPane().removeAll();
-		_frameSRC.add(_profil);
+		_frameSRC.add(_tempProfil);
 		_frameSRC.revalidate();
 		_frameSRC.repaint();
 	}
-	
-	//---------------
-	//TODO
-	//---------------
-	/*
-	 * Ferme une fenêtre en sauvegardant les données dans le modèle puis recharge la fenêtre du profil
-	 * 
-	 */
-	
 }

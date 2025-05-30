@@ -16,6 +16,7 @@ public class PanelEditInfo extends JPanel {
 	private CompsTextField _pAnnee;
 	private CompsTextField _pNationalitee;
 	private CompsTextField _pLogement;
+	private CompsTextField _pImgPath;
 	
 	//---------------
 	//GETTERS
@@ -26,6 +27,7 @@ public class PanelEditInfo extends JPanel {
 	public CompsTextField getAnnee() {return _pAnnee;}
 	public CompsTextField getNationalitee() {return _pNationalitee;}
 	public CompsTextField getLogement() {return _pLogement;}
+	public CompsTextField getImgPath() {return _pImgPath;}
 
 	//---------------
 	//CONSTRUCTEUR
@@ -37,6 +39,7 @@ public class PanelEditInfo extends JPanel {
 		_pAnnee = new CompsTextField("Année Étude :");
 		_pNationalitee = new CompsTextField("Nationalitée :");
 		_pLogement = new CompsTextField("Logement :");
+		_pImgPath = new CompsTextField("imgPath :");
 		
 		add(_pNom);
 		add(_pPrenom);
@@ -44,14 +47,8 @@ public class PanelEditInfo extends JPanel {
 		add(_pAnnee);
 		add(_pNationalitee);
 		add(_pLogement);
+		add(_pImgPath);
 		
-		setLayout(new GridLayout(6,1, 4,4));
+		setLayout(new GridLayout(7,1, 4,4));
 	}
-	
-	//---------------
-	//METHODE
-	//---------------
-
-	
-	
 }
