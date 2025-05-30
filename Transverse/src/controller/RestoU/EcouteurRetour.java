@@ -23,7 +23,7 @@ public class EcouteurRetour implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		lePanel.removeAll();
-		lePanel.add(new PanelCategoriesMenuRestoU(lesMenus));
+		lePanel.add(new PanelCategoriesMenuRestoU());
 		lePanel.revalidate();
 		lePanel.repaint();
 	}
