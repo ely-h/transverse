@@ -1,53 +1,104 @@
 package modele;
 import java.util.*;
 
-// Classe FactoryCIUP permettant de créer et initialiser tous les objets nécessaires pour représenter la Cité Internationale Universitaire de Paris (CIUP).
+/**
+ * FactoryCIUP - Singleton responsable de la création et de la gestion 
+ * des objets modélisant la Cité Internationale Universitaire de Paris.
+ * Centralise toutes les données de l'application (maisons, étudiants, menus, etc.).
+ * 
+ * @author hassine
+ */
 public class FactoryCIUP {
+    //--------------------------
+    // ATTRIBUTS
+    //--------------------------
+    
+    /** Instance unique du singleton */
     private static FactoryCIUP instance;
-	private ArrayList<Maison> lesMaisons;
-	private ArrayList<Maison> listeMaisons;
-	private ArrayList<Etudiant> lesEtudiants;
-	private ArrayList<Etudiant> listeAttente;
-	private ArrayList<String> lesFiltres;
-	
-	private ArrayList<MenuRestoUParCategorie> lesCategories;
-	
-	private FactoryCIUP() {
-		
-	}
-	
-	public static FactoryCIUP getInstance() {
+    
+    /** Liste complète des maisons */
+    private ArrayList<Maison> lesMaisons;
+    
+    /** Liste des maisons sélectionnées/filtrées */
+    private ArrayList<Maison> listeMaisons;
+    
+    /** Liste de tous les étudiants */
+    private ArrayList<Etudiant> lesEtudiants;
+    
+    /** Liste d'attente pour les demandes de logement */
+    private ArrayList<Etudiant> listeAttente;
+    
+    /** Filtres disponibles (allergènes, étiquettes) */
+    private ArrayList<String> lesFiltres;
+    
+    /** Liste des Nationnalite du CIUP */
+    private ArrayList<Nationnalite> lesNationnalites;
+    
+    /** Catégories de menus du restaurant universitaire */
+    private ArrayList<MenuRestoUParCategorie> lesCategories;
+
+    //--------------------------
+    // CONSTRUCTEUR
+    //--------------------------
+    
+    /**
+     * Constructeur privé pour le pattern Singleton
+     */
+    private FactoryCIUP() {
+        // Initialisation différée dans CreationObjets()
+    }
+
+    //--------------------------
+    // METHODES STATIQUES
+    //--------------------------
+    
+    /**
+     * Point d'accès à l'instance unique du Singleton
+     * @return L'instance unique de FactoryCIUP
+     */
+    public static FactoryCIUP getInstance() {
         if (instance == null) {
             instance = new FactoryCIUP();
         }
         return instance;
     }
-	
-	public void CreationObjets() {
-		
-		/*---------------------------
-		* Initialise les listes
-		* --------------------------
-		*/
-		
-		lesMaisons = new ArrayList<Maison>();
-		listeMaisons = new ArrayList<Maison>();
-		lesEtudiants = new ArrayList<Etudiant>();
-		listeAttente = new ArrayList<Etudiant>();
-		lesCategories=new ArrayList<MenuRestoUParCategorie>();
-		
-		/*------------------------------
-		* Permet de créer les nationalités des maisons
-		* ------------------------------ 
-		*/
-		 
-		 Nationnalite FR = new Nationnalite ("Française");
-		Nationnalite ES = new Nationnalite ("Espagnole");			
-		Nationnalite JP = new Nationnalite ("Japonaise");
-		Nationnalite TN = new Nationnalite ("Tunisienne");
-		Nationnalite KR = new Nationnalite ("Coréenne"); 
-		Nationnalite INT = new Nationnalite ("Internationale"); 
-		
+
+    //--------------------------
+    // METHODES D'INITIALISATION
+    //--------------------------
+    
+    /**
+     * Initialise tous les objets de l'application :
+     * - Maisons et leurs nationalités
+     * - Étudiants
+     * - Menus et plats du restaurant universitaire
+     * - Allergènes et étiquettes
+     */
+    public void CreationObjets() {
+        // Initialisation des listes
+        lesMaisons = new ArrayList<Maison>();
+        listeMaisons = new ArrayList<Maison>();
+        lesEtudiants = new ArrayList<Etudiant>();
+        listeAttente = new ArrayList<Etudiant>();
+        lesCategories = new ArrayList<MenuRestoUParCategorie>();
+        
+        lesNationnalites=new ArrayList<Nationnalite>();
+        
+        // Création des nationalités
+        Nationnalite FR = new Nationnalite("Française");
+        Nationnalite ES = new Nationnalite("Espagnole");            
+        Nationnalite JP = new Nationnalite("Japonaise");
+        Nationnalite TN = new Nationnalite("Tunisienne");
+        Nationnalite KR = new Nationnalite("Coréenne"); 
+        Nationnalite INT = new Nationnalite("Internationale"); 
+        
+        this.lesNationnalites.add(FR);
+        this.lesNationnalites.add(ES);
+        this.lesNationnalites.add(JP);
+        this.lesNationnalites.add(TN);
+        this.lesNationnalites.add(KR);
+        this.lesNationnalites.add(INT);
+        
 		/*-------------------------------
 		 *  Permet de creer une maison et de la rajouter dans la liste de maison
 		 *  -----------------------------
@@ -78,16 +129,16 @@ public class FactoryCIUP {
 		 * ------------------------------ 
 		 */
 		
-		Etudiant etudiant1=new Etudiant("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES);
-		Etudiant etudiant2=new Etudiant("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR);
-		Etudiant etudiant3=new Etudiant("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN);
-        Etudiant etudiant4 = new Etudiant("Akira", "Tanaka", "akira.tanaka@gmail.com", 4, JP);
-        Etudiant etudiant5 = new Etudiant("Minji", "Kim", "minji.kim@naver.com", 2, KR);
-        Etudiant etudiant6 = new Etudiant("Sophie", "Dupont", "sophie.dupont@gmail.com", 3, FR);
-        Etudiant etudiant7 = new Etudiant("Carlos", "Gomez", "carlos.gomez@yahoo.es", 1, ES);
-        Etudiant etudiant8 = new Etudiant("Aya", "Nakamura", "aya.nakamura@gmail.com", 5, JP);
-        Etudiant etudiant9 = new Etudiant("Amir", "Ben Ali", "amir.benali@yahoo.fr", 2, TN);
-        Etudiant etudiant10 = new Etudiant("Junho", "Lee", "junho.lee@naver.com", 4, KR);
+		Etudiant etudiant1=new Etudiant("Ronaldo", "Dicaprio", "ronaldo.dicaprio@hotmail.com", 2, ES, "img/Etudiants/RonaldoDicaprio.jpg");
+		Etudiant etudiant2=new Etudiant("Larry", "Tocrate", "larry.tocrate@orange.fr", 3, FR, "img/Etudiants/LarryTocrate.jpg");
+		Etudiant etudiant3=new Etudiant("Yasmine", "Any", "yasmine13.any@yahoo.com", 1, TN, "img/Etudiants/YasmineAny.jpg");
+        Etudiant etudiant4 = new Etudiant("Akira", "Tanaka", "akira.tanaka@gmail.com", 4, JP, "img/Etudiants/AkiraTanaka.jpg");
+        Etudiant etudiant5 = new Etudiant("Minji", "Kim", "minji.kim@naver.com", 2, KR, "img/Etudiants/MinjiKim.jpg");
+        Etudiant etudiant6 = new Etudiant("Sophie", "Dupont", "sophie.dupont@gmail.com", 3, FR, "img/Etudiants/SophieDupont.jpg");
+        Etudiant etudiant7 = new Etudiant("Carlos", "Gomez", "carlos.gomez@yahoo.es", 1, ES, "img/Etudiants/CarlosGomez.jpg");
+        Etudiant etudiant8 = new Etudiant("Aya", "Nakamura", "aya.nakamura@gmail.com", 5, JP, "img/Etudiants/AyaNakamura.jpg");
+        Etudiant etudiant9 = new Etudiant("Amir", "Ben Ali", "amir.benali@yahoo.fr", 2, TN, "img/Etudiants/AmirBenAli.jpg");
+        Etudiant etudiant10 = new Etudiant("Junho", "Lee", "junho.lee@naver.com", 4, KR, "img/Etudiants/JunhoLee.jpg");
         
 		maisonEspagne.addEtudiant(etudiant1);
 		maisonFrance.addEtudiant(etudiant2);
@@ -247,25 +298,97 @@ public class FactoryCIUP {
         restoInternational.addCategorieRestoU(menuPlatsPrincipaux);
         restoInternational.addCategorieRestoU(menuDesserts);
         restoInternational.addCategorieRestoU(menuExtras);
-    
     }
-	
-	public ArrayList<MenuRestoUParCategorie> getLesCategories() {
-		return lesCategories;
-	}
 
-	
-	public ArrayList<Maison> getLesMaisons(){
-		return lesMaisons;
-	}
-	
-	public ArrayList<Etudiant> getLesEtudiants(){
-		return lesEtudiants;
-	}
-	
-	public ArrayList<String> getLesFiltres(){
-		return lesFiltres;
-	}
-	
+    //--------------------------
+    // ACCESSEURS
+    //--------------------------
+    
+    /**
+     * @return La liste des catégories de menus
+     */
+    public ArrayList<MenuRestoUParCategorie> getLesCategories() {
+        return lesCategories;
+    }
+    
+    /**
+     * @return La liste complète des maisons
+     */
+    public ArrayList<Maison> getLesMaisons() {
+        return lesMaisons;
+    }
+    
+    /**
+     * @return La liste complète des étudiants
+     */
+    public ArrayList<Etudiant> getLesEtudiants() {
+        return lesEtudiants;
+    }
+    
+    /**
+     * @return La liste des filtres disponibles
+     */
+    public ArrayList<String> getLesFiltres() {
+        return lesFiltres;
+    }
 
+    //--------------------------
+    // GESTION DE LA LISTE DES MAISONS
+    //--------------------------
+    
+    /**
+     * Ajoute une maison à la liste des maisons sélectionnées
+     * @param maison La maison à ajouter
+     */
+    public void addMaisonToListe(Maison maison) {
+        if (listeMaisons == null) {
+            listeMaisons = new ArrayList<Maison>();
+        }
+        listeMaisons.add(maison);
+    }
+    
+    /**
+     * @return La liste des maisons sélectionnées
+     */
+    public ArrayList<Maison> getListeMaisons() {
+        if (listeMaisons == null) {
+            listeMaisons = new ArrayList<Maison>();
+        }
+        return listeMaisons;
+    }
+
+    /**
+     * Retire une maison de la liste des maisons sélectionnées
+     * @param maison La maison à retirer
+     */
+    public void removeMaisonFromListe(Maison maison) {
+        if (listeMaisons != null) {
+            listeMaisons.remove(maison);
+        }
+    }
+
+    /**
+     * Vide la liste des maisons sélectionnées
+     */
+    public void clearListeMaisons() {
+        if (listeMaisons != null) {
+            listeMaisons.clear();
+        }
+    }
+    
+    /**
+     * Fonction qui à partir d'un String renvoie la Nationnalite qui porte le meme nom
+     * 
+     * @param nationnaliteATrouver chaine du caractère du nom de nationnalité à trouver
+     * @return la nationnalité correspondante, si il y en a aucune retourne la nationnalite "Inconnu"
+     */
+    public Nationnalite chercherNationnalite(String nationnaliteATrouver) {
+    	for(Nationnalite n : this.lesNationnalites) {
+    		if(n.getNom().equals(nationnaliteATrouver)) {
+    			return n;
+    		}
+    	}
+    	return new Nationnalite("Inconnu");
+    }
+    
 }
