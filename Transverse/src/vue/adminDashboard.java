@@ -14,16 +14,16 @@ public class adminDashboard extends JPanel {
  */
         
         ImageIcon logoIcon = new ImageIcon("img/logo_ciup.png");
-        Image scaledImage = logoIcon.getImage().getScaledInstance(150, 80, Image.SCALE_SMOOTH); 
+        Image scaledImage = logoIcon.getImage().getScaledInstance(180, 90, Image.SCALE_SMOOTH); 
         JLabel logoLabel = new JLabel(new ImageIcon(scaledImage));
-        logoLabel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10)); // marges internes
+        logoLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // marges internes
 /*---------------------------------------------------------------
         // Permet d'avoir le texte admindashboard aligné à droite
   ---------------------------------------------------------------
    */
         JLabel titre = new JLabel("Admin Dashboard");
         titre.setForeground(Color.BLACK);
-        titre.setFont(new Font("Avenir", Font.PLAIN, 20));
+        titre.setFont(new Font("Avenir", Font.PLAIN, 24));
         titre.setHorizontalAlignment(SwingConstants.RIGHT);
         titre.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 20));
 
@@ -39,6 +39,6 @@ public class adminDashboard extends JPanel {
      * permet d'avoir une taille de bordereau plus petit
      * ---------------------------------------------------
      */
-        setPreferredSize(new Dimension(800, 70));
+        setPreferredSize(new Dimension(800, 100));
     }
 }
