@@ -41,7 +41,7 @@ public class ListenerCancel implements ActionListener{
 	}
 	
 	//---------------
-	//METHODE
+	//METHODES
 	//---------------
 	private void loadProfil() {
 		try {
@@ -58,13 +58,4 @@ public class ListenerCancel implements ActionListener{
 		_frameSRC.revalidate();
 		_frameSRC.repaint();
 	}
-	
-	//---------------
-	//TODO
-	//---------------
-	/*
-	 * Ferme une fenêtre sans sauvegarder
-	 * 
-	 */
-	
 }

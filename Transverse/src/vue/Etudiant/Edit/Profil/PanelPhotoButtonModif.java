@@ -26,13 +26,11 @@ public class PanelPhotoButtonModif extends JPanel{
 	protected PanelPhotoButtonModif(String imgPath)throws IOException{
 		_pPhoto = new ComponentPhoto(imgPath);
 		_pBSave = new ComponentButton("Sauvegarder");
-		_pBChange = new ComponentButton("Modifier");
 		_pBCancel = new ComponentButton("Annuler");
 		
 		_lC = new ListenerCancel();
 		_lS = new ListenerSave();
-		
-		
+
 		_pBSave.getButton().addActionListener(_lS);
 		_pBCancel.getButton().addActionListener(_lC);
 		
