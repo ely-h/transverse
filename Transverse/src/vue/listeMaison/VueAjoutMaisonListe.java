@@ -90,9 +90,16 @@ public class VueAjoutMaisonListe extends JPanel{
         panelActions.setLayout(new BoxLayout(panelActions, BoxLayout.Y_AXIS));
         JLabel confirmation = new JLabel("Création de la liste");
         btnSelectAll = new JButton("Tout sélectionner");
+        btnSelectAll.setBackground(new Color(78, 94, 99));
+        btnSelectAll.setForeground(Color.WHITE);
         
         btnConfirm = new JButton("Confirmer");
+        btnConfirm.setBackground(new Color(78, 94, 99));
+        btnConfirm.setForeground(Color.WHITE);
+        
         btnCancel = new JButton("Annuler");
+        btnCancel.setBackground(new Color(78, 94, 99));
+        btnCancel.setForeground(Color.WHITE);
         
         panelActions.add(btnSelectAll);
         
