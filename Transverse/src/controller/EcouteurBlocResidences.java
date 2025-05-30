@@ -1,14 +1,13 @@
-package controleur;
+package controller;
 
 import vue.vueGestionDeListe;
-import vue.vueListeEtudiants;
-import vue.vueMenuRestoU;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/*
-*création de l ecouteur pour la réssidence
+/*--------------------------------------
+*création de l ecouteur pour la résidence
+*----------------------------------------
 */
 public class EcouteurBlocResidences implements ActionListener {
     
