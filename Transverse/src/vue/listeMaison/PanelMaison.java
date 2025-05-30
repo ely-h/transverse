@@ -1,4 +1,4 @@
-package vueMaison;
+package vue.listeMaison;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

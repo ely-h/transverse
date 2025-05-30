@@ -1,4 +1,4 @@
-package vueMaison;
+package controller.listeMaison;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import modele.Maison;
+import vue.listeMaison.PanelConfirmation;
+import vue.listeMaison.PanelSelection;
+import vue.listeMaison.VueAjoutMaisonListe;
 
 /**
  * @author elyssa

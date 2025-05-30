@@ -1,6 +1,10 @@
-package vueMaison;
+package vue.listeMaison;
 import modele.FactoryCIUP;
 import javax.swing.*;
+
+import controller.listeMaison.EcouteurConfirmation;
+import controller.listeMaison.EcouteurToutSelect;
+
 import java.awt.*; 
 import java.awt.event.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package vueMaison;
+package vue.listeMaison;
 
 import modele.Maison;
 import javax.swing.*;

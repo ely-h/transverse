@@ -1,6 +1,8 @@
-package vueMaison;
+package controller.listeMaison;
 
 import modele.Maison;
+import vue.listeMaison.VueListeMaison;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

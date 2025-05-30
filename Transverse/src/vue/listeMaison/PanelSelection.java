@@ -1,4 +1,4 @@
-package vueMaison;
+package vue.listeMaison;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -23,8 +23,8 @@ public class PanelSelection extends JPanel{
 	// ATTRIBUTS
 	//-------------------------
 	
-	JLabel label;
-	JCheckBox checkbox;
+	protected JLabel label;
+	protected JCheckBox checkbox;
 	private Maison maison;
 	
 	//-------------------------
@@ -54,7 +54,7 @@ public class PanelSelection extends JPanel{
 		
 		//ajout des composants
 		add(label);
-		add(checkbox);
+		add(getCheckbox());
 		this.maison = maison;
 	}
 	
@@ -76,10 +76,14 @@ public class PanelSelection extends JPanel{
 	
 	//Option tout selectionner
 	public boolean toutSelection() {
-        return checkbox.isSelected();
+        return getCheckbox().isSelected();
     }
     
     public void setDeselected(boolean deselected) {
-        checkbox.setSelected(deselected);
+        getCheckbox().setSelected(deselected);
     }
+
+	public JCheckBox getCheckbox() {
+		return checkbox;
+	}
 }

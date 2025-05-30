@@ -1,8 +1,10 @@
-package vueMaison;
+package controller.listeMaison;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+
+import vue.listeMaison.VueAjoutMaisonListe;
 
 /**
  * @author elyssa

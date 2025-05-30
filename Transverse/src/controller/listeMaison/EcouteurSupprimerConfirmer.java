@@ -1,7 +1,9 @@
-package vueMaison;
+package controller.listeMaison;
 
 import modele.FactoryCIUP;
 import modele.Maison;
+import vue.listeMaison.VueListeMaison;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;

@@ -1,8 +1,11 @@
-package vueMaison;
+package controller.listeMaison;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JCheckBox;
 import java.util.List;
+
+import vue.listeMaison.PanelSelection;
 
 /**
  * @author elyssa
@@ -45,7 +48,7 @@ public class EcouteurToutSelect implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         for (PanelSelection panel : selectionPanels) {
-            panel.checkbox.setSelected(true);
+            panel.getCheckbox().setSelected(true);
         }
     }
 }
