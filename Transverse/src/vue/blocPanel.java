@@ -24,9 +24,6 @@ public class blocPanel extends JPanel {
      */
     public blocPanel(PanelChangeListener listener) {
     	this.listener=listener;
-	}
-    
-    public blocPanel() {
 
         setLayout(new FlowLayout(FlowLayout.CENTER, 40, 60));
         setBackground(Color.WHITE);
