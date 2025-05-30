@@ -5,6 +5,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelInformation extends JPanel {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private Maison maison;
     private JLabel labelNom;
     private JLabel labelPays;
@@ -12,11 +17,19 @@ public class PanelInformation extends JPanel {
     private JLabel labelLatitude;
     private JLabel labelLongitude;
     
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+    
     public PanelInformation(Maison maison) {
         this.maison = maison;
         initializeComponents();
         setupLayout();
     }
+    
+	//-------------------------
+	// METHODES
+	//-------------------------
     
     private void initializeComponents() {
         // Création des labels avec les info de la maison
@@ -75,6 +88,10 @@ public class PanelInformation extends JPanel {
         titre.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         add(titre, BorderLayout.NORTH);
     }
+    
+	//-------------------------
+	// GETTER
+	//-------------------------
     
     public Maison getMaison() {
         return maison;

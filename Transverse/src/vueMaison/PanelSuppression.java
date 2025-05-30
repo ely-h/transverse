@@ -8,12 +8,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelSuppression extends JPanel {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+
     private Maison maison;
     private VueListeMaison vueParent;
     private JFrame frameParent;
     private JLabel labelQuestion;
     private JButton btnSupprimer;
     private JButton btnAnnuler;
+    
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+
     
     public PanelSuppression(Maison maison, VueListeMaison vueParent, JFrame frameParent) {
         this.maison = maison;
@@ -24,6 +34,11 @@ public class PanelSuppression extends JPanel {
         setupLayout();
         ajouterEcouteurs();
     }
+    
+	//-------------------------
+	// METHODES
+	//-------------------------
+
     
     private void initializeComponents() {
         // Message de confirmation

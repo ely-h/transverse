@@ -8,15 +8,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EcouteurSupprimerConfirmer implements ActionListener {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private Maison maison;
     private VueListeMaison vueParent;
     private JFrame frameParent;
+    
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
     
     public EcouteurSupprimerConfirmer(Maison maison, VueListeMaison vueParent, JFrame frameParent) {
         this.maison = maison;
         this.vueParent = vueParent;
         this.frameParent = frameParent;
     }
+    
+	//-------------------------
+	// METHODE
+	//-------------------------
     
     @Override
     public void actionPerformed(ActionEvent e) {

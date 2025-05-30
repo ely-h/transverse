@@ -9,13 +9,27 @@ import modele.FactoryCIUP;
 import modele.Maison;
 
 public class EcouteurValider implements ActionListener {
+	
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private List<Maison> maisonsSelectionnees;
     private JFrame fenetre;
+	
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
     
     public EcouteurValider(List<Maison> maisonsSelectionnees, JFrame fenetre) {
         this.maisonsSelectionnees = maisonsSelectionnees;
         this.fenetre = fenetre;
     }
+    
+	//-------------------------
+	// METHODES
+	//-------------------------
     
     @Override
     public void actionPerformed(ActionEvent e) {

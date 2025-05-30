@@ -11,17 +11,30 @@ import java.io.File;
 import java.io.IOException;
 
 public class PanelMaison extends JPanel {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private JLabel labelImage;
     private JLabel labelNom;
     private JButton btnInformation;
     private JButton btnSupprimer;
     private Maison maison;
     
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+    
     public PanelMaison(Maison maison) {
         this.maison = maison;
         initializeComponents();
         setupLayout();
     }
+    
+	//-------------------------
+	// METHODES
+	//-------------------------
     
     private void initializeComponents() {
         // Image maison
@@ -74,6 +87,10 @@ public class PanelMaison extends JPanel {
         add(panelBoutons, BorderLayout.SOUTH);
     }
     
+	//-------------------------
+	// GETTERS
+	//-------------------------
+    
     public Maison getMaison() {
         return maison;
     }
@@ -84,22 +101,6 @@ public class PanelMaison extends JPanel {
     
     public JButton getBtnSupprimer() {
         return btnSupprimer;
-    }
-    
-    //Test pour voir si la classe fonctionne
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-        	Nationnalite FR = new Nationnalite ("Française");
-        	Maison maisonFrance = new Maison("Maison France", FR, 48, 2, 50);
-
-            JFrame frame = new JFrame("Test PanelMaison");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(300, 350);
-            frame.setLocationRelativeTo(null);
-
-            frame.add(new PanelMaison(maisonFrance));
-            frame.setVisible(true);
-        });
     }
 
 }

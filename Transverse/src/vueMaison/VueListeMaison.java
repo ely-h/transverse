@@ -10,6 +10,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class VueListeMaison extends JPanel {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+
     private JPanel panelMaisons;
     private JScrollPane scrollPane;
     private ArrayList<PanelMaison> panelsMaison;
@@ -17,6 +22,10 @@ public class VueListeMaison extends JPanel {
     private JButton btnRetourCreation;
     private JFrame fenetreParent; 
  
+	//-------------------------
+	// CONSTRUCTEURS
+	//-------------------------
+
     public VueListeMaison() {
         this(null);
     }
@@ -31,6 +40,11 @@ public class VueListeMaison extends JPanel {
         chargerMaisons();
         ajouterEcouteurs();
     }
+    
+	//-------------------------
+	// METHODES
+	//-------------------------
+
     
     private void initializeComponents() {
         panelMaisons = new JPanel();

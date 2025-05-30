@@ -8,13 +8,26 @@ import javax.swing.JFrame;
 import modele.Maison;
 
 public class EcouteurConfirmation implements ActionListener {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private VueAjoutMaisonListe vueAjout;
     private JFrame fenetre;
+    
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
     
     public EcouteurConfirmation(VueAjoutMaisonListe vueAjout, JFrame fenetre) {
         this.vueAjout = vueAjout;
         this.fenetre = fenetre;
     }
+    
+	//-------------------------
+	// METHODE
+	//-------------------------
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -40,6 +53,10 @@ public class EcouteurConfirmation implements ActionListener {
         fenetre.revalidate();
         fenetre.repaint();
     }
+    
+	//-------------------------
+	// GETTER
+	//-------------------------
     
     private List<Maison> getMaisonsSelectionnees() {
         List<Maison> maisonsSelectionnees = new ArrayList<>();

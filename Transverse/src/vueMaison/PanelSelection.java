@@ -12,11 +12,19 @@ import java.io.File;
 import java.io.IOException;
 
 public class PanelSelection extends JPanel{
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
 	JLabel label;
 	JCheckBox checkbox;
 	private Maison maison;
 	
-	//Constructeur des selections de maison
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+	
 	PanelSelection(Maison maison, String cbxNom, String imgNom) throws IOException
 	{
 		BufferedImage bufferedImg = ImageIO.read(new File(imgNom + ".jpg"));
@@ -35,6 +43,10 @@ public class PanelSelection extends JPanel{
 		this.maison = maison;
 	}
 	
+	//-------------------------
+	// GETTERS
+	//-------------------------
+	
     public Maison getMaison() {
 		return maison;
 	}
@@ -42,6 +54,10 @@ public class PanelSelection extends JPanel{
 	public void setMaison(Maison maison) {
 		this.maison = maison;
 	}
+	
+	//-------------------------
+	// METHODES
+	//-------------------------
 	
 	//Option tout selectionner
 	public boolean toutSelection() {

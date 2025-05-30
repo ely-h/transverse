@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VueAjoutMaisonListe extends JPanel{
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+
 	private JPanel panelMaisons;
     private JButton btnSelectAll;
     private JButton btnConfirm;
@@ -21,6 +26,11 @@ public class VueAjoutMaisonListe extends JPanel{
     private PanelSelection maisonJP;
     private PanelSelection maisonTU;
     private PanelSelection maisonKR;
+    
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+
     
     public VueAjoutMaisonListe() {
         setLayout(new BorderLayout(20,20));
@@ -89,6 +99,11 @@ public class VueAjoutMaisonListe extends JPanel{
             }
         });
     }
+    
+	//-------------------------
+	// GETTERS
+	//-------------------------
+
 
     public List<PanelSelection> getSelectionPanels() {
 		return selectionPanels;

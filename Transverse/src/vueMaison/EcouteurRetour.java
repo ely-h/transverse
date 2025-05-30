@@ -5,13 +5,26 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 public class EcouteurRetour implements ActionListener {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
     private VueAjoutMaisonListe vueAjout;
     private JFrame fenetre;
+    
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
     
     public EcouteurRetour(VueAjoutMaisonListe vueAjout, JFrame fenetre) {
         this.vueAjout = vueAjout;
         this.fenetre = fenetre;
     }
+    
+	//-------------------------
+	// METHODE
+	//-------------------------
     
     @Override
     public void actionPerformed(ActionEvent e) {

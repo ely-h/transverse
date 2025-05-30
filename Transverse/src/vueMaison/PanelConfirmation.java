@@ -5,11 +5,20 @@ import java.util.List;
 import modele.Maison;
 
 public class PanelConfirmation extends JPanel {
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
 	private JLabel titleLabel;
 	private JTextArea selectedHousesArea;
 	private JButton btnRetour;
 	private JButton btnValider;
 	private List<Maison> selectedMaisons;
+	
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
 	
 	 public PanelConfirmation(List<Maison> selectedMaisons) {
 	     this.selectedMaisons = selectedMaisons;
@@ -17,6 +26,10 @@ public class PanelConfirmation extends JPanel {
 		 setupLayout();
 		 affichageSelection();
 	 }
+	 
+	//-------------------------
+	// METHODES
+	//-------------------------
 	 
     private void initializeComponents() {
         titleLabel = new JLabel("Confirmation de la sélection");
@@ -88,7 +101,17 @@ public class PanelConfirmation extends JPanel {
         selectedHousesArea.setText(sb.toString());
         selectedHousesArea.setCaretPosition(0);
     }
-
+    
+    //mettre à jour la liste des maisons sélectionnées
+    public void updateSelectedMaisons(List<Maison> newSelectedMaisons) {
+        this.selectedMaisons = newSelectedMaisons;
+        affichageSelection();
+    }
+    
+	//-------------------------
+	// GETTERS
+	//-------------------------
+    
 	public JButton getBtnRetour() {
 		return btnRetour;
 	}
@@ -100,10 +123,4 @@ public class PanelConfirmation extends JPanel {
 	public List<Maison> getSelectedMaisons() {
 		return selectedMaisons;
 	}
-	
-    //mettre à jour la liste des maisons sélectionnées
-    public void updateSelectedMaisons(List<Maison> newSelectedMaisons) {
-        this.selectedMaisons = newSelectedMaisons;
-        affichageSelection();
-    }
 }
