@@ -4,16 +4,23 @@
 package vue;
 
 import javax.swing.*;
+
+import vue.miseEnLienDesPages.PanelChangeListener;
+
 import java.awt.*;
 
 public class adminDashboard extends JPanel {
+	private PanelChangeListener listener;
 
     /**
      * Construit le tableau de bord de l'administrateur.
      * Initialise les composants graphiques et leur disposition.
      */
-	
+    public adminDashboard(PanelChangeListener listener) {
+    	this.listener=listener;
+    }
     public adminDashboard() {
+
         setLayout(new BorderLayout());
         setBackground(new Color(77, 111, 122)); // fond bleu-gris
 /*----------------------------------------------
@@ -53,16 +60,32 @@ public class adminDashboard extends JPanel {
     // ---------- Ligne des boutons ----------
     JPanel boutonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 5));
     
-
+    JButton btnAccueil=new JButton("Accueil");
     JButton btnResidences = new JButton("Résidences");
     JButton btnEtudiants = new JButton("Étudiants");
     JButton btnRestoU = new JButton("Resto U");
+    
+    
+    btnResidences.addActionListener(e -> /*équilavent de @Override
+    public void actionPerformed(ActionEvent e) */{
+    	listener.changeVers("Residences");
+    });
+    btnAccueil.addActionListener(e ->{
+    	listener.changeVers("Accueil");
+    });
+//    btnEtudiants.addActionListener(e ->{
+//    	listener.changeVers("Etudiants");
+//    });
+    btnRestoU.addActionListener(e ->{
+    	listener.changeVers("RestoU");
+    });
 
     Dimension btnSize = new Dimension(120, 30);
     btnResidences.setPreferredSize(btnSize);
     btnEtudiants.setPreferredSize(btnSize);
     btnRestoU.setPreferredSize(btnSize);
 
+    boutonPanel.add(btnAccueil);
     boutonPanel.add(btnResidences);
     boutonPanel.add(btnEtudiants);
     boutonPanel.add(btnRestoU);

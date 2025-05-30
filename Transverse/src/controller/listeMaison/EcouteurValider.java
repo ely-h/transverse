@@ -10,6 +10,7 @@ import modele.FactoryCIUP;
 import modele.Maison;
 import vue.listeMaison.VueAjoutMaisonListe;
 import vue.listeMaison.VueListeMaison;
+import vue.ApplicationCIUP;
 
 /**
  * @author elyssa
@@ -83,14 +84,17 @@ public class EcouteurValider implements ActionListener {
      * de naviguer vers d'autres fonctionnalités.
      */
     private void retournerAuMenuPrincipal() {
-        fenetre.getContentPane().removeAll();
-        fenetre.setTitle("Gestion de liste");
-        
-        vueGestionDeListe vueGestion = new vueGestionDeListe(fenetre);
-        fenetre.add(vueGestion);
-        
-        fenetre.revalidate();
-        fenetre.repaint();
+    	if (fenetre instanceof ApplicationCIUP) {
+            ApplicationCIUP app = (ApplicationCIUP) fenetre;
+            app.changeVers("Residences"); // Retour à la vue gestion de liste
+        } else {
+            // Fallback pour les tests indépendants
+            fenetre.getContentPane().removeAll();
+            vueGestionDeListe vueGestion = new vueGestionDeListe(fenetre);
+            fenetre.add(vueGestion);
+            fenetre.revalidate();
+            fenetre.repaint();
+        }
     }
 
 }
