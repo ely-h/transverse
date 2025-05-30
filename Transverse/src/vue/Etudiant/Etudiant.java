@@ -22,6 +22,7 @@ public class Etudiant extends JFrame{
 	
 	private ListenerOpenList _lOListe;
 	private ListenerOpenBlankProfil _lOBProfil;
+	
 	private ListenerCancel _lC;
 	private ListenerSave _lS;
 	private ListenerPreview _lP;
@@ -36,23 +37,21 @@ public class Etudiant extends JFrame{
 		
 		_panelMain = new MainPane();
 		_laListe = new Liste(facto.getLesMaisons(), facto.getLesEtudiants());
+		_profilVierge = new ProfilVierge();
 		
 		_lOListe = new ListenerOpenList(_laListe, this);
 		_lOBProfil = new ListenerOpenBlankProfil(_profilVierge, this);
 		
 		_panelMain.getCBTListe().addActionListener(_lOListe);
 		_panelMain.getCBTEtudiant().addActionListener(_lOBProfil);
-		
-		
-		_profilVierge = new ProfilVierge();
-		
-		_lS = new ListenerSave();
+
+		_lS = new ListenerSave(_panelMain, this, facto);
 		_profilVierge.getButton0().addActionListener(_lS);
 		
-		_lP = new ListenerPreview();
+		_lP = new ListenerPreview(this);
 		_profilVierge.getButton1().addActionListener(_lP);
 		
-		_lC = new ListenerCancel(_profilVierge,this );
+		_lC = new ListenerCancel(_panelMain,this );
 		_profilVierge.getButton2().addActionListener(_lC);
 		
 		

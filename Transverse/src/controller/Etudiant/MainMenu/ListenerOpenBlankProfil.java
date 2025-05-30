@@ -2,8 +2,11 @@ package controller.Etudiant.MainMenu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.*;
 
+import vue.Etudiant.Etudiant;
 import vue.Etudiant.Edit.ProfilVierge.*;
 
 public class ListenerOpenBlankProfil implements ActionListener {
@@ -18,8 +21,9 @@ public class ListenerOpenBlankProfil implements ActionListener {
 	//CONSTRUCTEUR
 	//---------------
 	public ListenerOpenBlankProfil(ProfilVierge profil, JFrame frame){
+		
 		_blankProfil = profil;
-		_frameSRC = frame;
+		_frameSRC = (Etudiant) frame;
 	}
 	
 	//---------------

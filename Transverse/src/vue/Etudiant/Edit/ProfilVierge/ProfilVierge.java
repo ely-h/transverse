@@ -24,6 +24,8 @@ public class ProfilVierge extends JPanel {
 	public JButton getButton0() {return _p3Button.getButton0();}
 	public JButton getButton1() {return _p3Button.getButton1();}
 	public JButton getButton2() {return _p3Button.getButton2();}
+	public PanelEditInfo getEditInfo() {return _pInfo;}
+	public Etudiant getEtu() {return _e0;}
 	
 	//---------------
 	//CONSTRUCTEUR
