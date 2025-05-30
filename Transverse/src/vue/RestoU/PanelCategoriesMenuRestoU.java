@@ -34,16 +34,18 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 	// CONSTRUCTEUR
 	//--------------------------
 	
-	public PanelCategoriesMenuRestoU(ArrayList<MenuRestoUParCategorie> lesMenus) {
-		this.lesVuesDeMenu=new ArrayList<VueMenuRestoUParCategorie>(lesMenus.size());
+	public PanelCategoriesMenuRestoU() {
+		FactoryCIUP f=FactoryCIUP.getInstance();
+		f.CreationObjets();
+		this.lesVuesDeMenu=new ArrayList<VueMenuRestoUParCategorie>(f.getLesCategories().size());
 		
 		this.inititializeLesImages();
 		
 		GridLayout grid=new GridLayout(1,4);
 		this.panelPrincipal=new JPanel(grid);
 		for(int i=0;i<this.lesCheminsDesImages.size();i++) {
-			VueMenuRestoUParCategorie vue=new VueMenuRestoUParCategorie (lesMenus.get(i),this.lesCheminsDesImages.get(i));
-			vue.getBoutton().addActionListener(new EcouteurChangementMenu(this,lesMenus.get(i)));
+			VueMenuRestoUParCategorie vue=new VueMenuRestoUParCategorie (f.getLesCategories().get(i),this.lesCheminsDesImages.get(i));
+			vue.getBoutton().addActionListener(new EcouteurChangementMenu(this,f.getLesCategories().get(i)));
 			this.lesVuesDeMenu.add(vue);
 			this.panelPrincipal.add(this.lesVuesDeMenu.get(i));
 		}
@@ -73,10 +75,8 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 	}
 	
 	public static void main(String[] args) {
-		FactoryCIUP f=FactoryCIUP.getInstance();
-		f.CreationObjets();
 		
-			PanelCategoriesMenuRestoU vueTest=new PanelCategoriesMenuRestoU(f.getLesCategories());
+			PanelCategoriesMenuRestoU vueTest=new PanelCategoriesMenuRestoU();
 			JFrame fenetre=new JFrame("Les Menus");
 			Toolkit tk = Toolkit.getDefaultToolkit();
 			int xSize = ((int) tk.getScreenSize().getWidth());
