@@ -2,7 +2,7 @@ package vue;
 
 import javax.swing.*;
 import java.awt.*;
-
+import java.awt.event.ActionListener;
 public class NavigationBar extends JPanel {
     private JButton backButton;
     private JLabel titleLabel;
@@ -40,4 +40,8 @@ public class NavigationBar extends JPanel {
     public void setTitle(String text) {
         titleLabel.setText(text);
     }
+    public void addBackActionListener(ActionListener listener) {
+        backButton.addActionListener(listener);
+    }
+
 }

@@ -1,7 +1,9 @@
 package vue;
+import vue.NavigationBar;
 import javax.swing.*;
 import java.awt.*;
-public class vueGestionDeListe extends  JFrame {
+
+public class vueGestionDeListe extends JFrame {
 
     public vueGestionDeListe() {
         setTitle("Gestion de liste");
@@ -10,64 +12,62 @@ public class vueGestionDeListe extends  JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Bordereau déjà existante
+        // Bandeau du haut
         add(new adminDashboard(), BorderLayout.NORTH);
 
-        // Titre de la page
-        JPanel panelTitre = new JPanel();
-        JLabel titre = new JLabel("Gestion de liste");
-        titre.setFont(new Font("Avenir", Font.PLAIN, 18));
-        panelTitre.add(titre);
-        add(panelTitre, BorderLayout.CENTER);
+        // Panel global central
+        JPanel contenuCentral = new JPanel();
+        contenuCentral.setLayout(new BorderLayout());
+        contenuCentral.setBackground(Color.WHITE);
 
-        // Les deux blocs : Créer une liste et Voir la liste
+        // Barre de navigation sous le bandeau
+        NavigationBar navBar = new NavigationBar("Gestion de liste");
+        contenuCentral.add(navBar, BorderLayout.NORTH);
+
+        // Panel pour les blocs Créer / Voir
         JPanel panelBloc = new JPanel();
-        panelBloc.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 20));
+        panelBloc.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 40));
         panelBloc.setBackground(Color.WHITE);
 
         // Bloc Créer une liste
-        JPanel creerPanel = new JPanel();
-        creerPanel.setPreferredSize(new Dimension(180, 150));
-        creerPanel.setBackground(new Color(250, 248, 245));
-        creerPanel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
-        creerPanel.setLayout(new BorderLayout());
-
-        JLabel creerLabel = new JLabel("Créer une liste", SwingConstants.CENTER);
-        creerLabel.setFont(new Font("Avenir", Font.PLAIN, 16));
-        JButton creerButton = new JButton("Choisir");
-
-        creerPanel.add(creerLabel, BorderLayout.CENTER);
-        creerPanel.add(creerButton, BorderLayout.SOUTH);
-
+        JPanel creerPanel = creerBloc("Créer une liste");
         // Bloc Voir la liste
-        JPanel voirPanel = new JPanel();
-        voirPanel.setPreferredSize(new Dimension(180, 150));
-        voirPanel.setBackground(new Color(250, 248, 245));
-        voirPanel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
-        voirPanel.setLayout(new BorderLayout());
+        JPanel voirPanel = creerBloc("Voir la liste");
 
-        JLabel voirLabel = new JLabel("Voir la liste", SwingConstants.CENTER);
-        voirLabel.setFont(new Font("Avenir", Font.PLAIN, 16));
-        JButton voirButton = new JButton("Choisir");
-
-        voirPanel.add(voirLabel, BorderLayout.CENTER);
-        voirPanel.add(voirButton, BorderLayout.SOUTH);
-
-        // Ajout des blocs au panneau
+        // Ajout des blocs
         panelBloc.add(creerPanel);
         panelBloc.add(voirPanel);
 
-        // Ajout au centre (en dessous du titre)
-        JPanel centrePanel = new JPanel();
-        centrePanel.setLayout(new BorderLayout());
-        centrePanel.setBackground(Color.WHITE);
-        centrePanel.add(panelTitre, BorderLayout.NORTH);
-        centrePanel.add(panelBloc, BorderLayout.CENTER);
+        // Ajout du panel des blocs dans le contenu central
+        contenuCentral.add(panelBloc, BorderLayout.CENTER);
 
-        add(centrePanel, BorderLayout.CENTER);
+        // Ajout du contenu central à la fenêtre
+        add(contenuCentral, BorderLayout.CENTER);
+
+        // Listener pour retour
+        navBar.addBackActionListener(e -> {
+            dispose();
+            new DashboardMain(); // retourne à la page d'accueil
+        });
+    }
+
+    private JPanel creerBloc(String titre) {
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setPreferredSize(new Dimension(180, 150));
+        panel.setBackground(new Color(250, 248, 245));
+        panel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
+
+        JLabel label = new JLabel(titre, SwingConstants.CENTER);
+        label.setFont(new Font("Avenir", Font.PLAIN, 16));
+        JButton bouton = new JButton("Choisir");
+
+        panel.add(label, BorderLayout.CENTER);
+        panel.add(bouton, BorderLayout.SOUTH);
+        return panel;
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new vueGestionDeListe().setVisible(true));
     }
 }
+

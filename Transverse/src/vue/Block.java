@@ -23,4 +23,5 @@ public class Block extends JPanel {
         add(label, BorderLayout.CENTER);
         add(bouton, BorderLayout.SOUTH);
     }
+    
 }
