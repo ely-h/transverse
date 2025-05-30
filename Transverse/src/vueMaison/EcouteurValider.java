@@ -110,7 +110,7 @@ public class EcouteurValider implements ActionListener {
         fenetre.getContentPane().removeAll();
         fenetre.setTitle("Calcul Perimètre");
         
-        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe(fenetre);
         fenetre.add(vueAjout);
         
         EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetre);

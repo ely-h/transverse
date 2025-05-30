@@ -46,7 +46,7 @@ public class VueAjoutMaisonListe extends JPanel{
      * et met en place la disposition visuelle avec les panels de sélection.
      * Ajoute également l'écouteur pour le bouton "Tout sélectionner".
      */
-    public VueAjoutMaisonListe() {
+    public VueAjoutMaisonListe(JFrame fenetre) {
         setLayout(new BorderLayout(20,20));
         selectionPanels = new ArrayList<>();
 
@@ -106,6 +106,9 @@ public class VueAjoutMaisonListe extends JPanel{
         //ECOUTEURS
         EcouteurToutSelect ecouteurToutSelect = new EcouteurToutSelect(selectionPanels);
         btnSelectAll.addActionListener(ecouteurToutSelect);
+        
+        EcouteurConfirmation ecouteur = new EcouteurConfirmation(this, fenetre);
+        btnConfirm.addActionListener(ecouteur);
     }
     
 	//-------------------------
@@ -135,10 +138,8 @@ public class VueAjoutMaisonListe extends JPanel{
         fenetre.setExtendedState(JFrame.MAXIMIZED_BOTH);
         fenetre.setSize(xSize,ySize);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+        VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe(fenetre);
         fenetre.add(vueAjout);
-        EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetre);
-        vueAjout.getBtnConfirm().addActionListener(ecouteur);
         fenetre.setVisible(true);
     }
 }

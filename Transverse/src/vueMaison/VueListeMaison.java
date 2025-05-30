@@ -168,7 +168,7 @@ public class VueListeMaison extends JPanel {
             fenetreParent.getContentPane().removeAll();
             fenetreParent.setTitle("Calcul Perimètre");
             
-            VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
+            VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe(fenetreParent);
             fenetreParent.add(vueAjout);
             
             EcouteurConfirmation ecouteur = new EcouteurConfirmation(vueAjout, fenetreParent);
