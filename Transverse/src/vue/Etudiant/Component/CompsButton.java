@@ -1,5 +1,7 @@
 package vue.Etudiant.Component;
 
+import java.awt.Color;
+
 import javax.swing.*;
 
 public class CompsButton extends JPanel{
@@ -19,6 +21,8 @@ public class CompsButton extends JPanel{
 	//---------------
 	public CompsButton(String s){
 		_button = new JButton(s);
+		_button.setBackground(new Color(78, 94, 99));
+		_button.setForeground(Color.WHITE);
 		
 		add(_button);
 	}

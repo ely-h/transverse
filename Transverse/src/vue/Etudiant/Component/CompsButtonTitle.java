@@ -7,21 +7,21 @@ public class CompsButtonTitle extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private JLabel _title;
-	private JButton _button;
+	private CompsInfo _title;
+	private CompsButton _button;
 	
 	//---------------
 	//ACCESSEUR
 	//---------------
-	public JButton getButton() {return _button;}
+	public JButton getButton() {return _button.getButton();}
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	
 	public CompsButtonTitle(String title, String val){
-		_title = new JLabel(title);
-		_button = new JButton(val);
+		_title = new CompsInfo(title);
+		_button = new CompsButton(val);
 		
 		add(_title);
 		add(_button);
