@@ -2,7 +2,7 @@ package vue.Etudiant.Component;
 
 import javax.swing.*;
 
-public class ComponentButton extends JPanel{
+public class CompsButton extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
@@ -17,7 +17,7 @@ public class ComponentButton extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ComponentButton(String s){
+	public CompsButton(String s){
 		_button = new JButton(s);
 		
 		add(_button);

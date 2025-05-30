@@ -13,10 +13,10 @@ public class PanelPhotoButtonModif extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private ComponentPhoto _pPhoto;
-	private ComponentButton _pBSave;
-	private ComponentButton _pBChange;
-	private ComponentButton _pBCancel;
+	private CompsPhoto _pPhoto;
+	private CompsButton _pBSave;
+	private CompsButton _pBChange;
+	private CompsButton _pBCancel;
 	private ListenerSave _lS;
 	private ListenerCancel _lC;
 	
@@ -24,9 +24,9 @@ public class PanelPhotoButtonModif extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	protected PanelPhotoButtonModif(String imgPath)throws IOException{
-		_pPhoto = new ComponentPhoto(imgPath);
-		_pBSave = new ComponentButton("Sauvegarder");
-		_pBCancel = new ComponentButton("Annuler");
+		_pPhoto = new CompsPhoto(imgPath);
+		_pBSave = new CompsButton("Sauvegarder");
+		_pBCancel = new CompsButton("Annuler");
 		
 		_lC = new ListenerCancel();
 		_lS = new ListenerSave();

@@ -8,7 +8,7 @@ import javax.imageio.*;
 import java.io.File;
 import java.io.IOException;
 
-public class ComponentPhoto extends JPanel  {
+public class CompsPhoto extends JPanel  {
 
 	//---------------
 	//ATTRIBUTS
@@ -19,7 +19,7 @@ public class ComponentPhoto extends JPanel  {
 	//CONSTRUCTEUR
 	//---------------
 	
-	public ComponentPhoto(String val) throws IOException{
+	public CompsPhoto(String val) throws IOException{
 		BufferedImage bufferedImg = ImageIO.read(new File(val));
 		Image imgName = bufferedImg.getScaledInstance (200, 150, Image.SCALE_DEFAULT);
 		

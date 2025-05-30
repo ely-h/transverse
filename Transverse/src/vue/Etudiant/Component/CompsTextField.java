@@ -3,7 +3,7 @@ package vue.Etudiant.Component;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class ComponentTextField extends JPanel{
+public class CompsTextField extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
@@ -19,13 +19,13 @@ public class ComponentTextField extends JPanel{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ComponentTextField(){ 
+	public CompsTextField(){ 
 		_valeur = new JTextField(20);
 		
 		add(_valeur);
 	}
 
-	public ComponentTextField(String type){ 
+	public CompsTextField(String type){ 
 		
 		_type = new JLabel(type);
 		_valeur = new JTextField(20);

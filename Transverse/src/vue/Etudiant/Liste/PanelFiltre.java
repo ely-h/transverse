@@ -13,7 +13,7 @@ public class PanelFiltre extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private ComponentInfo _label;
+	private CompsInfo _label;
 	
 	//---------------
 	//ACCESSEUR
@@ -23,12 +23,12 @@ public class PanelFiltre extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	public PanelFiltre(ArrayList<Maison> alMaison){
-		_label = new ComponentInfo("Filtre");
+		_label = new CompsInfo("Filtre");
 		
 		add(_label);
 		
 		for (int i=0; i < alMaison.size(); i++) {
-			ComponentButton _button = new ComponentButton(alMaison.get(i).getNationalite().getNom());
+			CompsButton _button = new CompsButton(alMaison.get(i).getNationalite().getNom());
 			add(_button);
 		}
 		

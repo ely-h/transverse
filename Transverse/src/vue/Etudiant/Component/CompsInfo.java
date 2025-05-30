@@ -3,7 +3,7 @@ package vue.Etudiant.Component;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class ComponentInfo extends JPanel {
+public class CompsInfo extends JPanel {
 
 	//---------------
 	//ATTRIBUTS
@@ -14,18 +14,18 @@ public class ComponentInfo extends JPanel {
 	//---------------
 	//CONSTRUCTEURS
 	//---------------
-	public ComponentInfo(String val){
+	public CompsInfo(String val){
 		_valeur = new JLabel(val);
 		add(_valeur);
 	}
 	
-	public ComponentInfo(int val){
+	public CompsInfo(int val){
 		_valeur = new JLabel(String.valueOf(val));
 		add(_valeur);
 	}
 	
 	
-	public ComponentInfo(String type, int val){
+	public CompsInfo(String type, int val){
 		_type = new JLabel(type + " : ");
 		_valeur = new JLabel(Integer.toString(val));
 		
@@ -35,7 +35,7 @@ public class ComponentInfo extends JPanel {
 		setLayout(new GridLayout(1,2));
 	}
 	
-	public ComponentInfo(String type, String val){
+	public CompsInfo(String type, String val){
 		_type = new JLabel(type + " : ");
 		_valeur = new JLabel(val);
 		

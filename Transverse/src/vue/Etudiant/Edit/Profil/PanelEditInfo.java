@@ -10,33 +10,33 @@ public class PanelEditInfo extends JPanel {
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private ComponentTextField _pNom;
-	private ComponentTextField _pPrenom;
-	private ComponentTextField _pMail;
-	private ComponentTextField _pAnnee;
-	private ComponentTextField _pNationalitee;
-	private ComponentTextField _pLogement;
+	private CompsTextField _pNom;
+	private CompsTextField _pPrenom;
+	private CompsTextField _pMail;
+	private CompsTextField _pAnnee;
+	private CompsTextField _pNationalitee;
+	private CompsTextField _pLogement;
 	
 	//---------------
 	//GETTERS
 	//---------------
-	public ComponentTextField getNom() {return _pNom;}
-	public ComponentTextField getPrenom() {return _pPrenom;}
-	public ComponentTextField getMail() {return _pMail;}
-	public ComponentTextField getAnnee() {return _pAnnee;}
-	public ComponentTextField getNationalitee() {return _pNationalitee;}
-	public ComponentTextField getLogement() {return _pLogement;}
+	public CompsTextField getNom() {return _pNom;}
+	public CompsTextField getPrenom() {return _pPrenom;}
+	public CompsTextField getMail() {return _pMail;}
+	public CompsTextField getAnnee() {return _pAnnee;}
+	public CompsTextField getNationalitee() {return _pNationalitee;}
+	public CompsTextField getLogement() {return _pLogement;}
 
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
 	public PanelEditInfo(){
-		_pNom = new ComponentTextField("Nom :");
-		_pPrenom = new ComponentTextField("Prénom :");
-		_pMail = new ComponentTextField("Mail :");
-		_pAnnee = new ComponentTextField("Année Étude :");
-		_pNationalitee = new ComponentTextField("Nationalitée :");
-		_pLogement = new ComponentTextField("Logement :");
+		_pNom = new CompsTextField("Nom :");
+		_pPrenom = new CompsTextField("Prénom :");
+		_pMail = new CompsTextField("Mail :");
+		_pAnnee = new CompsTextField("Année Étude :");
+		_pNationalitee = new CompsTextField("Nationalitée :");
+		_pLogement = new CompsTextField("Logement :");
 		
 		add(_pNom);
 		add(_pPrenom);

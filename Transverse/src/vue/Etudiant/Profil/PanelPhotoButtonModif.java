@@ -12,8 +12,8 @@ public class PanelPhotoButtonModif extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private ComponentPhoto _pPhoto;
-	private ComponentButton _pbutton;
+	private CompsPhoto _pPhoto;
+	private CompsButton _pbutton;
 	private ListenerModification _lM;
 	
 	//---------------
@@ -24,8 +24,8 @@ public class PanelPhotoButtonModif extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	protected PanelPhotoButtonModif(String imgPath)throws IOException{
-		_pPhoto = new ComponentPhoto(imgPath);
-		_pbutton = new ComponentButton("Modifier");
+		_pPhoto = new CompsPhoto(imgPath);
+		_pbutton = new CompsButton("Modifier");
 		
 		_lM = new ListenerModification();
 		

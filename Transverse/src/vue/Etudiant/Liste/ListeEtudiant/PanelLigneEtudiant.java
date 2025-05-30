@@ -14,11 +14,11 @@ public class PanelLigneEtudiant extends JPanel{
 	//---------------
 	//ATTRIBUTS
 	//---------------
-	private ComponentButton _button;
-	private ComponentInfo _nom;
-	private ComponentInfo _prenom;
-	private ComponentInfo _pays;
-	private ComponentInfo _annee;
+	private CompsButton _button;
+	private CompsInfo _nom;
+	private CompsInfo _prenom;
+	private CompsInfo _pays;
+	private CompsInfo _annee;
 	private ListenerBoutonProfil _lbp;
 	private Etudiant _etudiant;
 	private Profil _profil;
@@ -32,11 +32,11 @@ public class PanelLigneEtudiant extends JPanel{
 	//CONSTRUCTEUR
 	//---------------
 	PanelLigneEtudiant(Etudiant e0) throws IOException{
-		_button = new ComponentButton("Profil");
-		_nom = new ComponentInfo(e0.get_nom());
-		_prenom = new ComponentInfo(e0.get_prenom());
-		_pays = new ComponentInfo(e0.get_saNationnalite().getNom());
-		_annee = new ComponentInfo(e0.get_anneeEtude());
+		_button = new CompsButton("Profil");
+		_nom = new CompsInfo(e0.get_nom());
+		_prenom = new CompsInfo(e0.get_prenom());
+		_pays = new CompsInfo(e0.get_saNationnalite().getNom());
+		_annee = new CompsInfo(e0.get_anneeEtude());
 		_etudiant = e0;
 		_profil = new Profil(e0);
 		
