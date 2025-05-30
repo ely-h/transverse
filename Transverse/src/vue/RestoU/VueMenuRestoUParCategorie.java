@@ -2,6 +2,8 @@ package vue.RestoU;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+import modele.MenuRestoUParCategorie;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -20,12 +22,13 @@ public class VueMenuRestoUParCategorie extends JPanel {
 	protected JButton bouttonChoisir;
 	protected JLabel categorie;
 	protected JLabel imgCategorie;
+	protected PanelLabelBoutton panelCatBoutton;
 
 	//--------------------------
 	// CONSTRUCTEUR
 	//--------------------------
 
-	public VueMenuRestoUParCategorie(String categorie,String imageCat) {
+	public VueMenuRestoUParCategorie(MenuRestoUParCategorie categorie,String imageCat) {
 		BufferedImage bufferedImg;
 		try {
 			bufferedImg = ImageIO.read(new File(imageCat));
@@ -42,25 +45,21 @@ public class VueMenuRestoUParCategorie extends JPanel {
 		
 		this.add(imgCategorie);
 		
-		this.add(new PanelLabelBoutton("Choisir",categorie));
+		this.panelCatBoutton=new PanelLabelBoutton("Choisir",categorie.getCategorie());
+		
+		this.add(panelCatBoutton);
 		
 		this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY,3));
 
 	}
 
-	public static void main(String[] args) {
-		//BufferedImage monImg=ImageIO.read(new File("tarte_citron_meringuee.webp"));
-		VueMenuRestoUParCategorie vueTest;
-		
-		vueTest = new VueMenuRestoUParCategorie("Essai avec test long","img/pizza.jpg");
-		JFrame fenetre=new JFrame();
-		fenetre.setSize(300,500);
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.add(vueTest);
-		fenetre.setVisible(true);
-		
-		
-
+	//--------------------------
+	// ACCESSEURS
+	//--------------------------
+	
+	public JButton getBoutton() {
+		return this.panelCatBoutton.getBoutton();
 	}
+
 
 }

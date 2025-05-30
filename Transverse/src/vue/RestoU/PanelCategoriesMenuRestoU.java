@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import controller.RestoU.EcouteurChangementMenu;
 import modele.*;
 
 public class PanelCategoriesMenuRestoU extends JPanel{
@@ -26,6 +27,7 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 	
 	protected ArrayList<VueMenuRestoUParCategorie> lesVuesDeMenu;
 	protected ArrayList<String> lesCheminsDesImages;
+	protected JPanel panelPrincipal;
 	
 
 	//--------------------------
@@ -37,15 +39,22 @@ public class PanelCategoriesMenuRestoU extends JPanel{
 		
 		this.inititializeLesImages();
 		
-		for(int i=0;i<this.lesCheminsDesImages.size();i++) {
-			this.lesVuesDeMenu.add(new VueMenuRestoUParCategorie (lesMenus.get(i).getCategorie(),this.lesCheminsDesImages.get(i)));
-			this.add(this.lesVuesDeMenu.get(i));
-		}
 		GridLayout grid=new GridLayout(1,4);
-		this.setLayout(grid);
+		this.panelPrincipal=new JPanel(grid);
+		for(int i=0;i<this.lesCheminsDesImages.size();i++) {
+			VueMenuRestoUParCategorie vue=new VueMenuRestoUParCategorie (lesMenus.get(i),this.lesCheminsDesImages.get(i));
+			vue.getBoutton().addActionListener(new EcouteurChangementMenu(this,lesMenus.get(i)));
+			this.lesVuesDeMenu.add(vue);
+			this.panelPrincipal.add(this.lesVuesDeMenu.get(i));
+		}
 		grid.setHgap(20);
 		Border empty = new EmptyBorder(100, 200, 100, 200);
-		this.setBorder(empty);
+		this.panelPrincipal.setBorder(empty);
+		
+		this.setLayout(new BorderLayout());
+		this.add(panelPrincipal,BorderLayout.CENTER);
+		
+		
 		
 		
 	}

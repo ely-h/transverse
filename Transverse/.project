@@ -14,6 +14,13 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>img/annuler.png</name>
+			<type>1</type>
+			<location>/home/nuage/BUTCours/S2/s2-sae-dev-app-cd1/Transverse/img/annuler.png</location>
+		</link>
+	</linkedResources>
 	<filteredResources>
 		<filter>
 			<id>1744400062624</id>

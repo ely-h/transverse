@@ -6,13 +6,12 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
 
 import controller.RestoU.EcouteurComboBox;
+import controller.RestoU.EcouteurRetour;
 
 /**
  * Classe représentant la vue graphique des plats d'un menu RestoU
@@ -38,6 +37,11 @@ public class VueDUnMenu extends JPanel{
 	 * Référence au menu contenant les plats à afficher
 	 */
 	MenuRestoUParCategorie leMenu;
+	/**
+	 * Boutton retour
+	 */
+	JButton btnRetour;
+	JPanel panelPrincipal;
 
 	//--------------------------
 	// CONSTRUCTEUR
@@ -49,6 +53,8 @@ public class VueDUnMenu extends JPanel{
 	public VueDUnMenu(MenuRestoUParCategorie leMenu) {
 		this.leMenu=leMenu;
 		
+		panelPrincipal=new JPanel();
+		
 		FactoryCIUP f=FactoryCIUP.getInstance();
 		f.CreationObjets();
 		lesFiltres=f.getLesFiltres();
@@ -58,21 +64,42 @@ public class VueDUnMenu extends JPanel{
 		this.plats.setLayout(new FlowLayout(FlowLayout.LEADING));
 		for(Plat plat : leMenu.getSesPlats()) {
 			this.plats.add(new VuePlat(plat));
+			for(Allergene a: plat.getAllergenes()) {
+				System.out.println(a.getNom());
+			}
+			for(Etiquette e : plat.getEtiquettes()) {
+				System.out.println(e.getNom());
+			}
+			
 		}
-		this.setLayout(new BorderLayout());
-		this.add(plats,BorderLayout.CENTER);
+		this.panelPrincipal.setLayout(new BorderLayout());
+		this.panelPrincipal.add(plats,BorderLayout.CENTER);
 		
 		String[] filtres=new String[lesFiltres.size()];
 		filtres=this.lesFiltres.toArray(filtres);
+		for(String s:filtres) {
+			System.out.println(s);
+		}
 		
 		JComboBox<String> box=new JComboBox<String>(filtres);
 		box.setPreferredSize(new java.awt.Dimension(150,50));
 		box.addActionListener(new EcouteurComboBox(this));
-		JPanel p=new JPanel(new FlowLayout());
-		p.add(box);
+		JPanel p=new JPanel(new FlowLayout(FlowLayout.CENTER));
+		p.setPreferredSize(new java.awt.Dimension(150,this.getHeight()));
 		p.setBackground(new Color(78, 94, 99));
-		this.add(p,BorderLayout.WEST);
-		this.setBorder(BorderFactory.createEmptyBorder(0,0,0,150));
+		
+		
+		
+		this.btnRetour=new JButton("Retour");
+		this.btnRetour.setPreferredSize(new java.awt.Dimension(150,50));
+		this.btnRetour.addActionListener(new EcouteurRetour(this,f.getLesCategories()));
+		p.add(btnRetour);
+		p.add(box);
+		this.panelPrincipal.add(p,BorderLayout.WEST);
+		this.panelPrincipal.setBorder(BorderFactory.createEmptyBorder(0,0,0,150));
+		this.setLayout(new GridLayout(1,1));
+		this.add(panelPrincipal);
+		
 		
 		
 	}
@@ -88,23 +115,43 @@ public class VueDUnMenu extends JPanel{
 	 * @param filtre qui correspond à une chaine de caractère dans la ComboBox
 	 */
 	public void FiltrerPar(String filtre) {
-		this.plats.removeAll();
-		if(filtre==null|| filtre.equals("Tous")) {
-			for(Plat plat : leMenu.getSesPlats()) {
-				this.plats.add(new VuePlat(plat));
-			}
-		}
-		else {
-			for(Plat plat:leMenu.getSesPlats()) {
-				if(plat.getAllergenes().contains(filtre)||plat.getEtiquettes().contains(filtre)) {
-					this.plats.add(new VuePlat(plat));
-				}
-			}
-			
-		}
-		this.plats.revalidate();
-		this.plats.repaint();
+	    this.plats.removeAll();
+
+	    for (Plat plat : leMenu.getSesPlats()) {
+	        if (filtre == null || filtre.equals("Tous") || platCorrespondAuFiltre(plat, filtre)) {
+	            this.plats.add(new VuePlat(plat));
+	        }
+	    }
+
+	    this.plats.revalidate();
+	    this.plats.repaint();
 	}
+
+	/**
+	 * Vérifie si un plat contient l'allergène ou l'étiquette correspondant au filtre.
+	 * 
+	 * @param plat   le plat à tester
+	 * @param filtre le nom de l'allergène ou de l'étiquette
+	 * @return true si le plat correspond au filtre
+	 */
+	private boolean platCorrespondAuFiltre(Plat plat, String filtre) {
+	    // Vérifie dans les allergènes
+	    for (Allergene allergene : plat.getAllergenes()) {
+	        if (filtre.equalsIgnoreCase(allergene.getNom())) {
+	            return true;
+	        }
+	    }
+
+	    // Vérifie dans les étiquettes (si ce sont des Strings)
+	    for (Etiquette etiquette : plat.getEtiquettes()) {
+	        if (filtre.equalsIgnoreCase(etiquette.getNom())) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+
 	
 	public static void main(String[] args) {
 		FactoryCIUP f=FactoryCIUP.getInstance();
