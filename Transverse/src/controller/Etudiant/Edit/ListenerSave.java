@@ -30,9 +30,7 @@ public class ListenerSave implements ActionListener{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerSave(){
-		
-	}
+	public ListenerSave(){}
 	
 	//---------------
 	//MAIN

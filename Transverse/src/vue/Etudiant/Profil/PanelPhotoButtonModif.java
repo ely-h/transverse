@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.swing.*;
 
 import vue.Etudiant.Component.*;
+import controller.Etudiant.Profil.*;
 
 public class PanelPhotoButtonModif extends JPanel{
 
@@ -13,6 +14,7 @@ public class PanelPhotoButtonModif extends JPanel{
 	//---------------
 	private ComponentPhoto _pPhoto;
 	private ComponentButton _pbutton;
+	private ListenerModification _lM;
 	
 	//---------------
 	//ACCESSEUR
@@ -24,6 +26,10 @@ public class PanelPhotoButtonModif extends JPanel{
 	protected PanelPhotoButtonModif(String imgPath)throws IOException{
 		_pPhoto = new ComponentPhoto(imgPath);
 		_pbutton = new ComponentButton("Modifier");
+		
+		_lM = new ListenerModification();
+		
+		_pbutton.getButton().addActionListener(_lM);
 		
 		add(_pPhoto);
 		add(_pbutton);

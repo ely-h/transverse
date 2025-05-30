@@ -24,6 +24,7 @@ public class ListenerCancel implements ActionListener{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
+	public ListenerCancel(){}
 	
 	//---------------
 	//MAIN

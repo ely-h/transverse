@@ -2,6 +2,7 @@ package vue.Etudiant.Profil;
 
 import modele.Etudiant;
 import modele.FactoryCIUP;
+import vue.Etudiant.Edit.Profil.PanelEditInfo;
 
 import java.awt.GridLayout;
 import javax.swing.*;
@@ -14,7 +15,13 @@ public class Profil extends JPanel{
 	//---------------
 	private PanelPhotoButtonModif _pPhoto;
 	private PanelInfo _pInfo;
-
+	private Etudiant _e;
+	
+	//---------------
+	//ACCESSEUR
+	//---------------
+	public Etudiant getEtu() {return _e;}
+	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
@@ -35,6 +42,9 @@ public class Profil extends JPanel{
 				logement
 				);
 		_pPhoto = new PanelPhotoButtonModif(e0.getPathImg());
+		
+		_e = e0;
+		
 		
 		add(_pPhoto);
 		add(_pInfo);
