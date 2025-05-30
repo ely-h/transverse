@@ -1,6 +1,7 @@
 package vue.Etudiant.Edit.Profil;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.io.IOException;
 import javax.swing.*;
 
@@ -15,7 +16,9 @@ public class PanelPhotoButtonModif extends JPanel{
 	private ComponentPhoto _pPhoto;
 	private ComponentButton _pBSave;
 	private ComponentButton _pBChange;
+	private ComponentButton _pBCancel;
 	private ListenerSave _lS;
+	private ListenerCancel _lC;
 	
 	//---------------
 	//CONSTRUCTEUR
@@ -23,15 +26,22 @@ public class PanelPhotoButtonModif extends JPanel{
 	protected PanelPhotoButtonModif(String imgPath)throws IOException{
 		_pPhoto = new ComponentPhoto(imgPath);
 		_pBSave = new ComponentButton("Sauvegarder");
-		_pBChange = new ComponentButton("Modifié");
+		_pBChange = new ComponentButton("Modifier");
+		_pBCancel = new ComponentButton("Annuler");
+		
+		_lC = new ListenerCancel();
 		_lS = new ListenerSave();
 		
+		
 		_pBSave.getButton().addActionListener(_lS);
+		_pBCancel.getButton().addActionListener(_lC);
 		
+		JPanel jp = new JPanel();
+		jp.add(_pBSave);
+		jp.add(_pBCancel);
+		jp.setLayout(new GridLayout(1,2));
 		
-		/*Ecouteur pour _pBSave qui sauvegarderas les données dans les JTextFields et qui les
-		 * enregistras dans le modele
-		 * 
+		/* 
 		 *  Ecouteur pour _pBChange qui si possible ouvre l'explorateur de fichier pour choisir
 		 *  une nouvelle image et enregistra le nouveau chemin dans le modele
 		 */
@@ -39,6 +49,7 @@ public class PanelPhotoButtonModif extends JPanel{
 		
 		add(_pBChange, BorderLayout.EAST);
 		add(_pPhoto, BorderLayout.CENTER);
-		add(_pBSave, BorderLayout.SOUTH);
+		add(jp, BorderLayout.SOUTH);
+		
 	}
 }
