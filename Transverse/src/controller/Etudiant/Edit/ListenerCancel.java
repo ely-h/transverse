@@ -15,7 +15,7 @@ public class ListenerCancel implements ActionListener{
 	//ATTRIBUTS
 	//---------------
 	private JButton _buttonSRC;
-	private EditProfil _panelSRC;
+	private JPanel _panelSRC;
 	private PanelEditInfo _panelInfo;
 	private JFrame _frameSRC;
 	private Etudiant _targetEtu;
@@ -24,17 +24,26 @@ public class ListenerCancel implements ActionListener{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerCancel(){}
+	public ListenerCancel(JPanel pane){
+		if (pane instanceof EditProfil) {
+			_panelSRC = (EditProfil) pane;
+			
+		}
+		
+		if(pane instanceof PanelPhotoButtonModif) {
+			_panelSRC = (PanelPhotoButtonModif) pane;
+		}
+		
+		_frameSRC = (JFrame) _panelSRC.getParent().getParent().getParent().getParent();
+	}
 	
 	//---------------
 	//MAIN
 	//---------------
 	public void actionPerformed(ActionEvent e) {
 		_buttonSRC = (JButton) e.getSource();
-		_panelSRC = (EditProfil) _buttonSRC.getParent().getParent().getParent().getParent();
-		_frameSRC = (JFrame) _panelSRC.getParent().getParent().getParent().getParent() ;
-		_panelInfo = _panelSRC.getEditInfo();
-		_targetEtu = _panelSRC.getEtu();
+		_panelInfo = ((EditProfil) _panelSRC).getEditInfo();
+		_targetEtu = ((Profil) _panelSRC).getEtu();
 		
 		loadProfil();
 		closeFrame();
