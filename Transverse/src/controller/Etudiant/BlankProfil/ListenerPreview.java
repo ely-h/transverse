@@ -19,9 +19,8 @@ public class ListenerPreview implements ActionListener {
 	//---------------
 	//MAIN
 	//---------------
-	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		System.out.println("Preview");
 		
 	}
 	//---------------
