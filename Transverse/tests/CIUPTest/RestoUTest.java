@@ -8,6 +8,11 @@ import modele.RestoU;
 
 public class RestoUTest {
 
+    public RestoUTest() {
+        super();
+        //TODO Auto-generated constructor stub
+    }
+
     public static void main(String[] args) {
         testConstructeur_AssocieCorrectementLaMaison();
         testSetSaMaison_ModifieCorrectementLaMaison();
