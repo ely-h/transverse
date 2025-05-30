@@ -4,6 +4,7 @@ import modele.Etudiant;
 import modele.FactoryCIUP;
 import vue.Etudiant.Edit.Profil.EditProfil;
 import vue.Etudiant.Edit.Profil.PanelEditInfo;
+import vue.Etudiant.Component.*;
 
 import java.awt.GridLayout;
 import javax.swing.*;
@@ -15,6 +16,7 @@ public class ProfilVierge extends JPanel {
 	//ATTRIBUTS
 	//---------------
 	private PanelEditInfo _pInfo;
+	private CompsTripleButton _p3Button;
 	private Etudiant _e0;
 	
 	//---------------
@@ -22,7 +24,9 @@ public class ProfilVierge extends JPanel {
 	//---------------
 	public ProfilVierge() throws IOException{
 		_pInfo = new PanelEditInfo();
+		_p3Button = new CompsTripleButton("Sauvegarder", "Visualiser", "Annuler");
 		
+		add(_p3Button);
 		add(_pInfo);
 		
 		setLayout(new GridLayout(1,2));

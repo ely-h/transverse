@@ -26,6 +26,7 @@ public class ListenerSave implements ActionListener{
 	private String _annee;
 	private String _nation;
 	private String _logment;
+	private String _ImgPath;
 	
 	//---------------
 	//CONSTRUCTEUR
@@ -58,6 +59,7 @@ public class ListenerSave implements ActionListener{
 		_annee = _panelInfo.getAnnee().getTextField().getText();
 		_nation = _panelInfo.getNationalitee().getTextField().getText();
 		_logment = _panelInfo.getLogement().getTextField().getText();
+		_ImgPath = _panelInfo.getImgPath().getTextField().getText();
 	}
 	
 	private void updateEtuData() {
@@ -75,6 +77,9 @@ public class ListenerSave implements ActionListener{
 		
 		if (!_annee.equals("")) {
 			_targetEtu.set_anneeEtude(Integer.valueOf(_annee));
+		}
+		if (!_ImgPath.equals("")) {
+			_targetEtu.setPathImg(_ImgPath);
 		}
 	}
 	
