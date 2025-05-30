@@ -2,6 +2,8 @@ package vue.RestoU;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+import modele.MenuRestoUParCategorie;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -11,48 +13,76 @@ import javax.imageio.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Vue représentant une catégorie de menu du restaurant universitaire avec son image et un bouton de sélection.
+ * Combine une image de présentation et un PanelLabelBoutton pour l'interaction.
+ * 
+ * @author hassine
+ */
 public class VueMenuRestoUParCategorie extends JPanel {
-	
-	protected JButton bouttonChoisir;
-	protected JLabel categorie;
-	protected JLabel imgCategorie;
 
-	public VueMenuRestoUParCategorie(String categorie,String imageCat) {
-		BufferedImage bufferedImg;
-		try {
-			bufferedImg = ImageIO.read(new File(imageCat));
-			Image imgCat=bufferedImg.getScaledInstance(300,250, Image.SCALE_DEFAULT);
-		
-			imgCategorie=new JLabel(new ImageIcon(imgCat));
-		} catch (IOException e) {
-			imgCategorie=new JLabel(new ImageIcon("img/placeholder-food.png"));
-		}
-		
-		
-		
-		this.setLayout(new GridLayout(2,1) );
-		
-		this.add(imgCategorie);
-		
-		this.add(new PanelLabelBoutton("Choisir",categorie));
-		
-		this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY,3));
+    //--------------------------
+    // ATTRIBUTS
+    //--------------------------
+    
+    /** Bouton de sélection de la catégorie */
+    protected JButton bouttonChoisir;
+    
+    /** Label affichant le nom de la catégorie */
+    protected JLabel categorie;
+    
+    /** Label contenant l'image représentative de la catégorie */
+    protected JLabel imgCategorie;
+    
+    /** Panel combinant le label et le bouton de la catégorie */
+    protected PanelLabelBoutton panelCatBoutton;
 
-	}
+    //--------------------------
+    // CONSTRUCTEUR
+    //--------------------------
 
-	public static void main(String[] args) {
-		//BufferedImage monImg=ImageIO.read(new File("tarte_citron_meringuee.webp"));
-		VueMenuRestoUParCategorie vueTest;
-		
-		vueTest = new VueMenuRestoUParCategorie("Essai avec test long","img/pizza.jpg");
-		JFrame fenetre=new JFrame();
-		fenetre.setSize(300,500);
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.add(vueTest);
-		fenetre.setVisible(true);
-		
-		
+    /**
+     * Crée une vue pour une catégorie de menu avec son image et son bouton de sélection.
+     * 
+     * @param categorie La catégorie de menu à afficher (ne doit pas être null)
+     * @param imageCat Chemin d'accès à l'image représentant la catégorie
+     * 
+     * @throws NullPointerException si la catégorie est null
+     */
+    public VueMenuRestoUParCategorie(MenuRestoUParCategorie categorie, String imageCat) {
+        // Chargement de l'image
+        BufferedImage bufferedImg;
+        try {
+            bufferedImg = ImageIO.read(new File(imageCat));
+            Image imgCat = bufferedImg.getScaledInstance(300, 250, Image.SCALE_DEFAULT);
+            imgCategorie = new JLabel(new ImageIcon(imgCat));
+        } catch (IOException e) {
+            // Image de remplacement si le chargement échoue
+            imgCategorie = new JLabel(new ImageIcon("img/placeholder-food.png"));
+        }
+        
+        // Configuration du layout
+        this.setLayout(new GridLayout(2, 1));
+        
+        // Ajout des composants
+        this.add(imgCategorie);
+        this.panelCatBoutton = new PanelLabelBoutton("Choisir", categorie.getCategorie());
+        this.add(panelCatBoutton);
+        
+        // Style
+        this.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 3));
+    }
 
-	}
-
+    //--------------------------
+    // ACCESSEURS
+    //--------------------------
+    
+    /**
+     * Retourne le bouton de sélection de la catégorie.
+     * 
+     * @return Le bouton JButton permettant de sélectionner cette catégorie
+     */
+    public JButton getBoutton() {
+        return this.panelCatBoutton.getBoutton();
+    }
 }
