@@ -19,4 +19,15 @@ public class blocPanel extends JPanel {
         add(blocEtudiants);
         add(blocRestoU);
     }
+    public Block getBlocResidences() {
+        return getBlocResidences();
+    }
+
+    public Block getBlocEtudiants() {
+        return getBlocEtudiants();
+    }
+
+    public Block getBlocRestoU() {
+        return getBlocRestoU();
+    }
 }

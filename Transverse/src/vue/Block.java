@@ -1,12 +1,14 @@
 package vue;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /*---------------------------------------------------------
  * Classe des blocs pour les éléments résidents restoU et etudiants
  * --------------------------------------------------------
  */
 public class Block extends JPanel {
+	private JButton bouton;
     public Block(String titre)  {
         setPreferredSize(new Dimension(200, 150));
         setBackground(new Color(250, 248, 243));
@@ -24,4 +26,9 @@ public class Block extends JPanel {
         add(bouton, BorderLayout.SOUTH);
     }
     
+
+    // Permet d’ajouter un ActionListener au bouton "Manage"
+    public void addManageListener(ActionListener listener) {
+        bouton.addActionListener(listener);
+    }
 }

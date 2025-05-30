@@ -43,5 +43,21 @@ public class NavigationBar extends JPanel {
     public void addBackActionListener(ActionListener listener) {
         backButton.addActionListener(listener);
     }
+    // Méthode d'exemple pour l'intégration avec blocPanel
+    public static void setupBlocPanelListeners(blocPanel panel) {
+        panel.getBlocResidences().addManageListener(e -> {
+            new vueGestionDeListe().setVisible(true);
+        });
+/*
+        panel.getBlocEtudiants().addManageListener(e -> {
+            new vueListeEtudiants().setVisible(true);
+        });
 
+        panel.getBlocRestoU().addManageListener(e -> {
+            new vueMenuRestoU().setVisible(true);
+        });*/
+    }
 }
+
+
+
