@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 
 import javax.swing.*;
 
+import vue.RestoU.PanelCategoriesMenuRestoU;
 import vue.miseEnLienDesPages.*;
 import vueMaison.*;
 
@@ -40,7 +41,7 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
     	this.panelCentral.add(new blocPanel(this),"Accueil");
     	this.panelCentral.add(new vueGestionDeListe(),"Residences");
     	//this.panelCentral.add(new Etudiant(),"Etudiants");
-    	//this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
+    	this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
     	
     }
 

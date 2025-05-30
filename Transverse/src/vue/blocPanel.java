@@ -38,9 +38,9 @@ public class blocPanel extends JPanel {
 //        blocEtudiants.getBouton().addActionListener(e ->{
 //        	listener.changeVers("Etudiants");
 //        });
-//        blocRestoU.getBouton().addActionListener(e ->{
-//        	listener.changeVers("RestoU");
-//        });
+        blocRestoU.getBouton().addActionListener(e ->{
+        	listener.changeVers("RestoU");
+        });
     }
 
     // Getters simples 
