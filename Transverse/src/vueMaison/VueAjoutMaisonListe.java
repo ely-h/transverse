@@ -115,7 +115,11 @@ public class VueAjoutMaisonListe extends JPanel{
 	
 	public static void main(String[] args) {
         JFrame fenetre = new JFrame("Création de la liste");
-        fenetre.setSize(700, 700);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        fenetre.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        fenetre.setSize(xSize,ySize);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         VueAjoutMaisonListe vueAjout = new VueAjoutMaisonListe();
         fenetre.add(vueAjout);
