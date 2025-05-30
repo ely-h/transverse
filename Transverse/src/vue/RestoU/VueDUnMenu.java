@@ -1,5 +1,5 @@
 package vue.RestoU;
-import modele.*;
+import modele.*; 
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -14,20 +14,38 @@ import javax.swing.*;
 
 import controller.RestoU.EcouteurComboBox;
 
+/**
+ * Classe représentant la vue graphique des plats d'un menu RestoU
+ * qui nous permet également de filtrer selon les allergènes
+ */
 public class VueDUnMenu extends JPanel{
+	
+	
 
 	//--------------------------
 	// ATTRIBUTS
 	//--------------------------
 	
+	/**
+	 * Panel contenant les plats à afficher
+	 */
 	JPanel plats;
+	/**
+	 * ArrayList de chaines de caractères qui contiennent les différents allergènes et etiquettes disponibles
+	 */
 	ArrayList<String> lesFiltres;
+	/**
+	 * Référence au menu contenant les plats à afficher
+	 */
 	MenuRestoUParCategorie leMenu;
 
 	//--------------------------
 	// CONSTRUCTEUR
 	//--------------------------
-	
+	/**
+	 * Constructeur de la classe VueDUnMenu.
+	 * Initialise l'affichage des plats, configure la ComboBox et initialise l'arraylist des filtres
+	 */
 	public VueDUnMenu(MenuRestoUParCategorie leMenu) {
 		this.leMenu=leMenu;
 		
@@ -63,6 +81,12 @@ public class VueDUnMenu extends JPanel{
 	// MÉTHODES
 	//--------------------------
 	
+	
+	/**
+	 * Fonction qui modifie le panel des plats et n'affiche que les plats qui contiennent une certaine chaine de caractère dans ses étiquettes ou allergènes.
+	 * 
+	 * @param filtre qui correspond à une chaine de caractère dans la ComboBox
+	 */
 	public void FiltrerPar(String filtre) {
 		this.plats.removeAll();
 		if(filtre==null|| filtre.equals("Tous")) {
@@ -72,7 +96,7 @@ public class VueDUnMenu extends JPanel{
 		}
 		else {
 			for(Plat plat:leMenu.getSesPlats()) {
-				if(plat.getAllergenes().contains(filtre)) {
+				if(plat.getAllergenes().contains(filtre)||plat.getEtiquettes().contains(filtre)) {
 					this.plats.add(new VuePlat(plat));
 				}
 			}
