@@ -82,6 +82,8 @@ public class FactoryCIUP {
         listeAttente = new ArrayList<Etudiant>();
         lesCategories = new ArrayList<MenuRestoUParCategorie>();
         
+        lesNationnalites=new ArrayList<Nationnalite>();
+        
         // Création des nationalités
         Nationnalite FR = new Nationnalite("Française");
         Nationnalite ES = new Nationnalite("Espagnole");            
