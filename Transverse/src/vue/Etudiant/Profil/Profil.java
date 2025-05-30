@@ -60,11 +60,13 @@ public class Profil extends JPanel{
 		try {
 			FactoryCIUP facto = FactoryCIUP.getInstance();
 			facto.CreationObjets();
-			JFrame profil = new JFrame("Profil");
-			Profil p = new Profil (facto.getLesEtudiants().get(1));
 			
+			JFrame profil = new JFrame("Profil");
 			profil.setSize(700, 300);
 			profil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
+			Profil p = new Profil (facto.getLesEtudiants().get(1));
+			
 			profil.add(p);
 			profil.setVisible(true);
 			
