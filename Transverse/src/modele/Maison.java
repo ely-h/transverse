@@ -1,96 +1,166 @@
 package modele;
 import java.util.*;
 
+/**
+ * Représente une maison de la Cité Internationale Universitaire de Paris.
+ * Gère les informations sur la maison, ses étudiants et son restaurant universitaire.
+ * 
+ * @author hassine
+ */
 public class Maison {
-	
-	/*------------------------------------
-	 * attributs
-	 * ------------------------------------
-	 */
+    
+    //--------------------------
+    // ATTRIBUTS
+    //--------------------------
+    
+    /** Restaurant universitaire associé à la maison */
+    protected RestoU sonRestoU;
+    
+    /** Liste des étudiants résidant dans la maison */
+    protected ArrayList<Etudiant> sesEtudiants = new ArrayList<Etudiant>();
+    
+    /** Nationalité principale de la maison */
+    protected Nationnalite saNationnalite;
+    
+    /** Nom de la maison */
+    private String nom;
+    
+    /** Coordonnée géographique - longitude */
+    private double longitude;
+    
+    /** Coordonnée géographique - latitude */
+    private double lattitude;
+    
+    /** Capacité totale en nombre de chambres */
+    private int nombreChambres;
 
-	RestoU sonRestoU;
-	ArrayList<Etudiant> sesEtudiants=new ArrayList<Etudiant>();
-	Nationnalite saNationnalite;
-	private String nom;
-	private double longitude;
-	private double lattitude;
-	private int nombreChambres;
-	
-	/*------------------------------------
-	 * constructeur
-	 * ------------------------------------
-	 */
+    //--------------------------
+    // CONSTRUCTEUR
+    //--------------------------
+    
+    /**
+     * Construit une nouvelle maison avec ses caractéristiques de base
+     * 
+     * @param nom Le nom de la maison
+     * @param nationnalite La nationalité principale de la maison
+     * @param longitude Position géographique (longitude)
+     * @param lattitude Position géographique (latitude)
+     * @param nombreTotalChambres Capacité d'accueil en chambres
+     */
+    public Maison(String nom, Nationnalite nationnalite, double longitude, 
+                 double lattitude, int nombreTotalChambres) {
+        this.nom = nom;
+        this.saNationnalite = nationnalite;
+        this.saNationnalite.AddMaison(this);
+        this.longitude = longitude;
+        this.lattitude = lattitude;
+        this.nombreChambres = nombreTotalChambres;
+    }
 
-	public Maison(String nom,Nationnalite nationnalite,double longitude, double lattitude, int nombreTotalChambres) {
-		
-		this.nom=nom;
-		saNationnalite=nationnalite;
-		saNationnalite.AddMaison(this);
-		this.longitude=longitude;
-		this.lattitude=lattitude;
-		nombreChambres=nombreTotalChambres;
-	}
-	
-	/*------------------------------------
-	 * methodes
-	 * ------------------------------------
-	 */
-	
-	public void addRestoU(RestoU resto) {
-		sonRestoU=resto;
-	}
-	
-	public boolean addEtudiant(Etudiant etudiantAAjouter)
-	{
-		if(nombreChambres-sesEtudiants.size()>=0)
-		{
-			sesEtudiants.add(etudiantAAjouter);
-			etudiantAAjouter.set_saMaison(this);
-			return true;
-		}
-		else
-		{
-			System.out.println("Nombre maximum d'etudiants atteint");
-			return false;
-		}
-	//La methode ajoute un etudiant seulement si quand on l'ajoute on ne depasse pas le nombre maximum de lits occupes.
-	//Elle retourne vrai si l'etudiant a pu etre ajoute, sinon false
-	}
+    //--------------------------
+    // METHODES
+    //--------------------------
+    
+    /**
+     * Associe un restaurant universitaire à cette maison
+     * 
+     * @param resto Le restaurant universitaire à associer
+     */
+    public void addRestoU(RestoU resto) {
+        this.sonRestoU = resto;
+    }
+    
+    /**
+     * Ajoute un étudiant à la maison si la capacité le permet
+     * 
+     * @param etudiantAAjouter L'étudiant à ajouter
+     * @return true si l'ajout a réussi, false si capacité maximale atteinte
+     */
+    public boolean addEtudiant(Etudiant etudiantAAjouter) {
+        if(nombreChambres - sesEtudiants.size() > 0) {
+            sesEtudiants.add(etudiantAAjouter);
+            etudiantAAjouter.set_saMaison(this);
+            return true;
+        } else {
+            System.err.println("Capacité maximale d'étudiants atteinte pour " + this.nom);
+            return false;
+        }
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    //--------------------------
+    // ACCESSEURS
+    //--------------------------
+    
+    /**
+     * @return Le nom de la maison
+     */
+    public String getNom() {
+        return nom;
+    }
 
-	public Nationnalite getNationalite() {
-		return saNationnalite;
-	}
-	
-	public RestoU getSonRestoU(){
-		return sonRestoU;
-	}
+    /**
+     * @return La nationalité principale de la maison
+     */
+    public Nationnalite getNationalite() {
+        return saNationnalite;
+    }
+    
+    /**
+     * @return Le restaurant universitaire associé
+     */
+    public RestoU getSonRestoU() {
+        return sonRestoU;
+    }
 
-	public double getLongitude() {
-		return longitude;
-	}
+    /**
+     * @return La coordonnée de longitude
+     */
+    public double getLongitude() {
+        return longitude;
+    }
 
-	public double getLattitude() {
-		return lattitude;
-	}
+    /**
+     * @return La coordonnée de latitude
+     */
+    public double getLattitude() {
+        return lattitude;
+    }
 
-	public int getNombreChambres() {
-		return nombreChambres;
-	}
-	
-	public int getNombreEtudiants() {
-		return sesEtudiants.size();
-	}
+    /**
+     * @return La capacité totale en chambres
+     */
+    public int getNombreChambres() {
+        return nombreChambres;
+    }
+    
+    /**
+     * @return Le nombre actuel d'étudiants résidants
+     */
+    public int getNombreEtudiants() {
+        return sesEtudiants.size();
+    }
 
-	public void afficherEtudiants(){
-		for(Etudiant etudiant : sesEtudiants){
-			System.out.println(etudiant);
-		}
-	}
-	public String toString(){
-		return nom+" de "+saNationnalite.getNom()+"\nSes coordonnes gps sont longitude="+longitude+" lattitude="+lattitude;
-	}
+    //--------------------------
+    // METHODES D'AFFICHAGE
+    //--------------------------
+    
+    /**
+     * Affiche la liste des étudiants de la maison dans la console
+     */
+    public void afficherEtudiants() {
+        System.out.println("Étudiants de " + this.nom + ":");
+        for(Etudiant etudiant : sesEtudiants) {
+            System.out.println(" - " + etudiant);
+        }
+    }
+    
+    /**
+     * @return Une représentation textuelle des informations de base de la maison
+     */
+    @Override
+    public String toString() {
+        return nom + " (" + saNationnalite.getNom() + ") - " 
+             + getNombreEtudiants() + "/" + nombreChambres + " chambres occupées\n"
+             + "Coordonnées: longitude=" + longitude + ", latitude=" + lattitude;
+    }
 }
