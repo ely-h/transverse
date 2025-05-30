@@ -40,5 +40,25 @@ public class adminDashboard extends JPanel {
      * ---------------------------------------------------
      */
         setPreferredSize(new Dimension(800, 100));
-    }
+    
+    
+    // ---------- Ligne des boutons ----------
+    JPanel boutonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 5));
+    
+
+    JButton btnResidences = new JButton("Résidences");
+    JButton btnEtudiants = new JButton("Étudiants");
+    JButton btnRestoU = new JButton("Resto U");
+
+    Dimension btnSize = new Dimension(120, 30);
+    btnResidences.setPreferredSize(btnSize);
+    btnEtudiants.setPreferredSize(btnSize);
+    btnRestoU.setPreferredSize(btnSize);
+
+    boutonPanel.add(btnResidences);
+    boutonPanel.add(btnEtudiants);
+    boutonPanel.add(btnRestoU);
+
+    add(boutonPanel, BorderLayout.SOUTH);
+}
 }

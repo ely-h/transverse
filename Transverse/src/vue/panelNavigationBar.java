@@ -3,6 +3,7 @@ package vue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+
 public class panelNavigationBar extends JPanel {
     private JButton backButton;
     private JLabel titleLabel;
@@ -57,7 +58,7 @@ public class panelNavigationBar extends JPanel {
             new vueMenuRestoU().setVisible(true);
         });*/
     }
-}
+
 
 
 

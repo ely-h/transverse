@@ -10,24 +10,24 @@ public class blocPanel extends JPanel {
         setBackground(Color.WHITE);
 
         // Création des blocs
-        Block blocResidences = new Block("Résidences");
-        Block blocEtudiants = new Block("Étudiants");
-        Block blocRestoU = new Block("Resto U");
+        panelBlockMenu blocResidences = new panelBlockMenu("Résidences");
+        panelBlockMenu blocEtudiants = new panelBlockMenu("Étudiants");
+        panelBlockMenu blocRestoU = new panelBlockMenu("Resto U");
 
         // Ajout des blocs au panel
         add(blocResidences);
         add(blocEtudiants);
         add(blocRestoU);
     }
-    public Block getBlocResidences() {
+    public panelBlockMenu getBlocResidences() {
         return getBlocResidences();
     }
 
-    public Block getBlocEtudiants() {
+    public panelBlockMenu getBlocEtudiants() {
         return getBlocEtudiants();
     }
 
-    public Block getBlocRestoU() {
+    public panelBlockMenu getBlocRestoU() {
         return getBlocRestoU();
     }
 }

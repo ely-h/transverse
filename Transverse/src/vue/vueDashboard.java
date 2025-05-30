@@ -15,8 +15,12 @@ public class vueDashboard extends JFrame {
         // ---- BORDEREAU AVEC SELECTEUR ----
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.add(new adminDashboard(), BorderLayout.NORTH);
+        
+        add(new adminDashboard(), BorderLayout.NORTH);
+        add(new panelNavigationBar(), BorderLayout.AFTER_LAST_LINE); // juste après le bandeau
 
-        // ComboBox de navigation
+
+      /*  // ComboBox de navigation
         String[] pages = {" Sélectionner une page ", "Résidences", "Étudiants", "Resto U", "Gestion Liste", "Menu Resto"};
         JComboBox<String> pageSelector = new JComboBox<>(pages);
         pageSelector.setPreferredSize(new Dimension(200, 30));
@@ -24,9 +28,9 @@ public class vueDashboard extends JFrame {
         // Panel d'accueil pour la ComboBox à droite
         JPanel rightSelectorPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         rightSelectorPanel.setOpaque(false);
-        rightSelectorPanel.add(pageSelector);
+        rightSelectorPanel.add(pageSelector);*/
 
-        topPanel.add(rightSelectorPanel, BorderLayout.SOUTH);
+      /*  topPanel.add(rightSelectorPanel, BorderLayout.SOUTH);*/
 
         add(topPanel, BorderLayout.NORTH);
 
@@ -43,7 +47,7 @@ public class vueDashboard extends JFrame {
 
         add(centre, BorderLayout.SOUTH);
 
-        // ---- LISTENER POUR LA COMBOBOX ----
+     /*   // ---- LISTENER POUR LA COMBOBOX ----
         pageSelector.addActionListener((ActionEvent e) -> {
             String selected = (String) pageSelector.getSelectedItem();
             switch (selected) {
@@ -65,7 +69,7 @@ public class vueDashboard extends JFrame {
                 default:
                     break;
             }
-        });
+        });*/
 
         setVisible(true);
     }
