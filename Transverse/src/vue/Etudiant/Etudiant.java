@@ -45,7 +45,15 @@ public class Etudiant extends JFrame{
 		
 		
 		_profilVierge = new ProfilVierge();
-		initializeListener();
+		
+		_lS = new ListenerSave();
+		_profilVierge.getButton0().addActionListener(_lS);
+		
+		_lP = new ListenerPreview();
+		_profilVierge.getButton1().addActionListener(_lP);
+		
+		_lC = new ListenerCancel(_profilVierge,this );
+		_profilVierge.getButton2().addActionListener(_lC);
 		
 		
 		setSize(700, 300);
@@ -71,13 +79,7 @@ public class Etudiant extends JFrame{
 	//METHODES
 	//---------------
 	private void initializeListener() {
-		_lS = new ListenerSave();
-		_profilVierge.getButton0().addActionListener(_lS);
 		
-		_lP = new ListenerPreview();
-		_profilVierge.getButton1().addActionListener(_lP);
 		
-		_lC = new ListenerCancel(_profilVierge,this );
-		_profilVierge.getButton2().addActionListener(_lOBProfil);
 	}
 }

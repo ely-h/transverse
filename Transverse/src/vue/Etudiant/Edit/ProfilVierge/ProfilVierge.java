@@ -16,9 +16,6 @@ public class ProfilVierge extends JPanel {
 	//---------------
 	private PanelEditInfo _pInfo;
 	private CompsTripleButton _p3Button;
-	private ListenerCancel _lC;
-	private ListenerSave _lS;
-	private ListenerPreview _lP;
 	private Etudiant _e0;
 
 	//---------------
