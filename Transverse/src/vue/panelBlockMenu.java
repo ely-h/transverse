@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
  * Classe des blocs pour les éléments résidents restoU et etudiants
  * --------------------------------------------------------
  */
-public class Block extends JPanel {
+public class panelBlockMenu extends JPanel {
 	private JButton bouton;
-    public Block(String titre)  {
+    public panelBlockMenu(String titre)  {
         setPreferredSize(new Dimension(200, 150));
         setBackground(new Color(250, 248, 243));
         setLayout(new BorderLayout());

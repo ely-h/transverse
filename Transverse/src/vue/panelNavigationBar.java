@@ -3,11 +3,11 @@ package vue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-public class NavigationBar extends JPanel {
+public class panelNavigationBar extends JPanel {
     private JButton backButton;
     private JLabel titleLabel;
 
-    public NavigationBar(String titre) {
+    public panelNavigationBar(String titre) {
         setLayout(new FlowLayout(FlowLayout.LEFT));
         setBackground(Color.WHITE);
         setPreferredSize(new Dimension(800, 60));
@@ -43,11 +43,11 @@ public class NavigationBar extends JPanel {
     public void addBackActionListener(ActionListener listener) {
         backButton.addActionListener(listener);
     }
-    // Méthode d'exemple pour l'intégration avec blocPanel
+  /*  // Méthode d'exemple pour l'intégration avec blocPanel
     public static void setupBlocPanelListeners(blocPanel panel) {
         panel.getBlocResidences().addManageListener(e -> {
             new vueGestionDeListe().setVisible(true);
-        });
+        });*/
 /*
         panel.getBlocEtudiants().addManageListener(e -> {
             new vueListeEtudiants().setVisible(true);

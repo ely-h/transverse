@@ -1,5 +1,5 @@
 package vue;
-import vue.NavigationBar;
+import vue.panelNavigationBar;
 import javax.swing.*;
 import java.awt.*;
 
@@ -21,7 +21,7 @@ public class vueGestionDeListe extends JFrame {
         contenuCentral.setBackground(Color.WHITE);
 
         // Barre de navigation sous le bandeau
-        NavigationBar navBar = new NavigationBar("Gestion de liste");
+        panelNavigationBar navBar = new panelNavigationBar("Gestion de liste");
         contenuCentral.add(navBar, BorderLayout.NORTH);
 
         // Panel pour les blocs Créer / Voir
@@ -47,7 +47,7 @@ public class vueGestionDeListe extends JFrame {
         // Listener pour retour
         navBar.addBackActionListener(e -> {
             dispose();
-            new DashboardMain(); // retourne à la page d'accueil
+            new vueDashboard(); // retourne à la page d'accueil
         });
     }
 
