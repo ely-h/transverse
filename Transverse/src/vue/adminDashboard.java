@@ -18,8 +18,6 @@ public class adminDashboard extends JPanel {
      */
     public adminDashboard(PanelChangeListener listener) {
     	this.listener=listener;
-    }
-    public adminDashboard() {
 
         setLayout(new BorderLayout());
         setBackground(new Color(77, 111, 122)); // fond bleu-gris
