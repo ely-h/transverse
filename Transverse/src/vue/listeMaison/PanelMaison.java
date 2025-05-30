@@ -84,10 +84,10 @@ public class PanelMaison extends JPanel {
         btnInformation.setPreferredSize(new Dimension(90, 30));
         btnSupprimer.setPreferredSize(new Dimension(90, 30));
         
-        btnInformation.setBackground(new Color(33, 150, 243));
+        btnInformation.setBackground(new Color(78, 94, 99));
         btnInformation.setForeground(Color.WHITE);
         
-        btnSupprimer.setBackground(new Color(244, 67, 54));
+        btnSupprimer.setBackground(new Color(232, 111, 85));
         btnSupprimer.setForeground(Color.WHITE);
     }
     
