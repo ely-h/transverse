@@ -39,13 +39,6 @@ public class PanelPhotoButtonModif extends JPanel{
 		jp.add(_pBCancel);
 		jp.setLayout(new GridLayout(1,2));
 		
-		/* 
-		 *  Ecouteur pour _pBChange qui si possible ouvre l'explorateur de fichier pour choisir
-		 *  une nouvelle image et enregistra le nouveau chemin dans le modele
-		 */
-		
-		
-		add(_pBChange, BorderLayout.EAST);
 		add(_pPhoto, BorderLayout.CENTER);
 		add(jp, BorderLayout.SOUTH);
 		
