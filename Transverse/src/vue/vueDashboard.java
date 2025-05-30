@@ -19,7 +19,7 @@ public class vueDashboard extends JFrame {
         add(topPanel, BorderLayout.NORTH);
 
         // ---- NAVIGATION BAR ----
-        add(new panelNavigationBar("Tableau de Bord"), BorderLayout.CENTER);
+        //add(new panelNavigationBar("Tableau de Bord"), BorderLayout.CENTER);
 
         // ---- BLOCS CENTRAUX ----
         JPanel centre = new JPanel();
@@ -29,7 +29,7 @@ public class vueDashboard extends JFrame {
         centre.add(new panelBlockMenu("Étudiants"));
         centre.add(new panelBlockMenu("Resto U"));
 
-        add(centre, BorderLayout.SOUTH);
+        add(centre, BorderLayout.CENTER);
 
         setVisible(true);
     }

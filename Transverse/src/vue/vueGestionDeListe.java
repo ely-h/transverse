@@ -22,8 +22,8 @@ public class vueGestionDeListe extends JFrame {
         contenuCentral.setBackground(Color.WHITE);
 
         // Barre de navigation sous le bandeau
-        panelNavigationBar navBar = new panelNavigationBar("Gestion de liste");
-        contenuCentral.add(navBar, BorderLayout.NORTH);
+        //panelNavigationBar navBar = new panelNavigationBar("Gestion de liste");
+        //contenuCentral.add(navBar, BorderLayout.NORTH);
 
         // Panel pour les blocs Créer / Voir
         JPanel panelBloc = new JPanel();

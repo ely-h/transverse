@@ -13,13 +13,13 @@ public class panelNavigationBar extends JPanel {
         setPreferredSize(new Dimension(800, 60));
 
         // Bouton retour
-        backButton = new JButton("←"); // Flèche Unicode
-        backButton.setFont(new Font("SansSerif", Font.BOLD, 16));
-        backButton.setBackground(new Color(0, 173, 181));
-        backButton.setForeground(Color.WHITE);
-        backButton.setFocusPainted(false);
-        backButton.setPreferredSize(new Dimension(40, 40));
-        backButton.setBorder(BorderFactory.createEmptyBorder());
+        //backButton = new JButton("←"); // Flèche Unicode
+//        backButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+//        backButton.setBackground(new Color(0, 173, 181));
+//        backButton.setForeground(Color.WHITE);
+//        backButton.setFocusPainted(false);
+//        backButton.setPreferredSize(new Dimension(40, 40));
+//        backButton.setBorder(BorderFactory.createEmptyBorder());
 
         // Label titre centré dans une bordure arrondie
         titleLabel = new JLabel(titre);
@@ -29,7 +29,7 @@ public class panelNavigationBar extends JPanel {
                 BorderFactory.createEmptyBorder(5, 15, 5, 15)
         ));
 
-        add(backButton);
+        //add(backButton);
         add(titleLabel);
     }
 
