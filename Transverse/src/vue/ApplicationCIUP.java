@@ -8,7 +8,7 @@ import javax.swing.*;
 
 import vue.RestoU.PanelCategoriesMenuRestoU;
 import vue.miseEnLienDesPages.*;
-import vueMaison.*;
+import vue.listeMaison.*;
 
 public class ApplicationCIUP extends JFrame implements PanelChangeListener{
 	private CardLayout cardLayout;
@@ -39,7 +39,7 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
     	cardLayout=new CardLayout();
     	this.panelCentral=new JPanel(cardLayout);
     	this.panelCentral.add(new blocPanel(this),"Accueil");
-    	this.panelCentral.add(new vueGestionDeListe(),"Residences");
+    	this.panelCentral.add(new vueGestionDeListe(this),"Residences");
     	//this.panelCentral.add(new Etudiant(),"Etudiants");
     	this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
     	

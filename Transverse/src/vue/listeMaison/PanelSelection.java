@@ -1,4 +1,4 @@
-package vueMaison;
+package vue.listeMaison;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -11,12 +11,35 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author elyssa
+ * 
+ * Panel d'interface graphique pour afficher la confirmation de sélection des maisons.
+ * Cette classe présente à l'utilisateur un récapitulatif des maisons sélectionnées et propose les options de retour ou de validation de la liste.
+ */
 public class PanelSelection extends JPanel{
-	JLabel label;
-	JCheckBox checkbox;
+	
+	//-------------------------
+	// ATTRIBUTS
+	//-------------------------
+	
+	protected JLabel label;
+	protected JCheckBox checkbox;
 	private Maison maison;
 	
-	//Constructeur des selections de maison
+	//-------------------------
+	// CONSTRUCTEUR
+	//-------------------------
+	
+	/**
+	 * Constructeur du panel de sélection pour une maison.
+	 * Charge l'image correspondante et configure l'interface graphique.
+	 * 
+	 * @param maison
+	 * @param cbxNom
+	 * @param imgNom
+	 * @throws IOException
+	 */
 	PanelSelection(Maison maison, String cbxNom, String imgNom) throws IOException
 	{
 		BufferedImage bufferedImg = ImageIO.read(new File(imgNom + ".jpg"));
@@ -31,9 +54,13 @@ public class PanelSelection extends JPanel{
 		
 		//ajout des composants
 		add(label);
-		add(checkbox);
+		add(getCheckbox());
 		this.maison = maison;
 	}
+	
+	//-------------------------
+	// GETTERS
+	//-------------------------
 	
     public Maison getMaison() {
 		return maison;
@@ -43,12 +70,20 @@ public class PanelSelection extends JPanel{
 		this.maison = maison;
 	}
 	
+	//-------------------------
+	// METHODES
+	//-------------------------
+	
 	//Option tout selectionner
 	public boolean toutSelection() {
-        return checkbox.isSelected();
+        return getCheckbox().isSelected();
     }
     
     public void setDeselected(boolean deselected) {
-        checkbox.setSelected(deselected);
+        getCheckbox().setSelected(deselected);
     }
+
+	public JCheckBox getCheckbox() {
+		return checkbox;
+	}
 }
