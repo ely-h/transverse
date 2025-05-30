@@ -11,6 +11,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author elyssa
+ * 
+ * Panel d'interface graphique pour afficher la confirmation de sélection des maisons.
+ * Cette classe présente à l'utilisateur un récapitulatif des maisons sélectionnées et propose les options de retour ou de validation de la liste.
+ */
 public class PanelSelection extends JPanel{
 	
 	//-------------------------
@@ -25,6 +31,15 @@ public class PanelSelection extends JPanel{
 	// CONSTRUCTEUR
 	//-------------------------
 	
+	/**
+	 * Constructeur du panel de sélection pour une maison.
+	 * Charge l'image correspondante et configure l'interface graphique.
+	 * 
+	 * @param maison
+	 * @param cbxNom
+	 * @param imgNom
+	 * @throws IOException
+	 */
 	PanelSelection(Maison maison, String cbxNom, String imgNom) throws IOException
 	{
 		BufferedImage bufferedImg = ImageIO.read(new File(imgNom + ".jpg"));

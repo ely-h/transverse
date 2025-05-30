@@ -7,12 +7,21 @@ import java.util.List;
 import javax.swing.JFrame;
 import modele.Maison;
 
+/**
+ * @author elyssa
+ * 
+ * Écouteur d'événements pour gérer la confirmation de sélection des maisons.
+ * Cette classe traite la transition entre la vue de sélection des maisons et la vue de confirmation, en vérifiant qu'au moins une maison est sélectionnée.
+ */
 public class EcouteurConfirmation implements ActionListener {
 	
 	//-------------------------
 	// ATTRIBUTS
 	//-------------------------
 	
+    /**
+     * Référence vers la vue d'ajout des maisons pour récupérer les sélections.
+     */
     private VueAjoutMaisonListe vueAjout;
     private JFrame fenetre;
     
@@ -20,6 +29,12 @@ public class EcouteurConfirmation implements ActionListener {
 	// CONSTRUCTEUR
 	//-------------------------
     
+    /**
+     * Constructeur de l'écouteur de confirmation.
+     * 
+     * @param vueAjout La vue d'ajout des maisons contenant les sélections
+     * @param fenetre La fenêtre principale de l'application
+     */
     public EcouteurConfirmation(VueAjoutMaisonListe vueAjout, JFrame fenetre) {
         this.vueAjout = vueAjout;
         this.fenetre = fenetre;
@@ -29,6 +44,13 @@ public class EcouteurConfirmation implements ActionListener {
 	// METHODE
 	//-------------------------
     
+    /**
+     * Méthode appelée lors de l'événement de confirmation.
+     * Verifie qu'au moins une maison est sélectionnée, puis affiche le panel de confirmation avec les maisons sélectionnées.
+     * Si aucune maison n'est sélectionnée elle affiche un message d'avertissement.
+     * 
+     * @param e L'événement d'action déclenché par le bouton de confirmation
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         List<Maison> maisonsSelectionnees = getMaisonsSelectionnees();
@@ -58,6 +80,12 @@ public class EcouteurConfirmation implements ActionListener {
 	// GETTER
 	//-------------------------
     
+    /**
+     * Récupère la liste des maisons sélectionnées à partir des panels de sélection.
+     * Parcours tous les panels de sélection et ajoute les maisons cochées à la liste.
+     * 
+     * @return Une liste contenant toutes les maisons sélectionnées par l'utilisateur
+     */
     private List<Maison> getMaisonsSelectionnees() {
         List<Maison> maisonsSelectionnees = new ArrayList<>();
         List<PanelSelection> selectionPanels = vueAjout.getSelectionPanels();

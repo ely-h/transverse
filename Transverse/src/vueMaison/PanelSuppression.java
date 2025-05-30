@@ -7,6 +7,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author elyssa
+ * 
+ * Panel d'interface graphique pour confirmer la suppression d'une maison de la liste.
+ * Cette classe affiche une boîte de dialogue de confirmation avec les options de suppression ou d'annulation.
+ */
 public class PanelSuppression extends JPanel {
 	
 	//-------------------------
@@ -25,6 +31,14 @@ public class PanelSuppression extends JPanel {
 	//-------------------------
 
     
+    /**
+     * Constructeur du panel de suppression.
+     * Initialise l'interface de confimation pour la suppression d'une maison specifique.
+     * 
+     * @param maison
+     * @param vueParent
+     * @param frameParent
+     */
     public PanelSuppression(Maison maison, VueListeMaison vueParent, JFrame frameParent) {
         this.maison = maison;
         this.vueParent = vueParent;
@@ -40,6 +54,10 @@ public class PanelSuppression extends JPanel {
 	//-------------------------
 
     
+    /**
+     * Initialise tous les composants graphiques du panel de suppression.
+     * Configure le message de confirmation et les boutons avec leurs styles.
+     */
     private void initializeComponents() {
         // Message de confirmation
         labelQuestion = new JLabel("<html><center>Êtes-vous sûr de vouloir supprimer<br>" + 
@@ -67,6 +85,10 @@ public class PanelSuppression extends JPanel {
         btnAnnuler.setFocusPainted(false);
     }
     
+    /**
+     * Configure la mise en page du panel avec BorderLayout.
+     * Place la question au centre et les boutons en bas.
+     */
     private void setupLayout() {
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
@@ -85,6 +107,10 @@ public class PanelSuppression extends JPanel {
         add(panelBoutons, BorderLayout.SOUTH);
     }
     
+    /**
+     * Ajoute les écouteurs d'événements aux boutons.
+     * Configure les actions de suppression et d'annulation.
+     */
     private void ajouterEcouteurs() {
         // Écouteur pour le bouton Supprimer
         EcouteurSupprimerConfirmer ecouteurSuppr = new EcouteurSupprimerConfirmer(maison, vueParent, frameParent);

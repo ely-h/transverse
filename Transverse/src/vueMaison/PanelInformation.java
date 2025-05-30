@@ -4,6 +4,17 @@ import modele.Maison;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author elyssa
+ * 
+ * Panel d'affichage détaillé des informations d'une maison.
+ * Cette classe étend JPanel et présente toutes les informations importantes d'une maison dans une interface graphique claire et organisée.
+ * Les informations affichées sont :
+ * -Le nom de la maison (en titre mis en valeur)
+ * -Le pays d'origine
+ * -Le nombre de chambres disponibles
+ * -Les coordonnées géographiques (latitude et longitude)
+ */
 public class PanelInformation extends JPanel {
 	
 	//-------------------------
@@ -21,6 +32,11 @@ public class PanelInformation extends JPanel {
 	// CONSTRUCTEUR
 	//-------------------------
     
+    /**
+     * Constructeur du panel d'information.
+     * 
+     * @param maison maison La maison dont on veut afficher les informations
+     */
     public PanelInformation(Maison maison) {
         this.maison = maison;
         initializeComponents();
@@ -31,6 +47,12 @@ public class PanelInformation extends JPanel {
 	// METHODES
 	//-------------------------
     
+    /**
+     * Initialise tous les composants visuels du panel.
+     * Crée les labels avec les informations de la maison et applique le style approprié (polices, couleurs) pour chaque élément.
+     * Le nom de la maison est mis en évidence avec une police plus grande et une couleur bleue.
+     * 
+     */
     private void initializeComponents() {
         // Création des labels avec les info de la maison
         labelNom = new JLabel("Nom: " + maison.getNom());
@@ -55,6 +77,16 @@ public class PanelInformation extends JPanel {
         labelLongitude.setForeground(Color.DARK_GRAY);
     }
     
+    /**
+     * Met en place la disposition des composants dans le panel.
+     * s
+     * Organise les éléments avec un BorderLayout principal :
+     * -Un titre au nord
+     * -Les informations au centre, organisées verticalement
+     * -Un espacement approprié entre les éléments
+     * 
+     * Le panel a un fond blanc et des marges pour une présentation aérée.
+     */
     private void setupLayout() {
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);

@@ -9,6 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * @author elyssa
+ * Vue principale pour l'affichage et la gestion d'une liste de maisons.
+ * Cette classe permet de visualiser les maisons d'une liste créée précédemment, d'afficher leurs informations détaillées, de les supprimer de la liste et de retourner vers la création de nouvelles listes.
+ * 
+ */
 public class VueListeMaison extends JPanel {
 	
 	//-------------------------
@@ -30,6 +36,12 @@ public class VueListeMaison extends JPanel {
         this(null);
     }
     
+    /**
+     * Constructeur avec fenêtre parent.
+     * Initialise la vue avec tous ses composants et charge les maisons depuis la factory.
+     * 
+     * @param fenetreParent La fenêtre parent pour permettre la navigation
+     */
     public VueListeMaison(JFrame fenetreParent) {
     	this.fenetreParent = fenetreParent;
         factory = FactoryCIUP.getInstance();
@@ -46,6 +58,10 @@ public class VueListeMaison extends JPanel {
 	//-------------------------
 
     
+    /**
+     * Initialise tous les composants graphiques de base.
+     * Crée le panel des maisons, le scroll pane et le bouton de retour si une fenêtre parent est fournie.
+     */
     private void initializeComponents() {
         panelMaisons = new JPanel();
         panelMaisons.setLayout(new GridLayout(0, 3, 10, 10)); 
@@ -63,6 +79,10 @@ public class VueListeMaison extends JPanel {
         }
     }
     
+    /**
+     * Met en place la disposition générale de la vue.
+     * Organise le titre, le bouton de retour et la zone de contenu des maisons.
+     */
     private void setupLayout() {
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
@@ -94,6 +114,10 @@ public class VueListeMaison extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
     }
     
+    /**
+     * Charge toutes les maisons depuis la factory et les affiche.
+     * Vide d'abord le panel actuel puis crée un PanelMaison pour chaque maison de la liste. Affiche un message si aucune maison n'est disponible.
+     */
     private void chargerMaisons() {
         // Vider le panel actuel
         panelMaisons.removeAll();
@@ -120,6 +144,10 @@ public class VueListeMaison extends JPanel {
         panelMaisons.repaint();
     }
     
+    /**
+     * Ajoute les écouteurs d'événements aux boutons de chaque panel de maison.
+     * Associe les boutons 'Information' et "Supprimer" à leurs écouteurs respectifs.
+     */
     private void ajouterEcouteurs() {
         for (PanelMaison panelMaison : panelsMaison) {
             EcouteurInformation ecouteurInfo = new EcouteurInformation(panelMaison.getMaison(), this);
@@ -130,6 +158,10 @@ public class VueListeMaison extends JPanel {
         }
     }
     
+    /**
+     * Retourne vers la vue de création de liste.
+     * Remplace le contenu de la fenêtre parent par une nouvelle VueAjoutMaisonListe avec son écouteur de confirmation.
+     */
     private void retournerVersCreation() {
         if (fenetreParent != null) {
             // Retourner à la vue de sélection
@@ -148,6 +180,12 @@ public class VueListeMaison extends JPanel {
     }
     
     // Méthodes utilisées par les écouteurs
+    /**
+     * Affiche les informations détaillées d'une maison dans une nouvelle fenêtre.
+     * Méthode appelée par EcouteurInformation lors du clic sur "Information".
+     * 
+     * @param maison
+     */
     public void afficherInformations(Maison maison) {
         JFrame frameInfo = new JFrame("Informations - " + maison.getNom());
         frameInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -159,6 +197,12 @@ public class VueListeMaison extends JPanel {
         frameInfo.setVisible(true);
     }
     
+    /**
+     * Affiche la boîte de dialogue de confirmation de suppression.
+     * Méthode appelée par EcouteurSupprimer lors du clic sur "Supprimer".
+     * 
+     * @param maison
+     */
     public void afficherConfirmationSuppression(Maison maison) {
         JFrame frameSuppression = new JFrame("Supprimer - " + maison.getNom());
         frameSuppression.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -170,6 +214,11 @@ public class VueListeMaison extends JPanel {
         frameSuppression.setVisible(true);
     }
     
+    /**
+     * Actualise l'affichage de la liste après modification.
+     * Recharge les maisons depuis la factory et remet en place les écouteurs.
+     * Méthode appelée après suppression d'une maison.
+     */
     public void actualiserListe() {
         chargerMaisons();
         ajouterEcouteurs();

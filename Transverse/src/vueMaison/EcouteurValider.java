@@ -8,6 +8,12 @@ import javax.swing.JOptionPane;
 import modele.FactoryCIUP;
 import modele.Maison;
 
+/**
+ * @author elyssa
+ * Écouteur d'événements pour gérer la validation finale de la liste de maisons.
+ * Cette classe traite l'ajout effectif des maisons sélectionnées à la liste et propose à l'utilisateur de voir la liste créée ou de retourner à la sélection.
+ * 
+ */
 public class EcouteurValider implements ActionListener {
 	
 	
@@ -15,13 +21,26 @@ public class EcouteurValider implements ActionListener {
 	// ATTRIBUTS
 	//-------------------------
 	
+    /**
+     * Liste des maisons sélectionnées à ajouter à la liste principale.
+     */
     private List<Maison> maisonsSelectionnees;
+    
+    /**
+     * Référence vers la fenêtre principale de l'application.
+     */
     private JFrame fenetre;
 	
 	//-------------------------
 	// CONSTRUCTEUR
 	//-------------------------
     
+    /**
+     * Constructeur de l'écouteur de validation.
+     * 
+     * @param maisonsSelectionnees
+     * @param fenetre
+     */
     public EcouteurValider(List<Maison> maisonsSelectionnees, JFrame fenetre) {
         this.maisonsSelectionnees = maisonsSelectionnees;
         this.fenetre = fenetre;
@@ -31,6 +50,11 @@ public class EcouteurValider implements ActionListener {
 	// METHODES
 	//-------------------------
     
+    /**
+     * Méthode appelée lors de l'événement de validation.
+     * Ajoute les maisons sélectionnées à la liste principale via FactoryCIUP, affiche un message de confirmation et propose à l'utilisateur de voir la liste créée ou de retourner à la sélection.
+     * 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         // Récupérer l'instance de FactoryCIUP
@@ -61,6 +85,10 @@ public class EcouteurValider implements ActionListener {
             }
 
     }
+    /**
+     * Affiche la vue de la liste des maisons créée.
+     * Remplace le contenu de la fenêtre par VueListeMaison pour permettre à l'utilisateur de consulter sa liste nouvellement créée.
+     */
     private void afficherVueListeMaison() {
         fenetre.getContentPane().removeAll();
         fenetre.setTitle("Ma Liste de Maisons");
@@ -73,6 +101,10 @@ public class EcouteurValider implements ActionListener {
         fenetre.repaint();
     }
     
+    /**
+     * Retourne vers la vue de sélection des maisons.
+     * Recrée une nouvelle instance de VueAjoutMaisonListe et configure ses écouteurs pour permettre une nouvelle sélection.
+     */
     private void retournerVersSelection() {
         // Retourner à la vue de sélection des maisons
         fenetre.getContentPane().removeAll();

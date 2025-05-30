@@ -4,6 +4,11 @@ import java.awt.*;
 import java.util.List;
 import modele.Maison;
 
+/**
+ * @author elyssa
+ * Panel d'interface graphique pour afficher la confirmation de sélection des maisons.
+ * Cette classe présente à l'utilisateur un récapitulatif des maisons sélectionnées et propose les options de retour ou de validation de la liste.
+ */
 public class PanelConfirmation extends JPanel {
 	
 	//-------------------------
@@ -20,7 +25,13 @@ public class PanelConfirmation extends JPanel {
 	// CONSTRUCTEUR
 	//-------------------------
 	
-	 public PanelConfirmation(List<Maison> selectedMaisons) {
+	 /**
+	 * Constructeur du panel de confirmation.
+	 * Initialise tous les composants graphiques et affiche les maisons sélectionnées.
+	 * 
+	 * @param selectedMaisons
+	 */
+	public PanelConfirmation(List<Maison> selectedMaisons) {
 	     this.selectedMaisons = selectedMaisons;
 		 initializeComponents();
 		 setupLayout();
@@ -31,6 +42,10 @@ public class PanelConfirmation extends JPanel {
 	// METHODES
 	//-------------------------
 	 
+    /**
+     * Initialise tous les composants graphiques du panel.
+     * Configure les labels, zone de texte et boutons avec leurs styles respectifs.
+     */
     private void initializeComponents() {
         titleLabel = new JLabel("Confirmation de la sélection");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
@@ -55,6 +70,10 @@ public class PanelConfirmation extends JPanel {
         btnRetour.setForeground(Color.WHITE);
     }
     
+    /**
+     * Configure la mise en page du panel avec BorderLayout.
+     * Organise le titre en haut, la liste au centre et les boutons en bas.
+     */
     private void setupLayout() {
         setLayout(new BorderLayout(20, 20));
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -84,6 +103,10 @@ public class PanelConfirmation extends JPanel {
         add(buttonPanel, BorderLayout.SOUTH);
     }
     
+    /**
+     * Met à jour l'affichage de la liste des maisons sélectionnées.
+     * Construit un texte formaté avec le nombre et les noms des maisons.
+     */
     private void affichageSelection() {
         if (selectedMaisons == null || selectedMaisons.isEmpty()) {
             selectedHousesArea.setText("Aucune maison sélectionnée.");
@@ -102,7 +125,12 @@ public class PanelConfirmation extends JPanel {
         selectedHousesArea.setCaretPosition(0);
     }
     
-    //mettre à jour la liste des maisons sélectionnées
+    /**
+     * Met à jour la liste des maisons sélectionnées et rafraîchit l'affichage.
+     * Utilisée pour modifier dynamiquement la sélection si nécessaire.
+     * 
+     * @param newSelectedMaisons
+     */
     public void updateSelectedMaisons(List<Maison> newSelectedMaisons) {
         this.selectedMaisons = newSelectedMaisons;
         affichageSelection();

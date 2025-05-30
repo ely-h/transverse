@@ -10,6 +10,17 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author elyssa
+ * 
+ * Panel représentant visuellement une maison dans la liste.
+ * 
+ * Cette classe étend JPanel et crée une carte visuelle pour chaque maison comprenant :
+ * -Une image de la maison
+ * -Le nom de la maison
+ * -Un bouton 'Information' pour afficher les détails
+ * -Un bouton 'Supprimer' pour retirer la maison de la liste
+ */
 public class PanelMaison extends JPanel {
 	
 	//-------------------------
@@ -26,6 +37,12 @@ public class PanelMaison extends JPanel {
 	// CONSTRUCTEUR
 	//-------------------------
     
+    /**
+     * Constructeur du panel de maison.
+     * Initialise tous les composants visuels et met en place la disposition pour représenter la maison fournie.
+     * 
+     * @param maison
+     */
     public PanelMaison(Maison maison) {
         this.maison = maison;
         initializeComponents();
@@ -36,6 +53,13 @@ public class PanelMaison extends JPanel {
 	// METHODES
 	//-------------------------
     
+    /**
+     * Initialise tous les composants visuels du panel.
+     * Cette méthode :
+     * -Charge et redimensionne l'image de la maison 
+     * -Crée le label avec le nom de la maison
+     * -Initialise les boutons avec leur style respectif
+     */
     private void initializeComponents() {
         // Image maison
         try {
@@ -67,6 +91,12 @@ public class PanelMaison extends JPanel {
         btnSupprimer.setForeground(Color.WHITE);
     }
     
+    /**
+     * Met en place la disposition des composants dans le panel.
+     * Organise les éléments avec un BorderLayout :
+     * -L'image et le nom au centre
+     * -Les boutons au sud, organisés en grille
+     */
     private void setupLayout() {
         setLayout(new BorderLayout(5, 5));
         setBackground(Color.WHITE);

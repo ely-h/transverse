@@ -7,6 +7,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author elyssa
+ * 
+ * Vue principale pour la création d'une liste de maisons.
+ * 
+ * Cette classe permet à l'utilisateur de sélectionner des maisons parmi celles disponibles dans la factory CIUP pour créer une liste personnalisée.
+ * L'interface présente toutes les maisons disponibles avec des cases à cocher pour permettre la sélection multiple.
+ */
 public class VueAjoutMaisonListe extends JPanel{
 	
 	//-------------------------
@@ -32,6 +40,12 @@ public class VueAjoutMaisonListe extends JPanel{
 	//-------------------------
 
     
+    /**
+     * Constructeur de la vue d'ajout de maisons à la liste.
+     * Initialise tous les composants graphiques, charge les maisons depuis la factory
+     * et met en place la disposition visuelle avec les panels de sélection.
+     * Ajoute également l'écouteur pour le bouton "Tout sélectionner".
+     */
     public VueAjoutMaisonListe() {
         setLayout(new BorderLayout(20,20));
         selectionPanels = new ArrayList<>();
@@ -90,14 +104,8 @@ public class VueAjoutMaisonListe extends JPanel{
         add(panelActions, BorderLayout.EAST);
         
         //ECOUTEURS
-        btnSelectAll.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (PanelSelection panel : selectionPanels) {
-                    panel.checkbox.setSelected(true);
-                }
-            }
-        });
+        EcouteurToutSelect ecouteurToutSelect = new EcouteurToutSelect(selectionPanels);
+        btnSelectAll.addActionListener(ecouteurToutSelect);
     }
     
 	//-------------------------
@@ -113,6 +121,12 @@ public class VueAjoutMaisonListe extends JPanel{
 		return btnConfirm;
 	}
 	
+	/**
+	 * Méthode main pour tester la vue indépendamment.
+	 * Crée une fenêtre maximisée avec la vue d'ajout et son écouteur de confirmation.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
         JFrame fenetre = new JFrame("Création de la liste");
         Toolkit tk = Toolkit.getDefaultToolkit();
