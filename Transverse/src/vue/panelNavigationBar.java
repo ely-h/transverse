@@ -2,7 +2,6 @@ package vue;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class panelNavigationBar extends JPanel {
     private JButton backButton;
@@ -41,23 +40,7 @@ public class panelNavigationBar extends JPanel {
     public void setTitle(String text) {
         titleLabel.setText(text);
     }
-    public void addBackActionListener(ActionListener listener) {
-        backButton.addActionListener(listener);
-    }
-  /*  // Méthode d'exemple pour l'intégration avec blocPanel
-    public static void setupBlocPanelListeners(blocPanel panel) {
-        panel.getBlocResidences().addManageListener(e -> {
-            new vueGestionDeListe().setVisible(true);
-        });*/
-/*
-        panel.getBlocEtudiants().addManageListener(e -> {
-            new vueListeEtudiants().setVisible(true);
-        });
-
-        panel.getBlocRestoU().addManageListener(e -> {
-            new vueMenuRestoU().setVisible(true);
-        });*/
-    }
+}
 
 
 

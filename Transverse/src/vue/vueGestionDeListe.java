@@ -1,4 +1,5 @@
 package vue;
+
 import vue.panelNavigationBar;
 import javax.swing.*;
 import java.awt.*;
@@ -43,12 +44,6 @@ public class vueGestionDeListe extends JFrame {
 
         // Ajout du contenu central à la fenêtre
         add(contenuCentral, BorderLayout.CENTER);
-
-        // Listener pour retour
-        navBar.addBackActionListener(e -> {
-            dispose();
-            new vueDashboard(); // retourne à la page d'accueil
-        });
     }
 
     private JPanel creerBloc(String titre) {
@@ -70,4 +65,5 @@ public class vueGestionDeListe extends JFrame {
         SwingUtilities.invokeLater(() -> new vueGestionDeListe().setVisible(true));
     }
 }
+
 

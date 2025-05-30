@@ -5,29 +5,36 @@ import java.awt.*;
 
 public class blocPanel extends JPanel {
 
+    // Champs privés pour les blocs
+    private panelBlockMenu blocResidences;
+    private panelBlockMenu blocEtudiants;
+    private panelBlockMenu blocRestoU;
+
     public blocPanel() {
         setLayout(new FlowLayout(FlowLayout.CENTER, 40, 60));
         setBackground(Color.WHITE);
 
         // Création des blocs
-        panelBlockMenu blocResidences = new panelBlockMenu("Résidences");
-        panelBlockMenu blocEtudiants = new panelBlockMenu("Étudiants");
-        panelBlockMenu blocRestoU = new panelBlockMenu("Resto U");
+        blocResidences = new panelBlockMenu("Résidences");
+        blocEtudiants = new panelBlockMenu("Étudiants");
+        blocRestoU = new panelBlockMenu("Resto U");
 
         // Ajout des blocs au panel
         add(blocResidences);
         add(blocEtudiants);
         add(blocRestoU);
     }
+
+    // Getters simples 
     public panelBlockMenu getBlocResidences() {
-        return getBlocResidences();
+        return blocResidences;
     }
 
     public panelBlockMenu getBlocEtudiants() {
-        return getBlocEtudiants();
+        return blocEtudiants;
     }
 
     public panelBlockMenu getBlocRestoU() {
-        return getBlocRestoU();
+        return blocRestoU;
     }
 }
