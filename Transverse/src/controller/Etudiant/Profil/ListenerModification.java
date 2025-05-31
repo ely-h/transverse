@@ -17,7 +17,7 @@ public class ListenerModification implements ActionListener {
 	private JButton _buttonSRC;
 	private EditProfil _paneEdit;
 	private PanelEditInfo _panelInfo;
-	private JLayeredPane _frameSRC;
+	private JFrame _frameSRC;
 	private Etudiant _targetEtu;
 	private Profil _profilSRC;
 	
@@ -32,7 +32,7 @@ public class ListenerModification implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		_buttonSRC = (JButton) e.getSource();
 		_profilSRC = (Profil) _buttonSRC.getParent().getParent().getParent();
-		_frameSRC = (JLayeredPane) _profilSRC.getParent().getParent().getParent().getParent() ;
+		_frameSRC = (JFrame) _profilSRC.getParent().getParent().getParent().getParent() ;
 		_targetEtu = _profilSRC.getEtu();
 		
 		loadEditProfil();

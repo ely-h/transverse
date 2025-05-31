@@ -77,7 +77,10 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
     	this.panelCentral.add(new vueGestionDeListe(this),"Residences");
 
     	try {
-			this.panelCentral.add(new Etudiant(this.panelCentral),"Etudiants");
+    		JPanel panelEtudiant=new JPanel();
+    		
+    		panelEtudiant.add(new Etudiant(panelEtudiant)) ;
+			this.panelCentral.add(panelEtudiant,"Etudiants");
 		} catch (IOException e) {
 		    JOptionPane.showMessageDialog(this, 
 		            "Erreur de chargement des données étudiant",
