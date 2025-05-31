@@ -1,5 +1,6 @@
 package modele;
 import java.util.*;
+import java.io.*;
 
 /**
  * FactoryCIUP - Singleton responsable de la création et de la gestion 
@@ -45,6 +46,9 @@ public class FactoryCIUP {
      * Constructeur privé pour le pattern Singleton
      */
     private FactoryCIUP() {
+    	this.listeMaisons = new ArrayList<>();
+    	chargerListeMaisons();
+    	System.out.println("Données initiales chargées : " + listeMaisons.size() + " maisons");
         // Initialisation différée dans CreationObjets()
     }
 
@@ -77,7 +81,7 @@ public class FactoryCIUP {
     public void CreationObjets() {
         // Initialisation des listes
         lesMaisons = new ArrayList<Maison>();
-        listeMaisons = new ArrayList<Maison>();
+        //listeMaisons = new ArrayList<Maison>();
         lesEtudiants = new ArrayList<Etudiant>();
         listeAttente = new ArrayList<Etudiant>();
         lesCategories = new ArrayList<MenuRestoUParCategorie>();
@@ -389,6 +393,56 @@ public class FactoryCIUP {
     		}
     	}
     	return new Nationnalite("Inconnu");
+    }
+    
+    /**
+     * Méthode pour sauvegarder/serialiser les maisons dans le fichier .ser
+     */
+    public void sauvegarderListeMaisons() {
+        // Crée le dossier s'il n'existe pas
+        File dossier = new File("data");
+        if (!dossier.exists()) {
+            if (!dossier.mkdirs()) {  // mkdirs crée aussi les parents si besoin
+                System.err.println("Échec de la création du dossier 'data'");
+                return;
+            }
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/liste_maisons.ser"))) {
+            if (this.listeMaisons == null || this.listeMaisons.isEmpty()) {
+                System.err.println("Avertissement : la liste des maisons est vide lors de la sauvegarde.");
+            } else {
+                oos.writeObject(this.listeMaisons);
+                System.out.println("Liste sauvegardée avec succès.");
+            }
+        } catch (IOException e) {
+            System.err.println("Échec de la sauvegarde : " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Méthode pour charger les maisons depuis le fichier .ser
+     */
+    public void chargerListeMaisons() {
+        File fichier = new File("data/liste_maisons.ser");
+        System.out.println("[DEBUG] Chemin: " + fichier.getAbsolutePath());
+        
+        if (fichier.exists() && fichier.length() > 0) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichier))) {
+                ArrayList<Maison> temp = (ArrayList<Maison>) ois.readObject();
+                this.listeMaisons.clear();
+                this.listeMaisons.addAll(temp);
+                System.out.println("[DEBUG] " + this.listeMaisons.size() + " maisons chargées");
+            } catch (Exception e) {
+                System.err.println("[ERREUR] Chargement: " + e.toString());
+                // Réinitialiser si erreur
+                this.listeMaisons = new ArrayList<>();
+            }
+        } else {
+            System.out.println("[INFO] Aucune sauvegarde trouvée");
+            this.listeMaisons = new ArrayList<>();
+        }
     }
     
 }

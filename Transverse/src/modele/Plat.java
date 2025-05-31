@@ -1,4 +1,5 @@
 package modele;
+import java.io.Serializable;
 import java.util.*;
 
 
@@ -6,8 +7,8 @@ import java.util.*;
  * Classe des Plats ayant comme informations le nom, les ingredients, les valeurs nutritionnelle et les allergenes du plats
  *---------------------------
  */
-public class Plat {
-
+public class Plat implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String nomDuPlat;
 	private ArrayList<String> ingredientsDuPlat;
 	private String valeursNutritionnelles; 

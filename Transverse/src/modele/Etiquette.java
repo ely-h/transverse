@@ -1,11 +1,14 @@
 package modele;
 
+import java.io.Serializable;
+
 /*------------------------------
  * Classe Etiquette
  * -----------------------------
  */
 
-public class Etiquette {
+public class Etiquette implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String nom;
 	
 /*------------------------------

@@ -1,7 +1,10 @@
 package modele;
 
+import java.io.Serializable;
 
-public class Etudiant {
+public class Etudiant implements Serializable{
+	private static final long serialVersionUID = 1L; // Version 1
+
 
 	Nationnalite _saNationnalite;
 	Maison _saMaison;

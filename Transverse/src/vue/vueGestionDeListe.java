@@ -14,6 +14,8 @@ import java.awt.*;
 
 /**
  * Panel pour la gestion des listes (création et visualisation).
+ * 
+ * @author agoubi
  */
 
 public class vueGestionDeListe extends JPanel {

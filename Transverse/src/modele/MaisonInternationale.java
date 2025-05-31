@@ -1,5 +1,6 @@
 package modele;
 import java.util.*;
+import java.io.Serializable;
 
 /**
  * Représente une maison internationale de la CIUP, avec des services spécifiques.
@@ -7,7 +8,8 @@ import java.util.*;
  * 
  * @author hassine
  */
-public class MaisonInternationale extends Maison {
+public class MaisonInternationale extends Maison implements Serializable{
+	private static final long serialVersionUID = 1L; // Version 1
     
     //--------------------------
     // ATTRIBUTS

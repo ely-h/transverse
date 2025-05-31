@@ -9,6 +9,9 @@ import vue.miseEnLienDesPages.PanelChangeListener;
 
 import java.awt.*;
 
+/**
+ * @author agoubi
+ */
 public class adminDashboard extends JPanel {
 	private PanelChangeListener listener;
 

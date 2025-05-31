@@ -1,7 +1,9 @@
 package modele;
+import java.io.Serializable;
 import java.util.*;
 
-public class Nationnalite {
+public class Nationnalite implements Serializable{
+	private static final long serialVersionUID = 1L; // Version 
 
 	Maison saMaison;
 	ArrayList<Etudiant> sesEtudiants;

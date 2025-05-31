@@ -9,6 +9,8 @@ import java.awt.*;
  */
 /**
  * Panel représentant un bloc de menu avec un titre et un bouton.
+ * 
+ * @author agoubi
  */
 
 public class panelBlockMenu extends JPanel {
