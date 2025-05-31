@@ -5,6 +5,8 @@ import java.awt.*;
 
 /**
  * Barre de navigation avec un bouton retour et un titre.
+ * 
+ * @author agoubi
  */
 
 public class panelNavigationBar extends JPanel {

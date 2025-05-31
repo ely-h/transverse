@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+
+import modele.FactoryCIUP;
 import modele.Maison;
 import vue.ApplicationCIUP;
 import vue.listeMaison.PanelConfirmation;

@@ -56,11 +56,21 @@ public class EcouteurSupprimerConfirmer implements ActionListener {
      *   -Actualise l'affichage de la liste des maisons
      *   -Ferme la boîte de dialogue de confirmation
      *   -Affiche un message informant de la suppression réussie
+     *   -Permet de sauvegarder la liste des maison
+     *   -Debug
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         FactoryCIUP factory = FactoryCIUP.getInstance();
         factory.removeMaisonFromListe(maison);
+        try {
+            factory.sauvegarderListeMaisons();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(vueParent,
+                "Erreur lors de la sauvegarde : " + ex.getMessage(),
+                "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+        }
         vueParent.actualiserListe();
         frameParent.dispose();
         JOptionPane.showMessageDialog(vueParent, 

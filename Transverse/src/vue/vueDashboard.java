@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 
 /**
  * Fenêtre principale du tableau de bord administratif.
+ * 
+ * @author agoubi
  */
 
 public class vueDashboard extends JFrame {

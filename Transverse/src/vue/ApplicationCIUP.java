@@ -3,6 +3,7 @@ package vue;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Toolkit;
+
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
@@ -10,16 +11,39 @@ import java.lang.System.Logger.Level;
 import javax.swing.*;
 
 import vue.Etudiant.Etudiant;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+
+
+import modele.FactoryCIUP;
+
 import vue.RestoU.PanelCategoriesMenuRestoU;
 import vue.miseEnLienDesPages.*;
 import vue.listeMaison.*;
 
+/**
+ * @author hassine
+ */
 public class ApplicationCIUP extends JFrame implements PanelChangeListener{
 	private CardLayout cardLayout;
     private JPanel panelCentral;
     private JPanel panelEntier;
     
     public ApplicationCIUP() {
+    	System.out.println("[INIT] Chargement des données...");
+        FactoryCIUP factory = FactoryCIUP.getInstance();
+        
+        factory.chargerListeMaisons();
+        
+        if (factory.getListeMaisons().isEmpty()) {
+            System.out.println("[INIT] Création des objets initiaux...");
+            factory.CreationObjets();
+            factory.sauvegarderListeMaisons();
+        }
+        
+        System.out.println("[INIT] Maisons chargées : " + factory.getListeMaisons().size());
     	this.setTitle("Application CIUP");
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
@@ -27,6 +51,13 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setSize(xSize,ySize);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                FactoryCIUP.getInstance().sauvegarderListeMaisons();
+            }
+        });
+        
         
         panelEntier=new JPanel(new BorderLayout());
         
@@ -44,6 +75,7 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
     	this.panelCentral=new JPanel(cardLayout);
     	this.panelCentral.add(new blocPanel(this),"Accueil");
     	this.panelCentral.add(new vueGestionDeListe(this),"Residences");
+
     	try {
 			this.panelCentral.add(new Etudiant(this.panelCentral),"Etudiants");
 		} catch (IOException e) {

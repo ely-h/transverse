@@ -58,7 +58,6 @@ public class VueAjoutMaisonListe extends JPanel{
         panelMaisons.setLayout(new GridLayout(2, 5, 10, 10));
         
         FactoryCIUP factory = FactoryCIUP.getInstance();
-        factory.CreationObjets();
         
         lesMaisons = factory.getLesMaisons();
 

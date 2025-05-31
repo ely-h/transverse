@@ -1,12 +1,15 @@
 package modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*-----------------------------
  * Classe représentant un restaurant universitaire (RestoU) associé à une maison.
  * Contient des informations sur la maison à laquelle il appartient et les catégories de menus qu'il propose.
  *---------------------------*/
-public class RestoU {
+public class RestoU implements Serializable{
+	private static final long serialVersionUID = 1L; // Version 1
+
 	Maison saMaison;
 	private ArrayList<MenuRestoUParCategorie> sesCategories = new ArrayList<MenuRestoUParCategorie>(4);
 
