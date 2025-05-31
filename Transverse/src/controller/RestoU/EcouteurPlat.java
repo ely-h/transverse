@@ -11,8 +11,7 @@ import vue.RestoU.VueDetailsPlat;
  * Écouteur pour gérer l'affichage des détails d'un plat
  * Ouvre une nouvelle fenêtre présentant les informations détaillées du plat sélectionné
  * 
- * @author [Ton nom ou équipe]
- * @version 1.0
+ * @author hassine
  */
 public class EcouteurPlat implements ActionListener {
 

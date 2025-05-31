@@ -3,12 +3,22 @@ package vue;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Toolkit;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+
+import java.io.IOException;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 
 import javax.swing.*;
 
+import vue.Etudiant.Etudiant;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+
+
 import modele.FactoryCIUP;
+
 import vue.RestoU.PanelCategoriesMenuRestoU;
 import vue.miseEnLienDesPages.*;
 import vue.listeMaison.*;
@@ -65,6 +75,18 @@ public class ApplicationCIUP extends JFrame implements PanelChangeListener{
     	this.panelCentral=new JPanel(cardLayout);
     	this.panelCentral.add(new blocPanel(this),"Accueil");
     	this.panelCentral.add(new vueGestionDeListe(this),"Residences");
+
+    	try {
+    		JPanel panelEtudiant=new JPanel();
+    		
+    		panelEtudiant.add(new Etudiant(panelEtudiant)) ;
+			this.panelCentral.add(panelEtudiant,"Etudiants");
+		} catch (IOException e) {
+		    JOptionPane.showMessageDialog(this, 
+		            "Erreur de chargement des données étudiant",
+		            "Erreur",
+		            JOptionPane.ERROR_MESSAGE);
+		}
     	this.panelCentral.add(new PanelCategoriesMenuRestoU(),"RestoU");
     	
     }

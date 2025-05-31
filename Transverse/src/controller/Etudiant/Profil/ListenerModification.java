@@ -52,7 +52,7 @@ public class ListenerModification implements ActionListener {
 	}
 	
 	private void closeFrame() {
-		_frameSRC.getContentPane().removeAll();
+		_frameSRC.removeAll();
 		_frameSRC.add(_paneEdit);
 		_frameSRC.revalidate();
 		_frameSRC.repaint();

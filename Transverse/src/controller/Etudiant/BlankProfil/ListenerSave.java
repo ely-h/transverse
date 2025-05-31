@@ -19,7 +19,7 @@ public class ListenerSave implements ActionListener{
 	private JButton _buttonSRC;
 	private ProfilVierge _panelSRC;
 	private PanelEditInfo _panelInfo;
-	private JFrame _frameSRC;
+	private JPanel panelSRC;
 	
 	private JPanel _paneFerm;
 	private FactoryCIUP _facto;
@@ -35,9 +35,9 @@ public class ListenerSave implements ActionListener{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerSave (JPanel pane, JFrame frame, FactoryCIUP facto) {
+	public ListenerSave (JPanel pane, JPanel lePanel, FactoryCIUP facto) {
 		_paneFerm = pane;
-		_frameSRC = frame;
+		panelSRC = lePanel;
 		_facto = facto;
 	}
 	//---------------
@@ -82,9 +82,9 @@ public class ListenerSave implements ActionListener{
 	}
 	
 	private void closeFrame() {
-		_frameSRC.getContentPane().removeAll();
-		_frameSRC.add(_paneFerm);
-		_frameSRC.revalidate();
-		_frameSRC.repaint();
+		_panelSRC.removeAll();
+		_panelSRC.add(_paneFerm);
+		_panelSRC.revalidate();
+		_panelSRC.repaint();
 	}
 }
