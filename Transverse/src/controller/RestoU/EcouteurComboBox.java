@@ -8,8 +8,7 @@ import javax.swing.JComboBox;
  * Écouteur pour gérer les sélections dans une JComboBox de filtrage des plats.
  * Met à jour la vue associée en fonction de l'élément sélectionné.
  * 
- * @author [Ton nom ou équipe]
- * @version 1.0
+ * @author hassine
  */
 public class EcouteurComboBox implements ActionListener {
 

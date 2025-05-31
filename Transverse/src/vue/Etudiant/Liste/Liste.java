@@ -1,6 +1,9 @@
 package vue.Etudiant.Liste;
 
 import javax.swing.*;
+
+import controller.RestoU.*;
+
 import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.*;
@@ -8,6 +11,7 @@ import java.util.*;
 import modele.FactoryCIUP;
 import modele.Maison;
 import modele.Etudiant;
+import vue.Etudiant.PanelRetour;
 import vue.Etudiant.Liste.ListeEtudiant.PanelListeEtudiant;
 
 public class Liste extends JPanel{
@@ -25,6 +29,12 @@ public class Liste extends JPanel{
 		_pFiltre = new PanelFiltre(alMaison);
 		_pListeEtu = new PanelListeEtudiant(alEtu);
 		
+		setLayout(new BorderLayout());
+		
+		PanelRetour bouttonRetour=new PanelRetour ();
+		add(bouttonRetour,BorderLayout.LINE_START);
+		
+		bouttonRetour.getButton().addActionListener(new EcouteurRetour((JPanel)this));
 		add(_pFiltre, BorderLayout.WEST);
 		add(_pListeEtu, BorderLayout.CENTER);
 	}

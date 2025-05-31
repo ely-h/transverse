@@ -82,9 +82,20 @@ public class adminDashboard extends JPanel {
     });
 
     Dimension btnSize = new Dimension(120, 30);
+    btnAccueil.setPreferredSize(btnSize);
     btnResidences.setPreferredSize(btnSize);
     btnEtudiants.setPreferredSize(btnSize);
     btnRestoU.setPreferredSize(btnSize);
+    
+
+    btnAccueil.setBackground(new Color(78, 94, 99));
+    btnAccueil.setForeground(Color.WHITE);
+    btnResidences.setBackground(new Color(78, 94, 99));
+    btnResidences.setForeground(Color.WHITE);
+    btnEtudiants.setBackground(new Color(78, 94, 99));
+    btnEtudiants.setForeground(Color.WHITE);
+    btnRestoU.setBackground(new Color(78, 94, 99));
+    btnRestoU.setForeground(Color.WHITE);
 
     boutonPanel.add(btnAccueil);
     boutonPanel.add(btnResidences);
