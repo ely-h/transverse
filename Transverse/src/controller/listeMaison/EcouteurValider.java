@@ -61,21 +61,18 @@ public class EcouteurValider implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Récupérer l'instance de FactoryCIUP
         FactoryCIUP factory = FactoryCIUP.getInstance();
         
-        // Ajouter les maisons sélectionnées à listeMaisons
         for (Maison maison : maisonsSelectionnees) {
             factory.addMaisonToListe(maison);
             System.out.println("Maison ajoutée à la liste : " + maison.getNom());
         }
-        
-        //message de confirmation
+        factory.sauvegarderListeMaisons();
+
         String message = "Liste créée avec succès !\n" + maisonsSelectionnees.size() + " maison(s) ajoutée(s) à votre liste.";
         
         JOptionPane.showMessageDialog(fenetre, message, "Liste créée", JOptionPane.INFORMATION_MESSAGE);
-        
-        // Retourner directement au menu principal
+
         retournerAuMenuPrincipal();
     }
     /**
@@ -88,7 +85,6 @@ public class EcouteurValider implements ActionListener {
             ApplicationCIUP app = (ApplicationCIUP) fenetre;
             app.changeVers("Residences"); // Retour à la vue gestion de liste
         } else {
-            // Fallback pour les tests indépendants
             fenetre.getContentPane().removeAll();
             vueGestionDeListe vueGestion = new vueGestionDeListe(fenetre);
             fenetre.add(vueGestion);

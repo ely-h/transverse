@@ -1,4 +1,6 @@
 package modele;
+
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -7,7 +9,8 @@ import java.util.*;
  * 
  * @author hassine
  */
-public class Maison {
+public class Maison implements Serializable{
+	private static final long serialVersionUID = 1L; // Version 1
     
     //--------------------------
     // ATTRIBUTS

@@ -30,7 +30,7 @@ public class VueListeMaison extends JPanel {
     private JScrollPane scrollPane;
     private ArrayList<PanelMaison> panelsMaison;
     private FactoryCIUP factory;
-    private JButton btnRetourCreation;
+    //private JButton btnRetourCreation;
     private JFrame fenetreParent; 
  
 	//-------------------------
@@ -76,12 +76,13 @@ public class VueListeMaison extends JPanel {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         
-        if (fenetreParent != null) {
+        /*if (fenetreParent != null) {
             btnRetourCreation = new JButton("Créer une nouvelle liste");
             btnRetourCreation.setPreferredSize(new Dimension(200, 35));
             btnRetourCreation.setBackground(new Color(78, 94, 99));
             btnRetourCreation.setForeground(Color.WHITE);
-        }
+            
+        }*/
     }
     
     /**
@@ -99,21 +100,6 @@ public class VueListeMaison extends JPanel {
         titre.setFont(new Font("Arial", Font.BOLD, 18));
         titre.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
         panelDuHaut.add(titre, BorderLayout.CENTER);
-        
-        if (btnRetourCreation != null) {
-            JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-            buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 10));
-            buttonPanel.add(btnRetourCreation);
-            panelDuHaut.add(buttonPanel, BorderLayout.EAST);
-            
-            // Écouteur pour le bouton retour
-            btnRetourCreation.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    retournerVersCreation();
-                }
-            });
-        }
         
         add(panelDuHaut, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
@@ -170,6 +156,7 @@ public class VueListeMaison extends JPanel {
     private void retournerVersCreation() {
         if (fenetreParent != null) {
             // Retourner à la vue de sélection
+        	FactoryCIUP.getInstance().sauvegarderListeMaisons();
             fenetreParent.getContentPane().removeAll();
             fenetreParent.setTitle("Calcul Perimètre");
             

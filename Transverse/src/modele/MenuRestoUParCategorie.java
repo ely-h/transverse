@@ -1,12 +1,14 @@
 package modele;
+import java.io.Serializable;
 import java.util.*;
 
 /*-----------------------------
  * Classe représentant une catégorie de menu dans un RestoU.
  * Contient une liste de plats appartenant à cette catégorie et permet de consulter ou filtrer les plats selon des critères spécifiques.
  *---------------------------*/
-public class MenuRestoUParCategorie {
-
+public class MenuRestoUParCategorie implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private ArrayList<Plat> sesPlats = new ArrayList<Plat>();
 	private String categorie;
 
