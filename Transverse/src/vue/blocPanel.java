@@ -8,6 +8,8 @@ import java.awt.*;
 
 /**
  * Panel contenant les blocs de menu pour les différentes sections.
+ *
+ * @author agoubi
  */
 public class blocPanel extends JPanel {
 

@@ -10,6 +10,9 @@ import vue.RestoU.PanelCategoriesMenuRestoU;
 import vue.miseEnLienDesPages.*;
 import vue.listeMaison.*;
 
+/**
+ * @author agoubi
+ */
 public class ApplicationCIUP extends JFrame implements PanelChangeListener{
 	private CardLayout cardLayout;
     private JPanel panelCentral;
