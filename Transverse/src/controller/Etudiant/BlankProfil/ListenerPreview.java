@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 import modele.Etudiant;
+import modele.Nationnalite;
 import vue.Etudiant.Edit.Profil.EditProfil;
 import vue.Etudiant.Edit.Profil.PanelEditInfo;
 import vue.Etudiant.Edit.ProfilVierge.ProfilVierge;
@@ -17,9 +18,9 @@ public class ListenerPreview implements ActionListener {
 	//ATTRIBUTS
 	//---------------
 	private JButton _buttonSRC;
-	private ProfilVierge _panelSRC;
+	private ProfilVierge _panelViergeSRC;
 	private PanelEditInfo _panelInfo;
-	private JFrame _frameSRC;
+	private JPanel _frameSRC;
 	
 	private Etudiant _tempEtu;
 	private Profil _tempProfil;
@@ -33,18 +34,18 @@ public class ListenerPreview implements ActionListener {
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerPreview (JFrame frame) {
+	public ListenerPreview (JPanel lePanel) {
 		
-		_frameSRC = frame;
+		_frameSRC = lePanel;
 	}
 	//---------------
 	//MAIN
 	//---------------
 	public void actionPerformed(ActionEvent e) {
 		_buttonSRC = (JButton) e.getSource();
-		_panelSRC = (ProfilVierge) _buttonSRC.getParent().getParent().getParent();
-		_panelInfo = _panelSRC.getEditInfo();
-		_tempEtu = _panelSRC.getEtu();
+		_panelViergeSRC = (ProfilVierge) _buttonSRC.getParent().getParent().getParent();
+		_panelInfo = _panelViergeSRC.getEditInfo();
+		_tempEtu = _panelViergeSRC.getEtu();
 		
 		loadString();
 		createTempEtu();
@@ -68,15 +69,12 @@ public class ListenerPreview implements ActionListener {
 	
 	private void createTempEtu() {
 		
-		if(_ImgPath.equals(""))
-			_ImgPath = "img/Etudiants/example.jpg";
-		if(_annee.equals(""))
-			_annee = "0";
-		
-		_tempEtu = new Etudiant(_nom, _prenom, _mail, Integer.valueOf(_annee), null, _ImgPath);
-		
+	if(_ImgPath.equals(""))_ImgPath="img/Etudiants/example.jpg";if(_annee.equals(""))_annee="0";
+
+	_tempEtu=new Etudiant(_nom,_prenom,_mail,Integer.valueOf(_annee),new Nationnalite("Inconnu"),_ImgPath);
+
 	}
-	
+
 	private void loadUpdateProfil() {
 		try {
 			_tempProfil = new Profil(_tempEtu);
@@ -87,7 +85,7 @@ public class ListenerPreview implements ActionListener {
 	}
 
 	private void closeFrame() {
-		_frameSRC.getContentPane().removeAll();
+		_frameSRC.removeAll();
 		_frameSRC.add(_tempProfil);
 		_frameSRC.revalidate();
 		_frameSRC.repaint();

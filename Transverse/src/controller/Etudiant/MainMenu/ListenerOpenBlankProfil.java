@@ -15,24 +15,24 @@ public class ListenerOpenBlankProfil implements ActionListener {
 	//ATTRIBUTS
 	//---------------
 	private ProfilVierge _blankProfil;
-	private JFrame _frameSRC;
+	private JPanel _panelSRC;
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerOpenBlankProfil(ProfilVierge profil, JFrame frame){
+	public ListenerOpenBlankProfil(ProfilVierge profil, JPanel panel){
 		
 		_blankProfil = profil;
-		_frameSRC = (Etudiant) frame;
+		_panelSRC = (JPanel) panel;
 	}
 	
 	//---------------
 	//MAIN
 	//---------------
 	public void actionPerformed(ActionEvent e) {
-		_frameSRC.getContentPane().removeAll();
-		_frameSRC.add(_blankProfil);
-		_frameSRC.revalidate();
-		_frameSRC.repaint();
+		_panelSRC.removeAll();
+		_panelSRC.add(_blankProfil);
+		_panelSRC.revalidate();
+		_panelSRC.repaint();
 	}
 }

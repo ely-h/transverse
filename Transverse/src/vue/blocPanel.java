@@ -42,9 +42,9 @@ public class blocPanel extends JPanel {
         public void actionPerformed(ActionEvent e) */{
         	listener.changeVers("Residences");
         });
-//        blocEtudiants.getBouton().addActionListener(e ->{
-//        	listener.changeVers("Etudiants");
-//        });
+        blocEtudiants.getBouton().addActionListener(e ->{
+        	listener.changeVers("Etudiants");
+        });
         blocRestoU.getBouton().addActionListener(e ->{
         	listener.changeVers("RestoU");
         });

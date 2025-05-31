@@ -71,9 +71,9 @@ public class adminDashboard extends JPanel {
     btnAccueil.addActionListener(e ->{
     	listener.changeVers("Accueil");
     });
-//    btnEtudiants.addActionListener(e ->{
-//    	listener.changeVers("Etudiants");
-//    });
+    btnEtudiants.addActionListener(e ->{
+    	listener.changeVers("Etudiants");
+    });
     btnRestoU.addActionListener(e ->{
     	listener.changeVers("RestoU");
     });

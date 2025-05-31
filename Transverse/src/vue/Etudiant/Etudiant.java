@@ -8,10 +8,11 @@ import modele.FactoryCIUP;
 import controller.Etudiant.MainMenu.*;
 import controller.Etudiant.BlankProfil.*;
 import vue.Etudiant.MiseEnPage.*;
+import vue.miseEnLienDesPages.PanelChangeListener;
 import vue.Etudiant.Liste.*;
 import vue.Etudiant.Edit.ProfilVierge.*;
 
-public class Etudiant extends JFrame{
+public class Etudiant extends JPanel{
 
 	//---------------
 	//ATTRIBUTS
@@ -30,7 +31,7 @@ public class Etudiant extends JFrame{
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public Etudiant() throws IOException {
+	public Etudiant(JPanel lePanel) throws IOException {
 		FactoryCIUP facto = FactoryCIUP.getInstance();
 		facto.CreationObjets();
 		
@@ -39,26 +40,24 @@ public class Etudiant extends JFrame{
 		_laListe = new Liste(facto.getLesMaisons(), facto.getLesEtudiants());
 		_profilVierge = new ProfilVierge();
 		
-		_lOListe = new ListenerOpenList(_laListe, this);
-		_lOBProfil = new ListenerOpenBlankProfil(_profilVierge, this);
+		_lOListe = new ListenerOpenList(_laListe, lePanel);
+		_lOBProfil = new ListenerOpenBlankProfil(_profilVierge, lePanel);
 		
 		_panelMain.getCBTListe().addActionListener(_lOListe);
 		_panelMain.getCBTEtudiant().addActionListener(_lOBProfil);
 
-		_lS = new ListenerSave(_panelMain, this, facto);
+		_lS = new ListenerSave(_panelMain, lePanel, facto);
 		_profilVierge.getButton0().addActionListener(_lS);
 		
-		_lP = new ListenerPreview(this);
+		_lP = new ListenerPreview(lePanel);
 		_profilVierge.getButton1().addActionListener(_lP);
 		
-		_lC = new ListenerCancel(_panelMain,this );
+		_lC = new ListenerCancel(_panelMain,lePanel );
 		_profilVierge.getButton2().addActionListener(_lC);
 		
+		this.add(_panelMain);
 		
-		setSize(700, 300);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		add(_panelMain);
-		setVisible(true);
+		
 		
 		
 	}
@@ -67,11 +66,17 @@ public class Etudiant extends JFrame{
 	//MAIN
 	//---------------
 	public static void main(String[] arg) {
-		try {
-			Etudiant etu = new Etudiant();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			JFrame test = new JFrame();
+//			Etudiant etu = new Etudiant(test);
+//			test.add(etu);
+//			test.setSize(800, 600);
+//	        test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	        test.setVisible(true);
+//			
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	//---------------

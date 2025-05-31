@@ -10,14 +10,14 @@ public class ListenerCancel implements ActionListener{
 	//ATTRIBUTS
 	//---------------
 	private JPanel _paneSRC;
-	private JFrame _frameSRC;
+	private JPanel _panelSRC;
 	
 	//---------------
 	//CONSTRUCTEUR
 	//---------------
-	public ListenerCancel(JPanel pane, JFrame frame) {
+	public ListenerCancel(JPanel pane, JPanel lePanel) {
 		_paneSRC = pane;
-		_frameSRC = frame;
+		_panelSRC = lePanel;
 	}
 	//---------------
 	//MAIN
@@ -29,9 +29,9 @@ public class ListenerCancel implements ActionListener{
 	//METHODE
 	//---------------
 	private void closeFrame() {
-		_frameSRC.getContentPane().removeAll();
-		_frameSRC.add(_paneSRC);
-		_frameSRC.revalidate();
-		_frameSRC.repaint();
+		_panelSRC.removeAll();
+		_panelSRC.add(_paneSRC);
+		_panelSRC.revalidate();
+		_panelSRC.repaint();
 	}
 }
