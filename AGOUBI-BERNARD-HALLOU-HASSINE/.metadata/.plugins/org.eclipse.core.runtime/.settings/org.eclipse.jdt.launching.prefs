@@ -1,2 +1,0 @@
-eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1742542780555" defaultVMConnector\="">\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n        <vm id\="1742542780555" name\="java-23-openjdk" path\="/usr/lib/jvm/java-23-openjdk"/>\n        <vm id\="/usr/lib/jvm/java-8-openjdk" name\="java-8-openjdk" path\="/usr/lib/jvm/java-8-openjdk"/>\n    </vmType>\n</vmSettings>\n
